@@ -16,7 +16,7 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, fullName, email, password));
+      const data = await dispatch(signUp(fullName, username, email, password));
       if (data) {
         setErrors(data)
       }
@@ -58,7 +58,7 @@ const SignUpForm = () => {
         <label>Full Name</label>
         <input
           type='text'
-          name='full_name'
+          name='fullName'
           onChange={updateFullName}
           value={fullName}
         ></input>
