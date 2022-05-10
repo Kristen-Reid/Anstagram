@@ -5,21 +5,22 @@ import { login } from '../../store/session';
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
-  const [email, setEmail] = useState('');
+  const [usernameEmail, setUsernameEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
   const onLogin = async (e) => {
     e.preventDefault();
-    const data = await dispatch(login(email, password));
+    const data = await dispatch(login(usernameEmail, password));
     if (data) {
       setErrors(data);
     }
   };
 
-  const updateEmail = (e) => {
-    setEmail(e.target.value);
+
+  const updateUsernameEmail = (e) => {
+    setUsernameEmail(e.target.value);
   };
 
   const updatePassword = (e) => {
@@ -38,13 +39,12 @@ const LoginForm = () => {
         ))}
       </div>
       <div>
-        <label htmlFor='email'>Email</label>
         <input
-          name='email'
+          name='username_email'
           type='text'
-          placeholder='Email'
-          value={email}
-          onChange={updateEmail}
+          placeholder='Username or Email'
+          value={usernameEmail}
+          onChange={updateUsernameEmail}
         />
       </div>
       <div>
