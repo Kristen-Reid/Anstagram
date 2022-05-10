@@ -1,6 +1,6 @@
 <h1 align="center"> Anstagram </h1> <a name="top"> </a>
 
-## <h5 align="center">  By: <a href="https://github.com/Kristen-Reid">Kristen Reid</a>
+<h5 align="center">  By: <a href="https://github.com/Kristen-Reid">Kristen Reid</a>
 
 <h2> About </h2>
 Anstagram is a clone of Instagram. Anstagram is where anime lovers can share posts/images/gifs from their favorite animes with each other!
@@ -12,7 +12,7 @@ Anstagram is a clone of Instagram. Anstagram is where anime lovers can share pos
    
    
 <h2> Features </h2> <a name="features"></a>
- * * Splash Page 
+ (#Splash Page) 
     * Log in, sign up or log in as a demo user.
  * Home Page 
     * View posts of logged in user and other users that the logged in user follows.
