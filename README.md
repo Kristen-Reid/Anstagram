@@ -13,17 +13,17 @@ Anstagram is a clone of Instagram. Anstagram is where anime lovers can share pos
    
 <h2> Features </h2> <a name="features"></a>
  * Splash Page 
-   * Log in, sign up or log in as a demo user.
+    * Log in, sign up or log in as a demo user.
  * Home Page 
-   * View posts of logged in user and other users that the logged in user follows.
-   * Like and comment on a followed user's post.
+    * View posts of logged in user and other users that the logged in user follows.
+    * Like and comment on a followed user's post.
  * User Profile Page
-   * View logged in user's and followed user's profile information.
-   * Follow/Unfollow a user.
-   * View all posts made by user.
+    * View logged in user's and followed user's profile information.
+    * Follow/Unfollow a user.
+    * View all posts made by user.
  * User Post Page 
-   * View a user's specific post complete with their description and comments.
-   * Like and comment on a user's post.
+    * View a user's specific post complete with their description and comments.
+    * Like and comment on a user's post.
 
 <h2>Technologies Used</h2> <a name="tech"></a>
    
