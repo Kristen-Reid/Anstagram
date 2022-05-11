@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import '../auth/login.css';
 
 const LoginForm = () => {
   const [errors, setErrors] = useState([]);
@@ -18,6 +19,12 @@ const LoginForm = () => {
     }
   };
 
+  const demoLogin = async (e) => {
+    const data = await dispatch(login("demo@aa.io", "password"));
+    if (data) {
+      setErrors(data);
+    }
+  };
 
   const updateUsernameEmail = (e) => {
     setUsernameEmail(e.target.value);
@@ -32,37 +39,60 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={onLogin}>
-        <div>
-          {errors.map((error, ind) => (
-            <div key={ind}>{error}</div>
-          ))}
+    <div className='login-form-container'>
+      <div className='login-form-box'>
+        <div className='logo-container'>
+          <div className='logo'>
+            <p className='logo-name'>Anstagram</p>
+          </div>
         </div>
+        <form onSubmit={onLogin}>
+          <div>
+            {errors.map((error, ind) => (
+              <div key={ind}>{error}</div>
+            ))}
+          </div>
+          <div className='form-input-box'>
+            <input
+              className='form-input'
+              name='username_email'
+              type='text'
+              placeholder='Username or Email'
+              value={usernameEmail}
+              onChange={updateUsernameEmail}
+            />
+          </div>
+          <div className='form-input-box'>
+            <input
+              className='form-input'
+              name='password'
+              type='password'
+              placeholder='Password'
+              value={password}
+              onChange={updatePassword}
+            />
+          </div>
+        </form>
         <div>
-          <input
-            name='username_email'
-            type='text'
-            placeholder='Username or Email'
-            value={usernameEmail}
-            onChange={updateUsernameEmail}
-          />
+          <button className='login-btn' type='submit'>Login</button>
         </div>
-        <div>
-          <label htmlFor='password'>Password</label>
-          <input
-            name='password'
-            type='password'
-            placeholder='Password'
-            value={password}
-            onChange={updatePassword}
-          />
-          <button type='submit'>Login</button>
+        <div className='or-line-container'>
+          <div className='or-line'></div>
+          <div className='or'>OR</div>
+          <div className='or-line'></div>
         </div>
-        <div>
-          <p>Don't have an account? <a href='/sign-up'>Sign up</a></p>
+        <div className='demo-container'>
+          <a
+          className="demo-btn"
+            onClick={demoLogin}
+          >
+            Demo Login
+          </a>
         </div>
-      </form>
+      </div>
+      <div className='form-bottom-box'>
+        <p className='account-question'>Don't have an account? <a href='/sign-up'>Sign up</a></p>
+      </div>
     </div>
   );
 };

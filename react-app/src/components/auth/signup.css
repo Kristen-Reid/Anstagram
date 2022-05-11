@@ -1,7 +1,7 @@
 @import url(//db.onlinewebfonts.com/c/e721330050ecfe81b4e5455e1a308181?family=Billabong);
 
 .logo-name {
-    margin: 5%;
+    margin: 0% 0% 5% 0%;
 }
 
 .logo {
@@ -27,7 +27,9 @@
     align-items: center;
     width: 350px;
     height: 542px;
-    border: black solid 1px;
+    border: gray solid .5px;
+    padding-top: 30px;
+    padding-bottom: 20px;
 }
 
 .form-input-box {
@@ -40,33 +42,34 @@
 .form-input {
     width: 250px;
     padding: 12px;
-    border: black solid 1px;
+    border: gray solid .5px;
 }
 
 .form-bottom-box {
     display: flex;
     justify-content: center;
-    border: black solid 1px;
+    border: gray solid .5px;
     width: 350px;
     padding-top: 20px;
     padding-bottom: 20px;
     margin-top: 10px;
 }
 
-.signup-btn {
+.form-btn {
     background-color: #0095f6;
     color: white;
     border: none;
     width: 278px;
     padding: 12px;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 5px;
 }
 
 .signup-message {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
+    color: gray;
 }
 
 .logo-container {
@@ -85,4 +88,20 @@
 a {
     text-decoration: none;
     color: #0095f6;
+}
+
+.demo-signup {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    width: 278px;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.demo-signup:hover {
+    cursor: pointer;
+    /* text-decoration-line: underline; */
+    font-weight: bolder;
 }

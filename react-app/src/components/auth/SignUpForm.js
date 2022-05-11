@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { Redirect } from 'react-router-dom';
-import { signUp } from '../../store/session';
+import { login, signUp } from '../../store/session';
 import '../auth/signup.css'
 
 const SignUpForm = () => {
@@ -21,6 +21,13 @@ const SignUpForm = () => {
       if (data) {
         setErrors(data)
       }
+    }
+  };
+
+  const demoLogin = async (e) => {
+    const data = await dispatch(login("demo@aa.io", "password"));
+    if (data) {
+      setErrors(data);
     }
   };
 
@@ -58,6 +65,19 @@ const SignUpForm = () => {
           <div className='signup-message'>
             Sign up to see photos and videos from your friends.
           </div>
+        </div>
+        <div className='demo-container'>
+          <button
+          className="demo-signup"
+            onClick={demoLogin}
+          >
+            Demo Login
+          </button>
+        </div>
+        <div className='or-line-container'>
+          <div className='or-line'></div>
+          <div className='or'>OR</div>
+          <div className='or-line'></div>
         </div>
           <form onSubmit={onSignUp}>
             <div>
@@ -117,8 +137,8 @@ const SignUpForm = () => {
               ></input>
             </div>
           </form>
-        <div className='signup-btn-container'>
-          <button className='signup-btn' type='submit'>Sign Up</button>
+        <div className='btn-container'>
+          <button className='form-btn' type='submit'>Sign Up</button>
         </div>
       </div>
       <div className='form-bottom-box'>
