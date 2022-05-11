@@ -27,7 +27,7 @@ def seed_comments():
         description='Such a great show! This episode was NUTS!', user_id=2, post_id=4
     )
     comment9= Comment(
-        descripton='Mikasa > Levi', user_id=2, post_id=5
+        description='Mikasa > Levi', user_id=2, post_id=5
     )
     comment10= Comment(
         description='Levi definitely GOATed.', user_id=4, post_id=5
@@ -40,7 +40,7 @@ def seed_comments():
     )
 
 
-    db.session([comment1, comment2, comment3, comment4, comment5, comment6, comment7, comment8, comment9, comment10, comment11, comment12])
+    db.session.add_all([comment1, comment2, comment3, comment4, comment5, comment6, comment7, comment8, comment9, comment10, comment11, comment12])
 
     db.session.commit()
 
