@@ -1,3 +1,8 @@
 /* TODO Add site wide styles */
 
-
+@font-face {
+  font-family: "Billabong";
+  src: url("/font/Billabong.tff") format("tff");
+  font-weight: normal;
+  font-style: normal;
+}
