@@ -1,0 +1,88 @@
+@import url('http://fonts.cdnfonts.com/css/billabong');
+
+.logo-name {
+    margin: 5%;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    font-family: 'Billabong', sans-serif;
+    font-size: 62px;
+}
+
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.signup-form-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 542px;
+    border: black solid 1px;
+}
+
+.form-input-box {
+    display: flex;
+    justify-content: flex-start;
+    margin: 5px;
+    padding: 2px;
+}
+
+.form-input {
+    width: 250px;
+    padding: 12px;
+    border: black solid 1px;
+}
+
+.form-bottom-box {
+    display: flex;
+    justify-content: center;
+    border: black solid 1px;
+    width: 350px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+}
+
+.signup-btn {
+    background-color: #0095f6;
+    color: white;
+    border: none;
+    width: 278px;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.signup-message {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.form-bottom-box {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #0095f6;
+}
