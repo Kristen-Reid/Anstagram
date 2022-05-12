@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import '../PostCard/postCard.css'
 
 
-const PostCard = ({id, image, summary, createdAt, updatedAt, userId}) => {
+const PostCard = ({id, image, summary, updateddAt, updatedAt, userId}) => {
 
     const user = useSelector(state => state.session.user);
 
@@ -19,8 +19,8 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId}) => {
                     <div className='post-summary'>
                        {userId}  {summary}
                     </div>
-                    <div className='createdAt'>
-                        {createdAt}
+                    <div className='updatedAt'>
+                        {updatedAt}
                     </div>
                 </div>
             </div>
