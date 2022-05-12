@@ -8,6 +8,7 @@ import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
 import NavBar from './components/NavBar';
+import HomePage from './components/HomePage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -40,8 +41,8 @@ function App() {
           <User />
         </ProtectedRoute>
         <ProtectedRoute path='/home' exact={true} >
-          <h1>My Home Page</h1>
           <NavBar />
+          <HomePage />
         </ProtectedRoute>
       </Switch>
     </BrowserRouter>

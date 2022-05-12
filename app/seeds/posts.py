@@ -12,7 +12,7 @@ def seed_posts():
         media_url='https://i.pinimg.com/originals/29/63/8a/29638abfcef4f4217dcc615604a44d91.jpg', summary='So hype for the return of Bleach!', user_id=1
         )
     post4 = Post(
-        media_url='https://image.myanimelist.net/ui/5LYzTBVoS196gvYvw3zjwGGbbe8J8bLKCAaiBnFFrc0', summary='This episode was soooo good!! 🔥', user_id=1
+        media_url='https://64.media.tumblr.com/3d1e05d69677a1d1c2fec9103267c915/c5e3bd4614e47275-71/s1280x1920/330eba4b6f2c9dca6a30c11e2640785a95b8d6c9.jpg', summary='This episode was soooo good!! 🔥', user_id=1
         )
     post5 = Post(
         media_url='https://blacknerdproblems.com/wp-content/uploads/2018/08/attack-on-titan-season-3-levi-ackerman-kick-ass.jpg', summary='Levi definitely the GOAT on AOT! 🐐', user_id=1

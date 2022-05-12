@@ -1,0 +1,40 @@
+.post-box-top {
+    display: flex;
+    width: 470px;
+    height: 56px;
+    border: .5px black solid;
+    border-radius: 8px 8px 0px 0px;
+}
+
+
+.post-image {
+    width: 471px;
+    height: 210px;
+    object-fit: cover;
+}
+
+.post-box-main {
+    margin: 20px;
+    width: auto;
+}
+
+
+.post-box-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 470px;
+    border: .5px black solid;
+    border-radius: 0px 0px 8px 8px;
+    word-wrap: break-word;
+
+}
+
+.post-summary {
+    width: 470px;
+    height: 291px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.div {
+    word-wrap: break-word;
+}

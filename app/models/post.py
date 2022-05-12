@@ -1,4 +1,3 @@
-from email.policy import default
 from .db import db
 from sqlalchemy import ForeignKey
 from datetime import datetime

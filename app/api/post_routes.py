@@ -2,8 +2,8 @@ from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from datetime import datetime
 from app.models import db, Post
-from app.forms.create_post_form import Post
-from app.forms.edit_post_form import EditForm
+from app.forms.create_post_form import CreatePost
+from app.forms.edit_post_form import EditPost
 
 posts_routes = Blueprint('posts', __name__)
 
@@ -23,7 +23,8 @@ def validation_errors_to_error_messages(validation_errors):
 @login_required
 def get_all_posts():
     posts = Post.query.all()
-    return {'posts': sorted([post.post_to_dict() for post in posts], key=lambda post: post['id'], reverse=True)}
+    response = {'posts': [post.post_to_dict() for post in posts]}
+    return response
 
 
 @posts_routes.route('/<int:id>')
@@ -33,12 +34,12 @@ def get_one_post(id):
     return post.post_to_dict()
 
 
-@posts_routes.route('/', methods=['POST'])
+@posts_routes.route('/add', methods=['POST'])
 @login_required
 def add_a_post():
     user_id = current_user.to_dict()['id'].one()
 
-    form = Post()
+    form = CreatePost()
     form['csrf_token'].data = request.cookies['csrf_token']
     media_url = form.data['media_url']
     summary = form.data['summary']
@@ -58,12 +59,12 @@ def add_a_post():
         return {'errors': validation_errors_to_error_messages(form.errors)}
 
 
-@posts_routes.route('/<int:id>', methods=['PUT'])
+@posts_routes.route('/<int:id>/edit', methods=['PUT'])
 @login_required
 def update_post(id):
     # user_id = current_user.to_dict()['id'].one()
 
-    form = EditForm()
+    form = EditPost()
     form['csrf_token'].data = request.cookies['csrf_token']
 
 
@@ -78,7 +79,7 @@ def update_post(id):
         return {'errors': validation_errors_to_error_messages(form.errors)}
 
 
-@posts_routes.route('/<int:id>', methods=['DELETE'])
+@posts_routes.route('/<int:id>/delete', methods=['DELETE'])
 @login_required
 def delete_post(id):
     post = Post.query.get(id)

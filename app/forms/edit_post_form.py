@@ -3,5 +3,5 @@ from wtforms import TextAreaField
 from wtforms.validators import DataRequired
 
 
-class EditForm(FlaskForm):
+class EditPost(FlaskForm):
     summary = TextAreaField('summary', validators=[DataRequired()])
