@@ -19,6 +19,9 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId}) => {
                     <div className='post-summary'>
                        {userId}  {summary}
                     </div>
+                    <div className='createdAt'>
+                        {createdAt}
+                    </div>
                 </div>
             </div>
         </div>
