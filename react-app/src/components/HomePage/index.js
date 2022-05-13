@@ -12,7 +12,6 @@ const HomePage = () => {
     const user = useSelector(state => state.session.user)
     const posts = useSelector(state => state.posts)
     const postArr = Object.values(posts)
-    console.log(postArr)
 
 
     useEffect(() => {

@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import '../PostCard/postCard.css'
 
 
-const PostCard = ({id, image, summary, updateddAt, updatedAt, userId}) => {
+const PostCard = ({id, image, summary, createdAt, updatedAt, userId}) => {
 
     const user = useSelector(state => state.session.user);
 

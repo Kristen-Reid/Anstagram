@@ -1,0 +1,32 @@
+.navbar-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 0px;
+}
+
+.navbar-box {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100vw;
+    height: 60px;
+    border-bottom: .5px black solid;
+}
+
+.nav-icons {
+    display: flex;
+    margin-right: 400px;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-div {
+    display: flex;
+    flex-direction: row;
+    /* background-color: blue; */
+    /* width: 100%; */
+    justify-content: flex-end;
+    padding: 20px;
+    list-style: none;
+}

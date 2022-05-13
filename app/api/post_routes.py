@@ -4,6 +4,9 @@ from datetime import datetime
 from app.models import db, Post
 from app.forms.create_post_form import CreatePost
 from app.forms.edit_post_form import EditPost
+from app.boto import *
+import boto3
+import botocore
 
 posts_routes = Blueprint('posts', __name__)
 
@@ -39,17 +42,20 @@ def get_one_post(id):
 def add_a_post():
     user_id = current_user.to_dict()['id'].one()
 
+
     form = CreatePost()
     form['csrf_token'].data = request.cookies['csrf_token']
-    media_url = form.data['media_url']
+    media_url = upload_file_to_s3(form.data['media_url'], Config.S3_BUCKET)
     summary = form.data['summary']
+
 
     if form.validate_on_submit():
         post = Post(
             media_url=media_url,
             summary=summary,
             user_id=user_id,
-            created_at=datetime.now)
+            created_at=datetime.now,
+            updated_at=datetime.now)
 
         db.session.add(post)
         db.session.commit()
