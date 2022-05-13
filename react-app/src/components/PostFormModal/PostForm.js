@@ -11,49 +11,42 @@ const PostForm = () => {
     const { id } = useParams();
     const user = useSelector(state => state.session.user)
     const posts = useSelector(state => state.posts);
-    const postsArr = Object.values(posts);
 
-    const [url, setUrl] = useState('');
-    const [ mediaUrl, setMediaUrl ] = useState('');
-    const [summary, setSummary] = useState('');
-    const [validationErrors, setErrors] = useState([]);
-    const [showError, setShowError] = useState(false);
+    const [ url, setUrl ] = useState('');
+    const [image, setImage] = useState('');
+    const [imageLoading, setImageLoading] = useState(false);
+    const [ summary, setSummary ] = useState('');
+    const [ validationErrors, setErrors ] = useState([]);
+    const [ showError, setShowError ] = useState(false);
 
     useEffect(() => {
         dispatch(getAllPosts());
     }, [dispatch]);
 
-    useEffect(() => {
-        const errors = [];
-
-        const validImage = /\.(jpg|jpeg|png|gif)$/
-
-        // if (!url.length) errors.push('Please provide a URL for image');
-        if (!validImage.test(mediaUrl)) errors.push('Please provide a valid image URL');
-        if (!mediaUrl) errors.push('Please provide an image file')
-        // if (!summary.length) errors.push('Please provide a summary')
-
-        setErrors(errors);
-    }, [mediaUrl, summary]);
 
 
     const onSubmit = async (e) => {
         e.preventDefault();
         setShowError(true);
 
-        const postForm = {
-            mediaUrl,
-            summary,
-            userId: user?.id
-        }
+        const formData = new FormData();
+        formData.append('image', image);
+        formData.append('summary', summary)
+        formData.append('userId', user?.id)
 
-        if (validationErrors.length === 0) {
-            let newPost = await dispatch(createPost(postForm))
-            if (newPost) {
-                history.push(`/home`);
-            }
-        }
+        // setImageLoading(true);
+        console.log(image, '!!!!!!!!!!')
+
+        let newPost = await dispatch(createPost(formData))
+
     }
+
+    const updateImage = (e) => {
+        const file = e.target.files[0];
+        setImage(file);
+    }
+
+
 
 
     return (
@@ -77,29 +70,22 @@ const PostForm = () => {
                         <form onSubmit={onSubmit}>
                             <div>
                                 <input
-                                    className='hidden'
                                     type='file'
-                                    placeholder='Post Image'
                                     accept='image/*'
-                                    value={mediaUrl}
-                                    onChange={(e) => {
-                                        // setUrl((e.target.value));
-                                        setMediaUrl(e.target.value);
-                                    }}
+                                    onChange={updateImage}
                                 />
                             </div>
                             <div>
                                 <textarea
                                     className='postInput'
                                     placeholder='Summary'
+                                    value={summary}
                                     onChange={(e) => setSummary(e.target.value)}
                                 />
                             </div>
                             <div>
-                                <button
-                                    type='submit'
-                                    className='postBtn'
-                                >Make New Post</button>
+                                <button type="submit">Submit</button>
+                                {(imageLoading)&& <p>Loading...</p>}
                             </div>
                         </form>
                     </div>
