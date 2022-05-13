@@ -40,22 +40,41 @@ def get_one_post(id):
 @posts_routes.route('/add', methods=['POST'])
 @login_required
 def add_a_post():
-    user_id = current_user.to_dict()['id'].one()
+    user_id = current_user.to_dict()['id']
+    # print(request.form)
+    # print(request.files)
+    # print(request.files['image'])
+    if "image" not in request.files:
+        return {"errors": "image required"}, 400
 
+    image = request.files['image']
+
+    if not allowed_file(image.filename):
+        return {"errors": "file type not permitted"}, 401
+
+    image.filename = get_unique_filename(image.filename)
+
+    upload = upload_file_to_s3(image)
+    # print(upload)
+
+    if "url" not in upload:
+        return upload, 402
+
+    url = upload["url"]
 
     form = CreatePost()
     form['csrf_token'].data = request.cookies['csrf_token']
-    media_url = upload_file_to_s3(form.data['media_url'], Config.S3_BUCKET)
-    summary = form.data['summary']
 
+    summary = request.form.get('summary')
+    print(summary)
+    print(request.form['summary'])
 
     if form.validate_on_submit():
+        print('inside validation', '******')
         post = Post(
-            media_url=media_url,
+            media_url=url,
             summary=summary,
-            user_id=user_id,
-            created_at=datetime.now,
-            updated_at=datetime.now)
+            user_id=user_id)
 
         db.session.add(post)
         db.session.commit()

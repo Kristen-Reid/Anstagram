@@ -63,11 +63,10 @@ export const getAPost = (id) => async (dispatch) => {
 }
 
 
-export const createPost = (data) => async (dispatch) => {
+export const createPost = (formData) => async (dispatch) => {
     const response = await fetch(`/api/posts/add`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: formData
     });
 
     if (response.ok) {
