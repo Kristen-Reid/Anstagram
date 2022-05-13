@@ -47,3 +47,7 @@
 .postInput {
     margin: 10px;
 }
+
+.errors {
+    color: black;
+}

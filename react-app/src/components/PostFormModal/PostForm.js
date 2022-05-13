@@ -11,9 +11,9 @@ const PostForm = () => {
     const { id } = useParams();
     const user = useSelector(state => state.session.user)
     const posts = useSelector(state => state.posts);
-    const postsArr = Object.values(posts)
-    console.log(user)
+    const postsArr = Object.values(posts);
 
+    const [url, setUrl] = useState('');
     const [ mediaUrl, setMediaUrl ] = useState('');
     const [summary, setSummary] = useState('');
     const [validationErrors, setErrors] = useState([]);
@@ -28,9 +28,10 @@ const PostForm = () => {
 
         const validImage = /\.(jpg|jpeg|png|gif)$/
 
-        if (!mediaUrl.length) errors.push('Please provide a URL for image');
+        // if (!url.length) errors.push('Please provide a URL for image');
         if (!validImage.test(mediaUrl)) errors.push('Please provide a valid image URL');
-        if (!summary.length) errors.push('Please provide a summary')
+        if (!mediaUrl) errors.push('Please provide an image file')
+        // if (!summary.length) errors.push('Please provide a summary')
 
         setErrors(errors);
     }, [mediaUrl, summary]);
@@ -76,17 +77,22 @@ const PostForm = () => {
                         <form onSubmit={onSubmit}>
                             <div>
                                 <input
-                                    className='postInput'
-                                    type='text'
+                                    className='hidden'
+                                    type='file'
                                     placeholder='Post Image'
+                                    accept='image/*'
                                     value={mediaUrl}
-                                    onChange={(e) => setMediaUrl(e.target.files[0])}
+                                    onChange={(e) => {
+                                        // setUrl((e.target.value));
+                                        setMediaUrl(e.target.value);
+                                    }}
                                 />
                             </div>
                             <div>
                                 <textarea
                                     className='postInput'
                                     placeholder='Summary'
+                                    onChange={(e) => setSummary(e.target.value)}
                                 />
                             </div>
                             <div>

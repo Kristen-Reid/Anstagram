@@ -40,13 +40,14 @@ def get_one_post(id):
 @posts_routes.route('/add', methods=['POST'])
 @login_required
 def add_a_post():
-    user_id = current_user.to_dict()['id'].one()
+    user_id = current_user.to_dict()['id']
 
 
     form = CreatePost()
     form['csrf_token'].data = request.cookies['csrf_token']
-    media_url = upload_file_to_s3(form.data['media_url'], Config.S3_BUCKET)
+    file = form.data['media_url']
     summary = form.data['summary']
+    media_url = upload_file_to_s3(file, Config.S3_BUCKET)
 
 
     if form.validate_on_submit():
