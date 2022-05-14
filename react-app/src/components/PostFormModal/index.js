@@ -11,7 +11,7 @@ const PostFormModal = () => {
             <a className='navLink' onClick={() => setShowModal(true)}><AddPost /></a>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <PostForm />
+                    <PostForm close={() => setShowModal(false)}/>
                 </Modal>
             )}
         </>

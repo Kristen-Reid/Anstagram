@@ -5,7 +5,7 @@ import { getAllPosts, getAPost, createPost } from '../../store/post';
 import './post.css';
 
 
-const PostForm = () => {
+const PostForm = ({ close }) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const { id } = useParams();
@@ -38,6 +38,7 @@ const PostForm = () => {
         console.log(image, '!!!!!!!!!!')
 
         let newPost = await dispatch(createPost(formData))
+        close()
 
     }
 

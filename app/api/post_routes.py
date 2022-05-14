@@ -1,6 +1,5 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from datetime import datetime
 from app.models import db, Post
 from app.forms.create_post_form import CreatePost
 from app.forms.edit_post_form import EditPost
@@ -41,9 +40,7 @@ def get_one_post(id):
 @login_required
 def add_a_post():
     user_id = current_user.to_dict()['id']
-    # print(request.form)
-    # print(request.files)
-    # print(request.files['image'])
+
     if "image" not in request.files:
         return {"errors": "image required"}, 400
 
@@ -55,7 +52,6 @@ def add_a_post():
     image.filename = get_unique_filename(image.filename)
 
     upload = upload_file_to_s3(image)
-    # print(upload)
 
     if "url" not in upload:
         return upload, 402
@@ -66,11 +62,8 @@ def add_a_post():
     form['csrf_token'].data = request.cookies['csrf_token']
 
     summary = request.form.get('summary')
-    print(summary)
-    print(request.form['summary'])
 
     if form.validate_on_submit():
-        print('inside validation', '******')
         post = Post(
             media_url=url,
             summary=summary,
@@ -87,15 +80,16 @@ def add_a_post():
 @posts_routes.route('/<int:id>/edit', methods=['PUT'])
 @login_required
 def update_post(id):
-    # user_id = current_user.to_dict()['id'].one()
 
     form = EditPost()
     form['csrf_token'].data = request.cookies['csrf_token']
 
 
     if form.validate_on_submit():
+        data = form.data
         post = Post.query.get(id)
-        form.populate_obj(post)
+        post.summary=data['summary']
+
 
         db.session.commit()
 
