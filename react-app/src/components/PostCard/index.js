@@ -1,13 +1,17 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { deletePost } from '../../store/post';
 import EditPostFormModal from '../EditPostFormModal';
 import '../PostCard/postCard.css'
 
 
 const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username }) => {
+    const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
+
+
 
     return (
         <div className='post-box-conatianer'>
@@ -17,8 +21,13 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username })
                         {username}
                     </div>
                     {user?.id === userId && (
-                    <div className='top-box'>
-                        <EditPostFormModal id={id}/>
+                        <div className='top-box'>
+                            <div>
+                                <EditPostFormModal id={id}/>
+                            </div>
+                            <div>
+                                <a className='spotsDeleteBtn spotsBtnTxt' href={`/home/`} onClick={() => dispatch(deletePost(id)) }>Delete Spot</a>
+                            </div>
                         </div>
                     )}
                 </div>
