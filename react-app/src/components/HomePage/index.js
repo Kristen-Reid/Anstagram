@@ -28,7 +28,8 @@ const HomePage = () => {
                             summary={post?.summary}
                             createdAt={post?.created_at}
                             updatedAt={moment().startOf('hour').fromNow()}
-                            userId={post?.user?.username}
+                            userId={post?.user?.id}
+                            username={post?.user?.username}
                         />
 
                     ))}

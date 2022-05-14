@@ -1,5 +1,6 @@
 .post-box-top {
     display: flex;
+    justify-content: space-between;
     width: 470px;
     height: 56px;
     border: .5px black solid;
@@ -30,6 +31,8 @@
 }
 
 .post-summary {
+    display: flex;
+    justify-content: space-between;
     width: 470px;
     height: 291px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -40,4 +43,8 @@
     padding: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
+}
+
+.top-box {
+    margin: 10px;
 }

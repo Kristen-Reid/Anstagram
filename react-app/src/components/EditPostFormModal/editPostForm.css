@@ -5,6 +5,9 @@
     align-items: center;
     margin: 0;
     padding: 0;
+    /* width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8); */
 }
 
 .edit-post-box {
@@ -19,3 +22,18 @@
     border-radius: 12px;
     color: black;
 }
+
+
+.modal {
+    background-color: hotpink;
+
+}
+
+/* .popup-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+} */

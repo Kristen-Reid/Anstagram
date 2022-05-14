@@ -77,7 +77,7 @@ export const createPost = (formData) => async (dispatch) => {
 }
 
 
-export const updatePost = (data, id) => async (dispacth) => {
+export const updatePost = (data, id) => async (dispatch) => {
     const response = await fetch(`/api/posts/${id}/edit`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
@@ -87,8 +87,8 @@ export const updatePost = (data, id) => async (dispacth) => {
 
     if (response.ok) {
         const post = await response.json();
-        dispacth(editPost(post));
-        return response;
+        dispatch(editPost(post));
+        return post;
     }
 }
 
@@ -100,8 +100,7 @@ export const deletePost = (id) => async (dispatch) => {
 
     if (response.ok) {
         const post = await response.json();
-        dispatch(deleteAPost(post));
-        return response;
+        dispatch(deleteAPost(post.id));
     }
 }
 

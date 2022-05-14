@@ -31,11 +31,9 @@ const PostForm = ({ close }) => {
 
         const formData = new FormData();
         formData.append('image', image);
-        formData.append('summary', summary)
+        formData.append('summary', summary);
         formData.append('userId', user?.id)
 
-        // setImageLoading(true);
-        console.log(image, '!!!!!!!!!!')
 
         let newPost = await dispatch(createPost(formData))
         close()
@@ -46,8 +44,6 @@ const PostForm = ({ close }) => {
         const file = e.target.files[0];
         setImage(file);
     }
-
-
 
 
     return (

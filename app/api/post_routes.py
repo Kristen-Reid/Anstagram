@@ -33,6 +33,7 @@ def get_all_posts():
 @login_required
 def get_one_post(id):
     post = Post.query.filter(Post.id == id).one()
+    print(post)
     return post.post_to_dict()
 
 
@@ -71,6 +72,7 @@ def add_a_post():
 
         db.session.add(post)
         db.session.commit()
+        print('HIIIIIIIIIIII')
 
         return post.post_to_dict()
     else:
@@ -84,12 +86,10 @@ def update_post(id):
     form = EditPost()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-
     if form.validate_on_submit():
         data = form.data
         post = Post.query.get(id)
         post.summary=data['summary']
-
 
         db.session.commit()
 
