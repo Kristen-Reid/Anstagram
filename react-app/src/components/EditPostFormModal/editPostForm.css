@@ -1,0 +1,21 @@
+.edit-form-conatiner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.edit-post-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 494px;
+    height: 537px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    color: black;
+}
