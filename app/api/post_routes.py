@@ -33,7 +33,7 @@ def get_all_posts():
 @login_required
 def get_one_post(id):
     post = Post.query.filter(Post.id == id).one()
-    print(post)
+  
     return post.post_to_dict()
 
 

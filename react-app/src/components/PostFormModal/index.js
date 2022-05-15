@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Modal } from '../../context/Modal';
-import Popup from 'reactjs-popup';
 import PostForm from './PostForm';
 import { ReactComponent as AddPost } from '../../svgImg/add-post.svg';
 
@@ -16,9 +15,6 @@ const PostFormModal = () => {
                 </Modal>
             )}
 
-            {/* <Popup trigger={<a className="button" onClick={() => setShowModal(false)}> <AddPost /> </a>} modal>
-                <PostForm close={() => setShowModal(false)}/>
-            </Popup> */}
         </>
     )
 }
