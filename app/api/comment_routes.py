@@ -39,7 +39,6 @@ def get_one_comment(id):
 @login_required
 def add_a_comment(id):
     user_id = current_user.to_dict()['id']
-    print(post_id, '&&&&&&&&')
 
     description = form.data['description']
 
@@ -47,5 +46,17 @@ def add_a_comment(id):
 
     if form.validate_on_submit():
         comment = Comment(
-
+            description=description,
+            user_id=user_id,
+            post_id=id
         )
+
+        db.session.add(comment)
+        db.session.commit()
+
+        return comment.comment_to_dict()
+    else:
+        return {'errors': validation_errors_to_error_messages(form.errors)}
+
+
+       

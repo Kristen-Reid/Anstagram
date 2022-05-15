@@ -26,7 +26,7 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username })
                                 <EditPostFormModal id={id}/>
                             </div>
                             <div>
-                                <a className='spotsDeleteBtn sptBtnTxt' href={`/home/`} onClick={() => dispatch(deletePost(id)) }>Delete Spot</a>
+                                <button onClick={() => dispatch(deletePost(id))}>Delete Spot</button>
                             </div>
                         </div>
                     )}

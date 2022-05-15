@@ -99,8 +99,7 @@ export const deletePost = (id) => async (dispatch) => {
     });
 
     if (response.ok) {
-        const post = await response.json();
-        dispatch(deleteAPost(post.id));
+        dispatch(deleteAPost(id));
     }
 }
 
@@ -128,7 +127,7 @@ const postsReducer = (state = {}, action) => {
         }
         case DELETE_POST: {
             const newState = { ...state }
-            delete newState[action.payload.id]
+            delete newState[action.payload]
             return newState;
         }
         default:

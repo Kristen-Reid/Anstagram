@@ -33,7 +33,7 @@ def get_all_posts():
 @login_required
 def get_one_post(id):
     post = Post.query.filter(Post.id == id).one()
-  
+
     return post.post_to_dict()
 
 
@@ -48,14 +48,14 @@ def add_a_post():
     image = request.files['image']
 
     if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 401
+        return {"errors": "file type not permitted"}, 400
 
     image.filename = get_unique_filename(image.filename)
 
     upload = upload_file_to_s3(image)
 
     if "url" not in upload:
-        return upload, 402
+        return upload, 400
 
     url = upload["url"]
 
@@ -72,7 +72,6 @@ def add_a_post():
 
         db.session.add(post)
         db.session.commit()
-        print('HIIIIIIIIIIII')
 
         return post.post_to_dict()
     else:
