@@ -12,11 +12,11 @@ ALLOWED_EXTENSIONS = {"pdf", "png", "jpg", "jpeg", "gif"}
 
 my_config = Config(
     region_name = 'us-east-2',
-    signature_version = 's3v4',
-    retries = {
-        'max-attempts': 10,
-        'mode': 'standard'
-    }
+    signature_version = 's3v4'
+    # retries = {
+    #     'max-attempts': 10,
+    #     'mode': 'standard'
+    # }
 )
 
 
