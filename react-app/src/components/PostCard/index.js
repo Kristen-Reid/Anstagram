@@ -31,8 +31,8 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username })
                         </div>
                     )}
                 </div>
-                    <img className='post-image' src={image} alt='image'/>
                 <div className='post-box-bottom'>
+                    <img className='post-image' src={image} alt='image'/>
                     <div className='post-summary'>
                         <div className='summary-box username'>
                             {username}

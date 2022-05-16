@@ -1,4 +1,4 @@
-const ALL_POST = 'posts/ALL_POST';
+const ALL_POSTS = 'posts/ALL_POST';
 const ONE_POST = 'posts/ONE_POST';
 const ADD_POST = 'posts/ADD_POST';
 const UPDATE_POST = 'posts/UPDATE_POST';
@@ -7,7 +7,7 @@ const DELETE_POST = 'posts/DELETE_POST';
 
 const getPosts = (posts) => {
     return {
-        type: ALL_POST,
+        type: ALL_POSTS,
         payload: posts
     }
 }
@@ -107,7 +107,7 @@ export const deletePost = (id) => async (dispatch) => {
 
 const postsReducer = (state = {}, action) => {
     switch (action.type) {
-        case ALL_POST:
+        case ALL_POSTS:
             const getAllPosts = {};
             action.payload.posts.forEach((post) => {
                 getAllPosts[post.id] = post

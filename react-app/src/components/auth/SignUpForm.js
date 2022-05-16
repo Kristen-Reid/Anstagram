@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { login, signUp } from '../../store/session';
 import '../auth/signup.css'
 
 const SignUpForm = () => {
+  const history = useHistory();
+
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
@@ -30,6 +32,10 @@ const SignUpForm = () => {
       setErrors(data);
     }
   };
+
+  if (user) {
+    history.push('/home');
+  }
 
   const updateUsername = (e) => {
     setUsername(e.target.value);

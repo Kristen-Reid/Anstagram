@@ -10,7 +10,7 @@
 
 .post-image {
     width: 471px;
-    height: 438px;
+    height: auto;
     object-fit: contain;
 }
 
