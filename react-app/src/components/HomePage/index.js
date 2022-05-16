@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import PostCard from '../PostCard';
+import CommentBox from '../CommentBox'
 import { useParams } from 'react-router-dom';
 import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
@@ -10,11 +11,13 @@ import '../HomePage/home.css'
 
 const HomePage = () => {
     const dispatch = useDispatch();
+    const {id} = useParams()
     const user = useSelector(state => state.session.user);
     const posts = useSelector(state => state.posts);
     const comments = useSelector(state => state.comments);
     const postArr = Object.values(posts);
-    console.log(comments)
+    const commentArr = Object.values(comments);
+    console.log(commentArr)
 
 
     useEffect(() => {
@@ -37,9 +40,19 @@ const HomePage = () => {
                         />
 
                     ))}
-            </div>
-            <div>
-
+                    <div className='comment-container'>
+                        {commentArr.map((comment) => (
+                            <CommentBox key={comment?.id}
+                                id={comment?.id}
+                                description={comment?.description}
+                                userId={comment?.user?.id}
+                                username={comment?.user?.username}
+                                postId={comment?.post?.id}
+                                createdAt={comment?.created_at}
+                                updatedAt={moment().startOf('hour').fromNow()}
+                            />
+                        ))}
+                    </div>
             </div>
             </div>
     )

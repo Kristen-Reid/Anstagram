@@ -1,7 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { deletePost } from '../../store/post';
+import CommentBox from '../CommentBox';
 import EditPostFormModal from '../EditPostFormModal';
 import '../PostCard/postCard.css'
 
@@ -39,6 +39,9 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username })
                         </div>
                         <div className='summary-box summary'>
                             {summary}
+                        </div>
+                        <div>
+                            <CommentBox />
                         </div>
                     </div>
                     <div className='updatedAt'>
