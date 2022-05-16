@@ -1,8 +1,8 @@
 /* @import url(//db.onlinewebfonts.com/c/e721330050ecfe81b4e5455e1a308181?family=Billabong); */
-@import url('http://fonts.cdnfonts.com/css/billabong');
+@import url(//db.onlinewebfonts.com/c/6d32b8e06f40fb7698cfb714b9e7975d?family=BillabongW00-Regular);
 .logo-name {
     margin: 0% 0% 5% 0%;
-}
+}   
 
 .logo {
     display: flex;

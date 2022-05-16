@@ -1,6 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: "Billabong";
     src: url("//fonts/FontsFree-Net-Billabong.ttf") format('typetrue');
     font-style: normal;
     font-weight: bold;
-}
+} */
+
+@font-face {font-family: "BillabongW00-Regular"; src: url("//db.onlinewebfonts.com/t/6d32b8e06f40fb7698cfb714b9e7975d.eot"); src: url("//db.onlinewebfonts.com/t/6d32b8e06f40fb7698cfb714b9e7975d.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/6d32b8e06f40fb7698cfb714b9e7975d.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/6d32b8e06f40fb7698cfb714b9e7975d.woff") format("woff"), url("//db.onlinewebfonts.com/t/6d32b8e06f40fb7698cfb714b9e7975d.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/6d32b8e06f40fb7698cfb714b9e7975d.svg#BillabongW00-Regular") format("svg"); }
+
