@@ -127,7 +127,7 @@ const postsReducer = (state = {}, action) => {
         }
         case DELETE_POST: {
             const newState = { ...state }
-            delete newState[action.payload]
+            delete newState[action.payload];
             return newState;
         }
         default:

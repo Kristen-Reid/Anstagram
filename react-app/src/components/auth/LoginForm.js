@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
 import '../auth/login.css';
 
 const LoginForm = () => {
+  const history = useHistory();
   const [errors, setErrors] = useState([]);
   const [usernameEmail, setUsernameEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,6 +19,10 @@ const LoginForm = () => {
       setErrors(data);
     }
   };
+
+if (user) {
+  history.push('/home')
+}
 
   const demoLogin = async (e) => {
     const data = await dispatch(login("demo@aa.io", "password"));

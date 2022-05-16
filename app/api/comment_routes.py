@@ -24,6 +24,7 @@ def validation_errors_to_error_messages(validation_errors):
 def get_all_comments():
     comments = Comment.query.all()
     response = {'comments': [comment.comment_to_dict() for comment in comments]}
+    print(response)
     return response
 
 
@@ -67,8 +68,6 @@ def update_comment(id):
     form = EditComment()
     form['csrf_token'].data = request.cookies['csrf_token']
 
-    description = form.data['description']
-
     if form.validate_on_submit():
         data = form.data
         comment = Comment.query.get(id)
@@ -83,7 +82,7 @@ def update_comment(id):
 
 
 
-@comments_routes.route('/<int:id>/delete')
+@comments_routes.route('/<int:id>/delete', methods=['DELETE'])
 @login_required
 def delete_comment(id):
     comment = Comment.query.get(id)
