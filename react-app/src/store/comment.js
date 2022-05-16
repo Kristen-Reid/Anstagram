@@ -106,9 +106,9 @@ export const deleteComment = (id) => async (dispatch) => {
 const commentsReducer = (state = {}, action) => {
     switch (action.type) {
         case ALL_COMMENTS:
-            const allComments = {};
+            const getAllComments = {};
             action.payload.comments.forEach((comment) => {
-                allComments[comment.id] = comment
+                getAllComments[comment.id] = comment
             });
             return getAllComments;
         case ONE_COMMENT:

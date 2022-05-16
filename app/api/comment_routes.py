@@ -24,7 +24,7 @@ def validation_errors_to_error_messages(validation_errors):
 def get_all_comments():
     comments = Comment.query.all()
     response = {'comments': [comment.comment_to_dict() for comment in comments]}
-    print(response)
+    print(response, '************')
     return response
 
 

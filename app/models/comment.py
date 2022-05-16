@@ -26,5 +26,6 @@ class Comment(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'user': self.user.to_dict(),
-            'post': [Post.post_to_dict() for Post in self.post]
+            'post': self.post.post_to_dict()
+            # 'post': [Post.post_to_dict() for Post in self.post]
         }

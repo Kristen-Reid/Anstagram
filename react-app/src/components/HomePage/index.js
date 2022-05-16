@@ -4,6 +4,7 @@ import moment from 'moment';
 import PostCard from '../PostCard';
 import { useParams } from 'react-router-dom';
 import { getAllPosts } from '../../store/post';
+import { getAllComments } from '../../store/comment';
 import '../HomePage/home.css'
 
 
@@ -18,6 +19,7 @@ const HomePage = () => {
 
     useEffect(() => {
         dispatch(getAllPosts())
+        dispatch(getAllComments())
     }, [dispatch])
 
     return (
