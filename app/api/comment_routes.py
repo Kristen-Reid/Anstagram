@@ -43,6 +43,7 @@ def add_a_comment(id):
     description = form.data['description']
 
     form = CreateComment()
+    form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
         comment = Comment(
@@ -59,4 +60,34 @@ def add_a_comment(id):
         return {'errors': validation_errors_to_error_messages(form.errors)}
 
 
-       
+@comments_routes.route('/<int:id>/edit', methods=['PUT'])
+@login_required
+def update_comment(id):
+
+    form = EditComment()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    description = form.data['description']
+
+    if form.validate_on_submit():
+        data = form.data
+        comment = Comment.query.get(id)
+        comment.description = data['description']
+
+        db.session.commit()
+
+        return comment.comment_to_dict()
+
+    else:
+       return {'errors': validation_errors_to_error_messages(form.errors)}
+
+
+
+@comments_routes.route('/<int:id>/delete')
+@login_required
+def delete_comment(id):
+    comment = Comment.query.get(id)
+
+    db.session.delete(comment)
+    db.session.commit()
+    return {'message': 'Success'}

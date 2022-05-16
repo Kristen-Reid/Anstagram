@@ -34,9 +34,6 @@ const LoginForm = () => {
     setPassword(e.target.value);
   };
 
-  if (user) {
-    return <Redirect to='/home' />;
-  }
 
   return (
     <div className='login-form-container'>
