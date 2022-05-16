@@ -2,11 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deletePost } from '../../store/post';
 import CommentBox from '../CommentBox';
+import CommentFormat from '../CommentFormat';
 import EditPostFormModal from '../EditPostFormModal';
 import '../PostCard/postCard.css'
 
 
-const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username }) => {
+const PostCard = ({ id, image, summary, createdAt,
+    updatedAt, userId, username, commentId, description, commentCreatedAt, commentUpdatedA}) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
@@ -40,8 +42,9 @@ const PostCard = ({id, image, summary, createdAt, updatedAt, userId, username })
                         <div className='summary-box summary'>
                             {summary}
                         </div>
-                        <div>
-                            <CommentBox />
+
+                        <div className='comment-format-box'>
+                            <CommentFormat id={id}/>
                         </div>
                     </div>
                     <div className='updatedAt'>

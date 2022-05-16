@@ -59,3 +59,7 @@
     font-weight: bold;
     margin: 15px;
 }
+
+.comment-format-box {
+    display: flex;
+}

@@ -19,10 +19,10 @@ def validation_errors_to_error_messages(validation_errors):
 
 
 
-@comments_routes.route('/')
+@comments_routes.route('/<int:id>')
 @login_required
-def get_all_comments():
-    comments = Comment.query.all()
+def get_all_comments(id):
+    comments = Comment.query.filter(Comment.post_id == id).all()
     response = {'comments': [comment.comment_to_dict() for comment in comments]}
     print(response, '************')
     return response
