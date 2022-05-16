@@ -1,2 +1,6 @@
-@font-face {font-family: "Billabong";
-    src: asset-path(FontsFree-Net-Billabong) format("truetype")}
+@font-face {
+    font-family: "Billabong";
+    src: url("fonts/FontsFree-Net-Billabong.tff");
+    font-style: normal;
+    font-weight: bold;
+}

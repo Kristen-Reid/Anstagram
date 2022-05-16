@@ -1,4 +1,4 @@
-@import url(//db.onlinewebfonts.com/c/e721330050ecfe81b4e5455e1a308181?family=Billabong);
+/* @import url(//db.onlinewebfonts.com/c/e721330050ecfe81b4e5455e1a308181?family=Billabong); */
 
 .logo-name {
     margin: 0% 0% 5% 0%;
@@ -7,7 +7,7 @@
 .logo {
     display: flex;
     justify-content: center;
-    font-family: 'Billabong', sans-serif;
+    font-family: 'Billabong';
     font-size: 62px;
 }
 
