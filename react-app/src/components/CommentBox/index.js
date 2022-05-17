@@ -7,11 +7,10 @@ import '../CommentBox/comment-box.css'
 const CommentBox = ({ id, description, userId, username, postId, createdAt, updatedAt, comment }) => {
     return (
         <div className='comment-box-container'>
-            {comment?.post_id === postId && (
             <div className='comment-box'>
-                {description}
+                    {username}
+                    {description}
             </div>
-            )}
         </div>
     )
 }

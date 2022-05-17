@@ -25,5 +25,6 @@ class Post(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'user_id': self.user_id,
-            'user': self.user.to_dict()
+            'user': self.user.to_dict(),
+            # 'comment': [Comment.comment_to_dict() for Comment in self.comment]
         }

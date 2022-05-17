@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import App from '../../App'
 import moment from 'moment';
 import CommentBox from '../CommentBox';
-import { useParams } from 'react-router-dom';
 import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
 import '../CommentFormat/commentFormat.css'
 
 
-const CommentFormat = ({id}) => {
+const CommentFormat = ({ id }) => {
 
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
@@ -16,11 +16,13 @@ const CommentFormat = ({id}) => {
     const comments = useSelector(state => state.comments);
     const postArr = Object.values(posts);
     const commentArr = Object.values(comments);
+    // console.log(commentArr)
 
     useEffect(() => {
         dispatch(getAllPosts())
         dispatch(getAllComments(id))
     }, [dispatch])
+    
 
     return (
         <div className='comment-container'>

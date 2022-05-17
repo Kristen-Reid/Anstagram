@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deletePost } from '../../store/post';
-import CommentBox from '../CommentBox';
-import CommentFormat from '../CommentFormat';
+import SinglePostModal from '../SinglePostModal';
+import { getAllPosts } from '../../store/post';
+import { getAllComments } from '../../store/comment';
 import EditPostFormModal from '../EditPostFormModal';
 import '../PostCard/postCard.css'
 
 
-const PostCard = ({ id, image, summary, createdAt,
-    updatedAt, userId, username, commentId, description, commentCreatedAt, commentUpdatedA}) => {
+const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post }) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
+    const comments = useSelector(state => state.comments);
+    const commentsArr = Object.values(comments);
+    const comment = commentsArr.filter(comment => comment?.post_id === id)
+
+
+    useEffect(() => {
+        dispatch(getAllPosts())
+        dispatch(getAllComments(id))
+    }, [dispatch])
 
 
 
@@ -42,11 +51,14 @@ const PostCard = ({ id, image, summary, createdAt,
                         <div className='summary-box summary'>
                             {summary}
                         </div>
-
-                        <div className='comment-format-box'>
-                            <CommentFormat id={id}/>
-                        </div>
                     </div>
+                        {comment?.length > 0 && (
+                        <div className='comment-count'>
+                            <button className='comment-count-btn' type='button'>
+                                <SinglePostModal id={id} post={post}/>
+                            </button>
+                            </div>
+                        )}
                     <div className='updatedAt'>
                         {updatedAt}
                     </div>

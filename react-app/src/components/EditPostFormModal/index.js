@@ -10,10 +10,6 @@ const EditPostFormModal = ({ id }) => {
 
     return (
         <>
-            {/* <Popup trigger={<a className="button"> <PostMenu /> </a>} modal>
-                <EditPostForm id={id}/>
-            </Popup> */}
-
             <a className='navLink' onClick={() => setShowModal(true)}><PostMenu /></a>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>

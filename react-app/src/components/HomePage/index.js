@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import PostCard from '../PostCard';
-import CommentBox from '../CommentBox';
-import CommentFormat from '../CommentFormat';
+import CommentBox from '../CommentBox'
 import { useParams } from 'react-router-dom';
 import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
@@ -18,12 +17,13 @@ const HomePage = () => {
     const comments = useSelector(state => state.comments);
     const postArr = Object.values(posts);
     const commentArr = Object.values(comments);
+    console.log(commentArr)
 
 
 
     useEffect(() => {
         dispatch(getAllPosts())
-        dispatch(getAllComments())
+        dispatch(getAllComments(id))
     }, [dispatch])
 
     return (
@@ -38,10 +38,10 @@ const HomePage = () => {
                             updatedAt={moment().startOf('hour').fromNow()}
                             userId={post?.user?.id}
                             username={post?.user?.username}
-                            
+                            post={post}
                         />
-                        ))}
 
+                    ))}
             </div>
             </div>
     )
