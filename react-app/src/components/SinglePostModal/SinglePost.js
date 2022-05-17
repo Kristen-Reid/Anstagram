@@ -2,22 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
 import moment from 'moment';
+import CommentForm from '../CommentForm';
 import { getAComment, getAllComments } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import './singlePost.css';
 
-const SinglePost = ({ close, id, post, updatedAt }) => {
+const SinglePost = ({ close, post}) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
     const commentsArr = Object.values(comments);
-    const comment = commentsArr.filter(comment => comment?.post_id === id);
+    const comment = commentsArr.filter(comment => comment?.post_id === post?.id);
+
 
     useEffect(() => {
         dispatch(getAllPosts());
-        dispatch(getAllComments(id));
-        dispatch(getAComment(id));
+        dispatch(getAllComments(post?.id));
+        dispatch(getAComment(post?.id));
     }, [dispatch]);
 
     return (
@@ -35,7 +37,6 @@ const SinglePost = ({ close, id, post, updatedAt }) => {
                             <div className='comment-user'>{post?.user?.username}</div>
                             <div className='comment-summary'>{post?.summary}</div>
                         </div>
-                        <div className='comment-updatedAt'>{moment().startOf('hour').fromNow()}</div>
                         {comment.map((comment) => (
                             <div className='comments-content' key={comment?.id}>
                                 <div className='comment-user-2 '>{comment?.user?.username}</div>
@@ -44,7 +45,10 @@ const SinglePost = ({ close, id, post, updatedAt }) => {
                         ))}
                     </div>
                     <div className='comment-bottom'>
-                        
+                    <div className='comment-updatedAt'>{moment().startOf('hour').fromNow()}</div>
+                    </div>
+                    <div className='comment-bottom-description'>
+                        <CommentForm post={post} />
                     </div>
                 </div>
             </div>

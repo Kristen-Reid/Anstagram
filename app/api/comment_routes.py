@@ -24,7 +24,7 @@ def validation_errors_to_error_messages(validation_errors):
 def get_all_comments(id):
     comments = Comment.query.filter(Comment.post_id == id).all()
     response = {'comments': [comment.comment_to_dict() for comment in comments]}
-    print(response, '************')
+
     return response
 
 
@@ -41,14 +41,16 @@ def get_one_comment(id):
 def add_a_comment(id):
     user_id = current_user.to_dict()['id']
 
-    description = form.data['description']
+    # description = form.data['description']
+    # print(description, '*******')
 
     form = CreateComment()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
+        data = form.data
         comment = Comment(
-            description=description,
+            description=data['description'],
             user_id=user_id,
             post_id=id
         )

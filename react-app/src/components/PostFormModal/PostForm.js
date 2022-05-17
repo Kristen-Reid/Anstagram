@@ -59,7 +59,7 @@ const PostForm = ({ close }) => {
                     <p>Create new post</p>
                 </div>
                 <div className='create-post-bottom'>
-                    <div className='post-form-container'>
+                    <div className='post-form'>
                         <form onSubmit={onSubmit}>
                             <div>
                                 <input

@@ -26,7 +26,7 @@ def validation_errors_to_error_messages(validation_errors):
 def get_all_posts():
     posts = Post.query.all()
     response = {'posts': [post.post_to_dict() for post in posts]}
-    # print(response)
+    
     return response
 
 

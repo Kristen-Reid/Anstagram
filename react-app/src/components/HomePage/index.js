@@ -16,10 +16,9 @@ const HomePage = () => {
     const postArr = Object.values(posts);
 
 
-
+   
     useEffect(() => {
         dispatch(getAllPosts())
-        dispatch(getAllComments(id))
     }, [dispatch])
 
     return (

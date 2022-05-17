@@ -24,8 +24,8 @@
     height: 652px;
     position: relative;
     overflow: hidden;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }
 
 .comment-container {
@@ -36,12 +36,12 @@
 
 .comment-top {
     width: 500px;
-    height: 20%;
+    height: 12%;
     background-color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
     border-right: .5px solid black;
-    border-top-right-radius: 8px;
+    border-top-right-radius: 5px;
 }
 
 .comment-box {
@@ -79,7 +79,7 @@
 
 
 .comment-updatedAt {
-    margin: 2px 15px 20px 15px;
+    margin: 15px 15px 20px 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
 }
@@ -99,10 +99,16 @@
 
 .comment-bottom {
     width: 500px;
-    height: 50%;
+    height: 20%;
     background-color: white;
     border-top: .5px solid black;
-    /* border-bottom: .5px solid black; */
     border-right: .5px solid black;
-    border-bottom-right-radius: 8px;
+}
+
+.comment-bottom-description {
+    width: 500px;
+    height: 10%;
+    background-color: white;
+    border-top: .5px solid black;
+    border-bottom-right-radius: 5px;
 }

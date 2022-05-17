@@ -1,0 +1,35 @@
+.comment-input-box {
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+}
+
+.comment-post-btn {
+    background:none;
+    border:none;
+    padding:0;
+    cursor: pointer;
+    color: #0095f6;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    margin-bottom: 15px;
+    margin-right: 5px;
+}
+
+.commentInput {
+    width: 440px;
+    height: 100%;
+    background:none;
+    border:none;
+}
+
+.comment-input-text {
+    margin-left: 15px;
+}
+
+.commentInput {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+}
