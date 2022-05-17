@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
+import moment from 'moment';
 import { getAComment, getAllComments } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import './singlePost.css';
 
-const SinglePost = ({ close, id, post }) => {
+const SinglePost = ({ close, id, post, updatedAt }) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
@@ -30,16 +31,20 @@ const SinglePost = ({ close, id, post }) => {
                         <div className='comment-user'>{post?.user?.username}</div>
                     </div>
                     <div className='comment-box'>
-                        <div className='comment-user-caption'>
+                        <div className='comment-caption'>
                             <div className='comment-user'>{post?.user?.username}</div>
                             <div className='comment-summary'>{post?.summary}</div>
                         </div>
+                        <div className='comment-updatedAt'>{moment().startOf('hour').fromNow()}</div>
                         {comment.map((comment) => (
                             <div className='comments-content' key={comment?.id}>
-                                <div className='comment-user'>{comment?.user?.username}</div>
-                                <div className='comment-summary'>{comment?.description}</div>
+                                <div className='comment-user-2 '>{comment?.user?.username}</div>
+                                <div className='comment-summary-2'>{comment?.description}</div>
                             </div>
                         ))}
+                    </div>
+                    <div className='comment-bottom'>
+                        
                     </div>
                 </div>
             </div>

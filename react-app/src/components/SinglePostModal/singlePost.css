@@ -2,75 +2,107 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
-    height: 100vh;
-    background-color: blue;
+    height: 654px;
+    width: 1000px;
 }
 
 .single-box-main {
     display: flex;
     align-items: center;
-    width: 1000px;
-    height: 1500px;
+    width: 100%;
+    height: 654px;
+    margin-right: 100px;
 }
 
 /* .post-comment-image {
-    width: 100%;
-    height: 700px;
-    object-fit: fill;
+    height: 650px;
 } */
 
 .post-comment-image {
-    width: 500px;
-    height: 650px;
+    object-fit: fill;
+    width: 600px;
+    height: 652px;
     position: relative;
     overflow: hidden;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 .comment-container {
     display: flex;
     flex-direction: column;
+    height: 650px;
 }
 
 .comment-top {
     width: 500px;
-    height: 70px;
-    /* position: relative; */
+    height: 20%;
     background-color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
-    border-top: .5px solid black;
-    border-left: .5px solid black;
     border-right: .5px solid black;
+    border-top-right-radius: 8px;
 }
 
 .comment-box {
     display: flex;
     flex-direction: column;
     width: 500px;
-    height: 350px;
+    height: 100%;
     background-color: white;
-    border: .5px solid black;
+    border-right: .5px solid black;
+    border-top: .5px solid black;
 }
 
 .comment-user {
-    margin: 10px;
+    margin: 15px 15px 0px 15px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: bold;
 }
 
 .comment-summary {
-    margin: 10px 5px 10px 0px;
+    margin: 15px 5px 5px 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .comments-content {
     display: flex;
-
 }
 
-.comment-user-caption {
+.comment-caption {
     display: flex;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+
+.comment-updatedAt {
+    margin: 2px 15px 20px 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
+}
+
+.comment-user-2 {
+    margin: 15px 15px 5px 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.comment-summary-2 {
+    margin: 15px 5px 5px 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+}
+
+.comment-bottom {
+    width: 500px;
+    height: 50%;
+    background-color: white;
+    border-top: .5px solid black;
+    /* border-bottom: .5px solid black; */
+    border-right: .5px solid black;
+    border-bottom-right-radius: 8px;
 }

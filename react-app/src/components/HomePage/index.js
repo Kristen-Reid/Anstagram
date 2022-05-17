@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 import PostCard from '../PostCard';
-import CommentBox from '../CommentBox'
 import { useParams } from 'react-router-dom';
 import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
@@ -11,13 +10,10 @@ import '../HomePage/home.css'
 
 const HomePage = () => {
     const dispatch = useDispatch();
-    const {id} = useParams()
-    const user = useSelector(state => state.session.user);
+    const { id } = useParams();
     const posts = useSelector(state => state.posts);
     const comments = useSelector(state => state.comments);
     const postArr = Object.values(posts);
-    const commentArr = Object.values(comments);
-    console.log(commentArr)
 
 
 

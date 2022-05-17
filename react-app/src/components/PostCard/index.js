@@ -53,10 +53,8 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                         </div>
                     </div>
                         {comment?.length > 0 && (
-                        <div className='comment-count'>
-                            <button className='comment-count-btn' type='button'>
-                                <SinglePostModal id={id} post={post}/>
-                            </button>
+                        <div className='comment-count comment-count-btn'>
+                                <SinglePostModal id={id} post={post} />
                             </div>
                         )}
                     <div className='updatedAt'>

@@ -7,12 +7,8 @@ import './post.css';
 
 const PostForm = ({ close }) => {
     const dispatch = useDispatch();
-    const history = useHistory();
-    const { id } = useParams();
     const user = useSelector(state => state.session.user)
-    const posts = useSelector(state => state.posts);
 
-    const [ url, setUrl ] = useState('');
     const [image, setImage] = useState('');
     const [imageLoading, setImageLoading] = useState(false);
     const [ summary, setSummary ] = useState('');
