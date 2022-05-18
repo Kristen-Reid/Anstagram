@@ -10,7 +10,8 @@ const DeleteCommentForm = ({post, onClose}) => {
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
     const commentArr = Object.values(comments);
-    const comment = commentArr.find(comment => comment?.post_id === post?.id);
+    const comment = commentArr.find(comment => comment?.post_id === post?.id && user?.id === comment?.user_id);
+    // console.log(comment?.id)
 
 
 
@@ -21,9 +22,12 @@ const DeleteCommentForm = ({post, onClose}) => {
                     <h2>Delete Post?</h2>
                     <p>Are you sure you want to delete this post?</p>
                 </div>
-                <div className='delete-comment-btn'>
-                    <button onClick={() => { dispatch(deleteComment(comment?.id)); onClose() }}>Delete</button>
-                </div>
+              
+
+                    <div key={comment?.id} className='delete-comment-btn'>
+                        <button onClick={() => { dispatch(deleteComment(comment?.id)); onClose() }}>Delete</button>
+                    </div>
+
                 <div className='cancel-btn'></div>
                 <button onClick={() => onClose()}>Cancel</button>
             </div>
