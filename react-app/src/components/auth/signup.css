@@ -2,7 +2,7 @@
 @import url(//db.onlinewebfonts.com/c/6d32b8e06f40fb7698cfb714b9e7975d?family=BillabongW00-Regular);
 .logo-name {
     margin: 0% 0% 5% 0%;
-}   
+}
 
 .logo {
     display: flex;
@@ -26,7 +26,6 @@
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 542px;
     border: gray solid .5px;
     padding-top: 30px;
     padding-bottom: 20px;

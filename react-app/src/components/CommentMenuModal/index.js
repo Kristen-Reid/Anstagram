@@ -9,14 +9,14 @@ import { ReactComponent as CommentMenuBtn } from '../../svgImg/three-dots.svg';
 
 const CommentMenuModal = ({post}) => {
 
-    const [showModal, setShowModal] = useState(false);
+    const [showCommentModal, setShowCommentModal] = useState(false);
 
     return (
         <>
-            <button className='navLink comment-menu-btn' onClick={() => setShowModal(true)}><CommentMenuBtn /></button>
-            {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <CommentMenu post={post} close={() => setShowModal(false)}/>
+            <button className='navLink comment-menu-btn' onClick={() => setShowCommentModal(true)}><CommentMenuBtn /></button>
+            {showCommentModal && (
+                <Modal onClose={() => setShowCommentModal(false)}>
+                    <CommentMenu post={post} closeCommentModal={() => setShowCommentModal(false)}/>
                 </Modal>
             )}
 

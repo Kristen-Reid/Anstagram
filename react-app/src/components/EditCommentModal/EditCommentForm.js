@@ -4,12 +4,13 @@ import { getAllComments, getAComment, updateComment } from '../../store/comment'
 import './editCommentForm.css';
 
 
-const EditCommentForm = ({post, onClose}) => {
+const EditCommentForm = ({ post, onClose, closeCommentModal }) => {
     const dispatch = useDispatch();
 
+    const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
     const commentArr = Object.values(comments);
-    const comment = commentArr.find(comment => comment?.post_id === post?.id);
+    const comment = commentArr.find(comment => comment?.post_id === post?.id && user?.id === comment?.user_id);
 
     const [ description, setDescription ] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
@@ -36,7 +37,8 @@ const EditCommentForm = ({post, onClose}) => {
 
 
         let updatedComment = await dispatch(updateComment(editCommentForm, comment?.id))
-        onClose()
+        // onClose()
+        closeCommentModal()
     }
 
     return (
@@ -68,6 +70,9 @@ const EditCommentForm = ({post, onClose}) => {
                             </div>
                         </div>
                     </form>
+                            <div>
+                                <button type='submit' onClick={() => closeCommentModal()}>Cancel</button>
+                            </div>
                 </div>
             </div>
         </div>
