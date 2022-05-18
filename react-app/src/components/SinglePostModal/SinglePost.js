@@ -10,6 +10,7 @@ import CommentMenuModal from '../CommentMenuModal';
 
 const SinglePost = ({ close, post}) => {
     const dispatch = useDispatch();
+    
 
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);

@@ -67,12 +67,6 @@
     display: flex;
 }
 
-/* .comment-count {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
-    margin-bottom: 15px;
-    margin-left: 10px;
-} */
 
 .comment-count-btn {
     background:none;
@@ -85,5 +79,3 @@
     margin-bottom: 15px;
     margin-left: 5px;
 }
-
-

@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, useParams } from 'react-router-dom';
-import { getAllPosts, getAPost, createPost } from '../../store/post';
+import React from 'react';
 import EditCommentModal from '../EditCommentModal';
 import DeleteCommentModal from '../DeleteCommentModal';
 import '../CommentMenuModal/commentMenu.css';

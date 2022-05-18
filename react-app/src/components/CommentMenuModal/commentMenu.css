@@ -15,3 +15,12 @@
     height: 300px;
     background-color: white;
 }
+
+.comment-menu-btn {
+    background:none;
+    border:none;
+    margin-top:0px;
+    padding:0;
+    cursor: pointer;
+    
+}

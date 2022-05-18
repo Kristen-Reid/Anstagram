@@ -20,7 +20,6 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
 
     useEffect(() => {
         dispatch(getAllPosts())
-        dispatch(getAllComments(post.id))
     }, [dispatch])
 
 
