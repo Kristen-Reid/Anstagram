@@ -106,3 +106,9 @@
     border-top: .5px solid black;
     border-bottom-right-radius: 5px;
 }
+
+.comment-menu {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15px;
+}

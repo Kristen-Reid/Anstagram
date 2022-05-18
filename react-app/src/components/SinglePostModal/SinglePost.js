@@ -10,7 +10,7 @@ import CommentMenuModal from '../CommentMenuModal';
 
 const SinglePost = ({ close, post}) => {
     const dispatch = useDispatch();
-    
+
 
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
@@ -42,10 +42,12 @@ const SinglePost = ({ close, post}) => {
                         {comment.map((comment) => (
                             <div className='comments-content' key={comment?.id}>
                                 <div className='comment-user-2 '>{comment?.user?.username}</div>
-                                <div className='comment-summary-2'>{comment?.description}</div>
-                                {user?.id === comment?.user_id && (
-                                    <CommentMenuModal post={post}/>
-                                )}
+                                    <div className='comment-summary-2'>{comment?.description}</div>
+                                <div className='comment-menu'>
+                                    {user?.id === comment?.user_id && (
+                                        <CommentMenuModal post={post}/>
+                                    )}
+                                </div>
                             </div>
                         ))}
                     </div>
