@@ -8,14 +8,17 @@ import './commentForm.css';
 const CommentForm = ({ post }) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
+    const comments = useSelector(state => state.comments);
+    const commentArr = Object.values(comments);
+    const comment = commentArr.find(comment => comment?.post_id === post?.id);
 
     const [description, setDescription] = useState('');
     const [ validationErrors, setErrors ] = useState([]);
     const [showError, setShowError] = useState(false);
 
     useEffect(() => {
-        dispatch(getAllComments(post?.id));
-        dispatch(getAComment(post?.id));
+        dispatch(getAllComments(comment?.id));
+        dispatch(getAComment(comment?.id));
     }, [dispatch]);
 
     const onSubmit = async (e) => {

@@ -71,7 +71,7 @@ def update_comment(id):
 
     if form.validate_on_submit():
         data = form.data
-        print(data, '************')
+    
         comment = Comment.query.get(id)
         print(comment, '&&&&&&&&&&&&&&&')
         comment.description = data['description']

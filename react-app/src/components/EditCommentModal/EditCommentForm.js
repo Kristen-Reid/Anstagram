@@ -10,13 +10,10 @@ const EditCommentForm = ({post, onClose}) => {
     const comments = useSelector(state => state.comments);
     const commentArr = Object.values(comments);
     const comment = commentArr.find(comment => comment?.post_id === post?.id);
-    console.log(comment)
 
     const [ description, setDescription ] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
     const [showError, setShowError] = useState(false);
-
-    console.log(post?.id)
 
     useEffect(() => {
         dispatch(getAllComments(comment?.id));
