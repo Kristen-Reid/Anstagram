@@ -139,10 +139,10 @@ const SignUpForm = () => {
                 required={true}
               ></input>
             </div>
+            <div className='btn-container'>
+              <button className='form-btn' type='submit'>Sign Up</button>
+            </div>
           </form>
-        <div className='btn-container'>
-          <button className='form-btn' type='submit'>Sign Up</button>
-        </div>
       </div>
       <div className='form-bottom-box'>
         <p className='account-question'>Have an account? <a href='/login'>Log in</a></p>

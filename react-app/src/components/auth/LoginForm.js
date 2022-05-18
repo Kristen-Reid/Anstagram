@@ -74,10 +74,10 @@ if (user) {
               onChange={updatePassword}
             />
           </div>
+          <div>
+            <button className='login-btn' type='submit'>Login</button>
+          </div>
         </form>
-        <div>
-          <button className='login-btn' type='submit'>Login</button>
-        </div>
         <div className='or-line-container'>
           <div className='or-line'></div>
           <div className='or'>OR</div>
