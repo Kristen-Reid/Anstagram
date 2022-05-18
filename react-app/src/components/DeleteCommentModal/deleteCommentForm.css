@@ -1,11 +1,11 @@
-.comment-menu-container{
+.delete-comment-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.comment-menu-box {
+.delete-comment-box {
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -1,18 +1,15 @@
-.comment-form-container {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+.post-comment-form {
+    border-radius: 5px;
 }
 
 
-.comment-input-box {
+.post-comment-input-box {
     display: flex;
     flex-direction: row;
     margin-top: 15px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
 }
 
-.comment-post-btn {
+.post-comment-btn {
     background:none;
     border:none;
     padding:0;
@@ -24,20 +21,28 @@
     margin-right: 5px;
 }
 
-.commentInput {
+.postCommentInput {
     width: 400px;
     height: 100%;
     background:none;
     border:none;
 }
 
-.comment-input-text {
+.post-comment-input-text {
     margin-left: 15px;
 }
 
-.commentInput {
+.postCommentInput {
     background-color: transparent;
     border: none;
     outline: none;
     resize: none;
+}
+
+.post-comment-bottom-description {
+    width: 470px;
+    background-color: white;
+    border-top: .5px solid black;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
 }

@@ -12,7 +12,7 @@ const EditPostForm = ({ id, close }) => {
     const postArr = Object.values(posts)
     const post = postArr.find(post => post?.id === id)
 
-    const [summary, setSummary] = useState('');
+    const [ summary, setSummary ] = useState('');
     const [ validationErrors, setErrors ] = useState([]);
     const [ showError, setShowError ] = useState(false);
 
@@ -22,7 +22,7 @@ const EditPostForm = ({ id, close }) => {
     }, [dispatch]);
 
     useEffect(() => {
-        setSummary(post?.summary)
+        setSummary(post?.summary);
     }, [post])
 
 
@@ -40,7 +40,6 @@ const EditPostForm = ({ id, close }) => {
     }
 
     return (
-        <>
     <div className='edit-post-conatiner'>
         {user?.id === post?.user?.id && (
                 <div className='edit-post-box'>
@@ -72,7 +71,6 @@ const EditPostForm = ({ id, close }) => {
                 </div>
             )}
         </div>
-    </>
     )
 }
 

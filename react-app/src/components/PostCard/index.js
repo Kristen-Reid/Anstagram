@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deletePost } from '../../store/post';
 import SinglePostModal from '../SinglePostModal';
+import PostCommentForm from '../PostCommentForm';
 import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
 import EditPostFormModal from '../EditPostFormModal';
@@ -55,10 +56,13 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                         {comment?.length > 0 && (
                         <div className='comment-count comment-count-btn'>
                                 <SinglePostModal id={id} post={post} />
-                            </div>
+                        </div>
                         )}
                     <div className='updatedAt'>
                         {updatedAt}
+                    </div>
+                    <div className='post-comment-bottom-description'>
+                        <PostCommentForm post={post} />
                     </div>
                 </div>
             </div>

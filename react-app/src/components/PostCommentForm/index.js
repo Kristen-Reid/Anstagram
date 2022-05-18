@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { getAllComments, getAComment, createComment } from '../../store/comment';
-import './commentForm.css';
+import './postCommentForm.css';
 
 
-const CommentForm = ({ post }) => {
+const PostCommentForm = ({ post }) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
 
@@ -33,8 +33,8 @@ const CommentForm = ({ post }) => {
 
 
     return (
-        <div className='comment-form-container'>
-            <div className='comment-form-box'>
+        <div className='post-comment-form-container'>
+            <div className='post-comment-form-box'>
                 <div className='errorsContainer'>
                     {showError && (
                     <ul className='errors'>
@@ -45,19 +45,19 @@ const CommentForm = ({ post }) => {
                     )
                     }
                 </div>
-                <div className='comment-form'>
+                <div className='post-comment-form'>
                     <form onSubmit={onSubmit}>
-                        <div className='comment-input-box'>
-                            <div className='comment-input-text'>
+                        <div className='post-comment-input-box'>
+                            <div className='post-comment-input-text'>
                                 <textarea
-                                        className='commentInput'
+                                        className='postCommentInput'
                                         placeholder='Add a comment...'
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}
                                     />
                             </div>
                             <div>
-                                <button className='comment-post-btn comment-postcard-btn' type='submit'>Post</button>
+                                <button className='post-comment-btn comment-postcard-btn' type='submit'>Post</button>
                             </div>
                         </div>
                     </form>
@@ -69,4 +69,4 @@ const CommentForm = ({ post }) => {
 }
 
 
-export default CommentForm;
+export default PostCommentForm;

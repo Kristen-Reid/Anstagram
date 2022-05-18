@@ -6,6 +6,7 @@ import CommentForm from '../CommentForm';
 import { getAComment, getAllComments } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
 import './singlePost.css';
+import CommentMenuModal from '../CommentMenuModal';
 
 const SinglePost = ({ close, post}) => {
     const dispatch = useDispatch();
@@ -41,6 +42,9 @@ const SinglePost = ({ close, post}) => {
                             <div className='comments-content' key={comment?.id}>
                                 <div className='comment-user-2 '>{comment?.user?.username}</div>
                                 <div className='comment-summary-2'>{comment?.description}</div>
+                                {user?.id === comment?.user_id && (
+                                    <CommentMenuModal post={post}/>
+                                )}
                             </div>
                         ))}
                     </div>
