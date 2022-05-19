@@ -20,7 +20,6 @@ const PostForm = ({ close }) => {
     }, [dispatch]);
 
 
-
     const onSubmit = async (e) => {
         e.preventDefault();
         setShowError(true);

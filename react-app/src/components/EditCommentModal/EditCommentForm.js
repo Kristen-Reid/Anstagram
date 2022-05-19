@@ -47,19 +47,19 @@ const EditCommentForm = ({ post, comment, onClose, closeCommentModal }) => {
         <div className='edit-comment-container'>
             <div className='edit-comment-box'>
                 <div className='edit-comment-form-container'>
-                <div className='errors-edit-container'>
+                <div className='errorsContainer'>
                         {showError && (
-                        <ul className='errors-edit'>
+                        <div className='form-errors'>
                             {validationErrors.map(error => (
                                 <li key={error}>{error}</li>
                             ))}
-                        </ul>
+                        </div>
                         )
                         }
                 </div>
                     <form onSubmit={onSubmit}>
                         <div>
-                            <div>
+                            <div className='edit-comment-textarea-container'>
                                 <textarea
                                     className='comment-input'
                                     placeholder='Edit comment...'

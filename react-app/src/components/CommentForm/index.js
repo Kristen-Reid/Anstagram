@@ -56,11 +56,11 @@ const CommentForm = ({ post }) => {
                     }
                 </div>
                 <div className='comment-form'>
-                    <form onSubmit={onSubmit}>
+                    <form className='comment-input-form' onSubmit={onSubmit}>
                         <div className='comment-input-box'>
                             <div className='comment-input-text'>
                                 <textarea
-                                        className='commentInput'
+                                        className='postCommentInput'
                                         placeholder='Add a comment...'
                                         value={description}
                                         onChange={(e) => setDescription(e.target.value)}

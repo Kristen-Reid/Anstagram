@@ -7,6 +7,7 @@ import '../auth/login.css';
 const LoginForm = () => {
   const history = useHistory();
   const [errors, setErrors] = useState([]);
+  const [showError, setShowError] = useState(false);
   const [usernameEmail, setUsernameEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
@@ -14,6 +15,8 @@ const LoginForm = () => {
 
   const onLogin = async (e) => {
     e.preventDefault();
+    setShowError(true)
+
     const data = await dispatch(login(usernameEmail, password));
     if (data) {
       setErrors(data);
@@ -49,11 +52,16 @@ if (user) {
           </div>
         </div>
         <form onSubmit={onLogin}>
-          <div className='errors-container'>
-            {errors.map((error, ind) => (
-              <div className='error' key={ind}>{error}</div>
-            ))}
-          </div>
+          <div className='errorsContainer'>
+            {showError && (
+                <ul className="errors">
+                    {errors.map(error => (
+                        <li className='errorsList' key={error}>{error}</li>
+                    ))}
+                </ul>
+                )
+                }
+            </div>
           <div className='form-input-box'>
             <input
               className='form-input'
@@ -74,8 +82,8 @@ if (user) {
               onChange={updatePassword}
             />
           </div>
-          <div>
-            <button className='login-btn' type='submit'>Login</button>
+          <div className='btn-container'>
+            <button className='form-btn' type='submit'>Login</button>
           </div>
         </form>
         <div className='or-line-container'>

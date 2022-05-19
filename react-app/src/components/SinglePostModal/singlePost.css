@@ -38,7 +38,7 @@
     background-color: #121212;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
-    border-top-right-radius: 5px;
+    border-top: .5px solid rgba(255, 255, 255, 87%);
 }
 
 .comment-box {
@@ -107,10 +107,27 @@
 
 .comment-bottom-description {
     width: auto;
-    height: 10%;
     background-color: #121212;
     border-top: .5px solid rgba(255, 255, 255, 87%);
-    border-bottom-right-radius: 5px;
+    border-bottom: .5px solid rgba(255, 255, 255, 87%);
+}
+
+.comment-bottom-description:hover{
+    cursor: pointer;
+}
+
+
+.commentInput:hover{
+    cursor: pointer;
+}
+
+.comment-bottom-description:focus{
+    cursor: text;
+}
+
+
+.commentInput:focus{
+    cursor: text;
 }
 
 .comment-menu {

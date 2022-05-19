@@ -51,11 +51,11 @@ const EditPostForm = ({ id, close }) => {
                 <div className='edit-post-box'>
                     <div className='errorsContainer'>
                         {showError && (
-                        <ul className='errors'>
+                        <div className='form-errors'>
                             {validationErrors.map(error => (
                                 <li key={error}>{error}</li>
                             ))}
-                        </ul>
+                        </div>
                         )
                         }
                     </div>

@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     width: 350px;
-    height: 360px;
+    /* height: 360px; */
     border: rgba(255, 255, 255, 87%) solid .5px;
 }
 
@@ -37,6 +37,10 @@
     font-size: 13px;
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.demo-container {
+    margin: 15px;
 }
 
 .demo-btn {

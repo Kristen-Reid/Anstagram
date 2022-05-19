@@ -23,4 +23,6 @@
 
 .delete-red {
     color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
 }

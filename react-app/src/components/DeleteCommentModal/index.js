@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import DeleteCommentForm from './DeleteCommentForm';
-import { Modal } from '../../context/Modal';
+import { Modal2 } from '../../context/Modal2';
 
 
 const DeleteCommentModal = ({post, closeCommentModal }) => {
@@ -11,9 +11,9 @@ const DeleteCommentModal = ({post, closeCommentModal }) => {
         <>
             <button className='navLink comment-menu-btn delete-btn' onClick={() => setShowModal(true)}>Delete</button>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
+                <Modal2 onClose={() => setShowModal(false)}>
                     <DeleteCommentForm post={post} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal} />
-                </Modal>
+                </Modal2>
             )}
 
         </>

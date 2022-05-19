@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { login, signUp } from '../../store/session';
@@ -8,6 +8,7 @@ const SignUpForm = () => {
   const history = useHistory();
 
   const [errors, setErrors] = useState([]);
+  const [showError, setShowError] = useState(false);
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -19,6 +20,8 @@ const SignUpForm = () => {
 
   const onSignUp = async (e) => {
     e.preventDefault();
+    setShowError(true)
+
     if (password === repeatPassword) {
       const data = await dispatch(signUp(fullName, username, email, password));
       if (data) {
@@ -28,7 +31,17 @@ const SignUpForm = () => {
     } else {
       setErrors(["Passwords must match."]);
     }
+
   }
+
+  useEffect(() => {
+    const errors = [];
+
+    if (!password.length) errors.push('Please provide email.');
+    if (password.length < 5 || password.length > 50) errors.push('Password must be between 5 and 50 characters.');
+
+    setErrors(errors);
+  }, [password]);
 
   const demoLogin = async (e) => {
     const data = await dispatch(login("demo@aa.io", "password"));
@@ -88,10 +101,15 @@ const SignUpForm = () => {
           <div className='or-line'></div>
         </div>
           <form onSubmit={onSignUp}>
-            <div className='errors-container'>
-              {errors.map((error, ind) => (
-                <div className='error' key={ind}>{error}</div>
-              ))}
+          <div className='errorsContainer'>
+            {showError && (
+                <ul className="errors">
+                    {errors.map(error => (
+                        <li className='errorsList' key={error}>{error}</li>
+                    ))}
+                </ul>
+                )
+                }
             </div>
             <div className='form-input-box'>
               <input

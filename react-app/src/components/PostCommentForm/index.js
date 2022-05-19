@@ -40,14 +40,15 @@ const PostCommentForm = ({ post }) => {
         <div className='post-comment-form-container'>
             <div className='post-comment-form-box'>
                 <div className='errorsContainer'>
-                    {showError && (
-                        <ul className='errors'>
+                        {showError && (
+                        <div className='form-errors'>
                             {validationErrors.map(error => (
                                 <li key={error}>{error}</li>
                             ))}
-                        </ul>
-                    )}
-                </div>
+                        </div>
+                        )
+                        }
+                    </div>
                 <div className='post-comment-form'>
                     <form onSubmit={onSubmit}>
                         <div className='post-comment-input-box'>
