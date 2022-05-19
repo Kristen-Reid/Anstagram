@@ -15,7 +15,9 @@ const CommentMenu = ({post, comment, closeCommentModal}) => {
                 <div className='comment-menu-delete' >
                     <DeleteCommentModal post={post} closeCommentModal={closeCommentModal} />
                 </div>
-                <button onClick={() => closeCommentModal()}>Cancel</button>
+                <div className='comment-menu-cancel'>
+                    <button className='comment-menu-btn cancel-btn' onClick={() => closeCommentModal()}>Cancel</button>
+                </div>
             </div>
         </div>
     )

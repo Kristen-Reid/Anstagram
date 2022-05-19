@@ -16,7 +16,7 @@
   left: 0;
   bottom: 0;
   /* backdrop-filter: blur(4px); */
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #modal-content {

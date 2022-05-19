@@ -46,7 +46,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
     color: rgba(255, 255, 255, 87%);
-    /* opacity: 87%; */
 }
 
 .top-box {
@@ -73,14 +72,12 @@
     display: flex;
 }
 
-
 .comment-count-btn {
     background:none;
     border:none;
     padding:0;
     cursor: pointer;
     color: rgba(255, 255, 255, 87%);
-    /* opacity: 87%; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;

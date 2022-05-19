@@ -8,11 +8,6 @@ const EditCommentForm = ({ post, comment, onClose, closeCommentModal }) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
-    // const comments = useSelector(state => state.comments);
-    // const commentArr = Object.values(comments);
-    // const comment = commentArr.find(comment => comment?.post_id === post?.id && user?.id === comment?.user_id);
-    // console.log(comment)
-
 
     const [ description, setDescription ] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);
@@ -73,12 +68,12 @@ const EditCommentForm = ({ post, comment, onClose, closeCommentModal }) => {
                                 />
                             </div>
                             <div>
-                                <button type='submit'>Button</button>
+                                <button className='comment-menu-btn edit-btn' type='submit'>Edit Comment</button>
                             </div>
                         </div>
                     </form>
                             <div>
-                                <button type='submit' onClick={() => closeCommentModal()}>Cancel</button>
+                                <button className='comment-menu-btn cancel-btn' type='submit' onClick={() => closeCommentModal()}>Cancel</button>
                             </div>
                 </div>
             </div>
