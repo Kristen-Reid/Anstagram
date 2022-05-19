@@ -45,7 +45,7 @@ const SinglePost = ({ close, post}) => {
                                     <div className='comment-summary-2'>{comment?.description}</div>
                                 <div className='comment-menu'>
                                     {user?.id === comment?.user_id && (
-                                        <CommentMenuModal post={post}/>
+                                        <CommentMenuModal post={post} comment={comment}/>
                                     )}
                                 </div>
                             </div>

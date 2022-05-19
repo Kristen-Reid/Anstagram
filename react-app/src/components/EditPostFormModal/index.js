@@ -10,7 +10,7 @@ const EditPostFormModal = ({ id }) => {
 
     return (
         <>
-            <a className='navLink' onClick={() => setShowModal(true)}><PostMenu /></a>
+            <a className='navLink post-menu' onClick={() => setShowModal(true)}><PostMenu /></a>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <EditPostForm id={id} close={() => setShowModal(false)}/>

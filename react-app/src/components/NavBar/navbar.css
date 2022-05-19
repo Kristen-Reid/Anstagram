@@ -1,3 +1,18 @@
+@import url(//db.onlinewebfonts.com/c/6d32b8e06f40fb7698cfb714b9e7975d?family=BillabongW00-Regular);
+.logo-name {
+    margin: 0% 0% 5% 0%;
+}
+
+.logo-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Billabong', sans-serif;;
+    font-size: 30px;
+    margin-left: 200px;
+    color: rgba(255, 255, 255, 87%);
+}
+
 .navbar-container {
     display: flex;
     justify-content: flex-end;
@@ -7,15 +22,16 @@
 
 .navbar-box {
     display: flex;
-    flex-direction: row-reverse;
+    justify-content: space-between;
+    flex-direction: row;
     width: 100vw;
     height: 60px;
-    border-bottom: .5px black solid;
+    border-bottom: .5px rgba(255, 255, 255, 87%) solid;
 }
 
 .nav-icons {
     display: flex;
-    margin-right: 400px;
+    margin-right: 100px;
     flex-direction: row;
     justify-content: center;
     list-style: none;
@@ -24,9 +40,102 @@
 .nav-div {
     display: flex;
     flex-direction: row;
-    /* background-color: blue; */
-    /* width: 100%; */
     justify-content: flex-end;
     padding: 20px;
     list-style: none;
+    color: rgba(255, 255, 255, 87%);
+}
+
+.nav-div:hover {
+    cursor: pointer;
+}
+
+#navContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLink{
+    font-family: 'Fredoka One';
+    margin: 5px;
+    font-size: 20px;
+    margin-right: 10px;
+    letter-spacing: 1.5px;
+
+}
+
+.navLink:hover{
+    cursor:pointer;
+    /* border-bottom: 3px solid white; */
+}
+
+.homeBtn {
+    font-size: 32px;
+    font-family: 'Fredoka One';
+    margin-left: 20px;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+.dropdownList {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    width: 200px;
+    height: 75px;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: rgba(0, 0, 0, .4);
+
+}
+
+/* .dropdownList:hover {
+    cursor: pointer;
+    color: white;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0px 5px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+} */
+
+.dropdownContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    border: 1px black solid;
+    box-shadow: 0px 0px 5px;
+    border-radius: 6px;
+    list-style-type: none;
+    font-family: 'Vazirmatn';
+    padding: 5px;
+    width: 200px;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+/* .logoContainer:hover{
+    cursor:pointer;
+} */
+
+.profileBtn{
+    border-radius: 20px;
 }

@@ -3,7 +3,7 @@ import EditCommentForm from './EditCommentForm';
 import { Modal } from '../../context/Modal';
 
 
-const EditCommentModal = ({post, closeCommentModal}) => {
+const EditCommentModal = ({post, comment, closeCommentModal}) => {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -12,7 +12,7 @@ const EditCommentModal = ({post, closeCommentModal}) => {
             <button className='navLink comment-menu-btn' onClick={() => { setShowModal(true) }}>Edit</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <EditCommentForm post={post} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal}/>
+                    <EditCommentForm post={post} comment={comment} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal}/>
                 </Modal>
             )}
 

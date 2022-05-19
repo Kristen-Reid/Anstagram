@@ -13,7 +13,7 @@
     text-align: center;
     width: 300px;
     height: 300px;
-    background-color: white;
+    background-color: #121212;
 }
 
 .comment-menu-btn {
@@ -22,5 +22,5 @@
     margin-top:0px;
     padding:0;
     cursor: pointer;
-    
+
 }

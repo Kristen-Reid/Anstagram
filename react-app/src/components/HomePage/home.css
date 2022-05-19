@@ -5,6 +5,8 @@
     align-items: center;
     width: 100vw;
     height: 100vh;
+    color: white;
+    opacity: 87%;
 }
 
 .home-title {
@@ -13,7 +15,8 @@
     align-items: center;
     justify-content: space-around;
     word-wrap: break-word;
-
 }
 
-
+body {
+    background-color: #121212;
+}

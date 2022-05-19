@@ -16,7 +16,7 @@
     align-items: center;
     width: 350px;
     height: 360px;
-    border: gray solid .5px;
+    border: rgba(255, 255, 255, 87%) solid .5px;
 }
 
 .or-line-container {
@@ -31,10 +31,11 @@
 .or-line {
     height: 1px;
     width: 110px;
-    background-color: gray;
+    background-color: rgba(255, 255, 255, 87%);
 }
 
 .or {
+    color: rgba(255, 255, 255, 87%);
     font-size: 13px;
     font-weight: 500;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -51,6 +52,7 @@
 
 .demo-btn:hover {
     cursor: pointer;
+
 }
 
 

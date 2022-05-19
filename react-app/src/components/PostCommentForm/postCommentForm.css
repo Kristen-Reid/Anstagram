@@ -14,7 +14,8 @@
     border:none;
     padding:0;
     cursor: pointer;
-    color: #0095f6;
+    color: white;
+    opacity: 87%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
@@ -37,12 +38,18 @@
     border: none;
     outline: none;
     resize: none;
+    color: white;
+    opacity: 87%;
 }
 
 .post-comment-bottom-description {
     width: 470px;
-    background-color: white;
-    border-top: .5px solid black;
+    border-top: .5px solid rgba(255, 255, 255, 87%);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+}
+
+::placeholder {
+  color: white;
+  opacity: 87%;
 }

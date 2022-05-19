@@ -77,7 +77,7 @@ def update_comment(id):
 
         return comment.comment_to_dict()
     else:
-       return {'errors': validation_errors_to_error_messages(form.errors)}
+       return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 

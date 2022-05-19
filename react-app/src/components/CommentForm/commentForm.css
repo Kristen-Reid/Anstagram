@@ -1,6 +1,7 @@
 .comment-form-container {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    background-color: #121212;
 }
 
 
@@ -18,7 +19,8 @@
     border:none;
     padding:0;
     cursor: pointer;
-    color: #0095f6;
+    color: white;
+    opacity: 87%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
@@ -37,6 +39,8 @@
 }
 
 .commentInput {
+    color: white;
+    opacity: 87%;
     background-color: transparent;
     border: none;
     outline: none;

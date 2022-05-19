@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
+import ProfileButton from './ProfileButton';
 import { ReactComponent as House } from '../../svgImg/homeIcon.svg';
 import PostFormModal from '../PostFormModal';
 import '../NavBar/navbar.css';
@@ -9,6 +10,9 @@ const NavBar = () => {
   return (
     <div className='navbar-container'>
       <div className='navbar-box'>
+        <div className='logo-nav'>
+          <h2>Anstagram</h2>
+        </div>
         <div className='nav-icons'>
           <div className='nav-div'>
             <li>
@@ -22,23 +26,9 @@ const NavBar = () => {
                 <PostFormModal />
             </li>
           </div>
-            {/* <div className='nav-div'>
-              <li>
-                <NavLink to='/login' exact={true} activeClassName='active'>
-                  Login
-                </NavLink>
-              </li>
-          </div> */}
-          {/* <div className='nav-div'>
-            <li>
-              <NavLink to='/sign-up' exact={true} activeClassName='active'>
-                Sign Up
-              </NavLink>
-            </li>
-          </div> */}
           <div className='nav-div'>
             <li>
-              <LogoutButton />
+              <ProfileButton />
             </li>
           </div>
         </div>
