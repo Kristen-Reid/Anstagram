@@ -9,7 +9,7 @@ const DeleteCommentModal = ({post, closeCommentModal }) => {
 
     return (
         <>
-            <button className='navLink comment-menu-btn' onClick={() => setShowModal(true)}>Delete</button>
+            <button className='navLink comment-menu-btn delete-btn' onClick={() => setShowModal(true)}>Delete</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
                     <DeleteCommentForm post={post} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal} />

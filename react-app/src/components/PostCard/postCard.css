@@ -45,8 +45,7 @@
     margin-left: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
 }
 
 .top-box {
@@ -79,8 +78,7 @@
     border:none;
     padding:0;
     cursor: pointer;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
