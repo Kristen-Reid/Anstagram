@@ -7,4 +7,31 @@
     url("//db.onlinewebfonts.com/t/e721330050ecfe81b4e5455e1a308181.svg#Billabong") format("svg"); }
 
 
+.pageNotFoundContainer{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    font-size: 20px;
+    color: white;
+}
 
+.sad-face {
+  margin-bottom: 20px;
+}
+
+.landing-button {
+    background:none;
+    border:none;
+    margin-top:0px;
+    padding:0;
+    color: rgba(255, 255, 255, 87%);
+    margin: 5px;
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.landing-button:hover {
+    cursor: pointer;
+    font-size: 30px
+}

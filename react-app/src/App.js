@@ -9,6 +9,7 @@ import User from './components/User';
 import { authenticate } from './store/session';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
+import { ReactComponent as SadFace } from "../src/svgImg/sadFace.svg";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -49,6 +50,17 @@ function App() {
           <NavBar />
           <HomePage />
         </ProtectedRoute>
+        <Route>
+          <div className=" landing-wrapper">
+            <div className="pageNotFoundContainer">
+              <h1 className="pageNotFound">PAGE NOT FOUND</h1>
+              <SadFace className="sad-face" />
+              <a href="/home">
+                <button className="landing-button">Go Back</button>
+              </a>
+            </div>
+          </div>
+        </Route>
       </Switch>
     </BrowserRouter>
   );
