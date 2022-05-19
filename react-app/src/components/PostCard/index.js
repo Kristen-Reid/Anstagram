@@ -33,11 +33,11 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                     </div>
                     {user?.id === userId && (
                         <div className='top-box'>
-                            <div>
+                            <div className='post-menu'>
                                 <EditPostFormModal id={id}/>
-                            </div>
-                            <div>
-                                <button onClick={() => dispatch(deletePost(id))}>Delete Spot</button>
+                                <div className='delete-btn-post-container'>
+                                    <button  className='delete-post' onClick={() => dispatch(deletePost(id))}>Delete Spot</button>
+                                </div>
                             </div>
                         </div>
                     )}
