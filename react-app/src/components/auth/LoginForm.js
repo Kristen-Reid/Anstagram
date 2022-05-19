@@ -49,9 +49,9 @@ if (user) {
           </div>
         </div>
         <form onSubmit={onLogin}>
-          <div>
+          <div className='errors-container'>
             {errors.map((error, ind) => (
-              <div key={ind}>{error}</div>
+              <div className='error' key={ind}>{error}</div>
             ))}
           </div>
           <div className='form-input-box'>

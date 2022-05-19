@@ -73,7 +73,14 @@ export const createComment = (data, id) => async (dispatch) => {
     if (response.ok) {
         const comment = await response.json();
         dispatch(addComment(comment));
-        return response;
+        return null
+    } else if (response.status < 500) {
+        const comment = await response.json();
+        if (comment.errors) {
+        return comment.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 };
 
@@ -85,10 +92,17 @@ export const updateComment = (data, id) => async (dispatch) => {
         body: JSON.stringify(data)
     });
 
-    if (response.ok) {
+   if (response.ok) {
         const comment = await response.json();
         dispatch(editComment(comment));
-        return response;
+        return null
+    } else if (response.status < 500) {
+        const comment = await response.json();
+        if (comment.errors) {
+        return comment.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 };
 

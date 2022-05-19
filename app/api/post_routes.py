@@ -26,7 +26,7 @@ def validation_errors_to_error_messages(validation_errors):
 def get_all_posts():
     posts = Post.query.all()
     response = {'posts': [post.post_to_dict() for post in posts]}
-    
+
     return response
 
 
@@ -44,12 +44,12 @@ def add_a_post():
     user_id = current_user.to_dict()['id']
 
     if "image" not in request.files:
-        return {"errors": "image required"}, 400
+        return {"errors": ["image required"]}, 400
 
     image = request.files['image']
 
     if not allowed_file(image.filename):
-        return {"errors": "file type not permitted"}, 400
+        return {"errors": ["file type not permitted"]}, 400
 
     image.filename = get_unique_filename(image.filename)
 
@@ -76,7 +76,7 @@ def add_a_post():
 
         return post.post_to_dict()
     else:
-        return {'errors': validation_errors_to_error_messages(form.errors)}
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @posts_routes.route('/<int:id>/edit', methods=['PUT'])
@@ -95,8 +95,7 @@ def update_post(id):
 
         return post.post_to_dict()
     else:
-        return {'errors': validation_errors_to_error_messages(form.errors)}
-
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 @posts_routes.route('/<int:id>/delete', methods=['DELETE'])
 @login_required

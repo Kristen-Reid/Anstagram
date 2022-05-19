@@ -10,10 +10,10 @@ const CommentForm = ({ post }) => {
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
     const commentArr = Object.values(comments);
-    const comment = commentArr.find(comment => comment?.post_id === post?.id);
+    const comment = commentArr.find(comment => comment?.post_id === post?.id && user?.id === comment?.user_id);
 
     const [description, setDescription] = useState('');
-    const [ validationErrors, setErrors ] = useState([]);
+    const [ validationErrors, setValidationErrors ] = useState([]);
     const [showError, setShowError] = useState(false);
 
     useEffect(() => {
@@ -30,9 +30,16 @@ const CommentForm = ({ post }) => {
         }
 
         let newComment = await dispatch(createComment(commentForm, post?.id));
+        if (newComment) {
+            setValidationErrors(newComment);
+        } else {
+            setDescription('');
+            setValidationErrors([])
+        }
 
-        setDescription('');
+
     }
+
 
 
     return (

@@ -10,7 +10,7 @@ const PostCommentForm = ({ post }) => {
     const user = useSelector(state => state.session.user);
 
     const [description, setDescription] = useState('');
-    const [ validationErrors, setErrors ] = useState([]);
+    const [ validationErrors, setValidationErrors ] = useState([]);
     const [showError, setShowError] = useState(false);
 
     useEffect(() => {
@@ -27,8 +27,12 @@ const PostCommentForm = ({ post }) => {
         }
 
         let newComment = await dispatch(createComment(commentForm, post?.id));
-
-        setDescription('');
+        if (newComment) {
+            setValidationErrors(newComment);
+        } else {
+            setDescription('');
+            setValidationErrors([])
+        }
     }
 
 
@@ -37,13 +41,12 @@ const PostCommentForm = ({ post }) => {
             <div className='post-comment-form-box'>
                 <div className='errorsContainer'>
                     {showError && (
-                    <ul className='errors'>
-                        {validationErrors.map(error => (
-                            <li key={error}>{error}</li>
-                        ))}
-                    </ul>
-                    )
-                    }
+                        <ul className='errors'>
+                            {validationErrors.map(error => (
+                                <li key={error}>{error}</li>
+                            ))}
+                        </ul>
+                    )}
                 </div>
                 <div className='post-comment-form'>
                     <form onSubmit={onSubmit}>

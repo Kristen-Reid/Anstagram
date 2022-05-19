@@ -13,6 +13,7 @@ const SignUpForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
+  const [num, setNum] = useState(0);
   const user = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -21,16 +22,20 @@ const SignUpForm = () => {
     if (password === repeatPassword) {
       const data = await dispatch(signUp(fullName, username, email, password));
       if (data) {
-        setErrors(data)
+        setErrors(data);
       }
+      setNum(0);
+    } else {
+      setErrors(["Passwords must match."]);
     }
-  };
+  }
 
   const demoLogin = async (e) => {
     const data = await dispatch(login("demo@aa.io", "password"));
     if (data) {
       setErrors(data);
     }
+
   };
 
   if (user) {
@@ -83,9 +88,9 @@ const SignUpForm = () => {
           <div className='or-line'></div>
         </div>
           <form onSubmit={onSignUp}>
-            <div>
+            <div className='errors-container'>
               {errors.map((error, ind) => (
-                <div key={ind}>{error}</div>
+                <div className='error' key={ind}>{error}</div>
               ))}
             </div>
             <div className='form-input-box'>

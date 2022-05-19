@@ -72,7 +72,14 @@ export const createPost = (formData) => async (dispatch) => {
     if (response.ok) {
         const post = await response.json();
         dispatch(addPost(post));
-        return response;
+        return null
+    } else if (response.status < 500) {
+        const post = await response.json();
+        if (post.errors) {
+        return post.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 }
 
@@ -88,7 +95,14 @@ export const updatePost = (data, id) => async (dispatch) => {
     if (response.ok) {
         const post = await response.json();
         dispatch(editPost(post));
-        return post;
+        return null
+    } else if (response.status < 500) {
+        const post = await response.json();
+        if (post.errors) {
+        return post.errors;
+        }
+    } else {
+        return ['An error occurred. Please try again.']
     }
 }
 

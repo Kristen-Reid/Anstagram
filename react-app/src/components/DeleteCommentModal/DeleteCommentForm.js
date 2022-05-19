@@ -4,7 +4,7 @@ import { getAllComments, getAComment, deleteComment } from '../../store/comment'
 import './deleteCommentForm.css';
 
 
-const DeleteCommentForm = ({post, onClose}) => {
+const DeleteCommentForm = ({post, onClose, closeCommentModal}) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
@@ -23,11 +23,11 @@ const DeleteCommentForm = ({post, onClose}) => {
 
 
                     <div key={comment?.id} className='delete-comment-btn'>
-                        <button onClick={() => { dispatch(deleteComment(comment?.id)); onClose() }}>Delete</button>
+                        <button onClick={() => { dispatch(deleteComment(comment?.id)); closeCommentModal() }}>Delete</button>
                     </div>
 
                 <div className='cancel-btn'></div>
-                <button onClick={() => onClose()}>Cancel</button>
+                <button onClick={() => closeCommentModal()}>Cancel</button>
             </div>
         </div>
     )

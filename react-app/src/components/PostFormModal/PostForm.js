@@ -12,7 +12,7 @@ const PostForm = ({ close }) => {
     const [image, setImage] = useState('');
     const [imageLoading, setImageLoading] = useState(false);
     const [ summary, setSummary ] = useState('');
-    const [ validationErrors, setErrors ] = useState([]);
+    const [ validationErrors, setValidationErrors ] = useState([]);
     const [ showError, setShowError ] = useState(false);
 
     useEffect(() => {
@@ -31,8 +31,10 @@ const PostForm = ({ close }) => {
         formData.append('userId', user?.id)
 
 
-        let newPost = await dispatch(createPost(formData))
-        close()
+
+        let newPost = await dispatch(createPost(formData));
+        if (newPost) setValidationErrors(newPost);
+        else close();
 
     }
 

@@ -11,6 +11,7 @@ const EditCommentForm = ({ post, onClose, closeCommentModal }) => {
     const comments = useSelector(state => state.comments);
     const commentArr = Object.values(comments);
     const comment = commentArr.find(comment => comment?.post_id === post?.id && user?.id === comment?.user_id);
+    
 
     const [ description, setDescription ] = useState('');
     const [validationErrors, setValidationErrors] = useState([]);

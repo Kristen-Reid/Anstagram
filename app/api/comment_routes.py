@@ -58,22 +58,19 @@ def add_a_comment(id):
 
         return comment.comment_to_dict()
     else:
-        return {'errors': validation_errors_to_error_messages(form.errors)}
+        return {'errors': validation_errors_to_error_messages(form.errors)}, 401
 
 
 @comments_routes.route('/<int:id>/edit', methods=['PUT'])
 @login_required
 def update_comment(id):
-    print(id, '==========')
 
     form = EditComment()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
         data = form.data
-    
         comment = Comment.query.get(id)
-        print(comment, '&&&&&&&&&&&&&&&')
         comment.description = data['description']
 
         db.session.commit()

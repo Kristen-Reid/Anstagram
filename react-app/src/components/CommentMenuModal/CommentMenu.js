@@ -10,10 +10,10 @@ const CommentMenu = ({post, closeCommentModal}) => {
         <div className='comment-menu-container'>
             <div className='comment-menu-box'>
                 <div className='comment-edit-btn'>
-                    <EditCommentModal post={post} closeCommentModal={closeCommentModal}/>
+                    <EditCommentModal post={post} closeCommentModal={closeCommentModal} />
                 </div>
                 <div className='comment-menu-delete' >
-                    <DeleteCommentModal post={post} />
+                    <DeleteCommentModal post={post} closeCommentModal={closeCommentModal} />
                 </div>
                 <button onClick={() => closeCommentModal()}>Cancel</button>
             </div>

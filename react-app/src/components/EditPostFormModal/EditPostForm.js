@@ -13,7 +13,7 @@ const EditPostForm = ({ id, close }) => {
     const post = postArr.find(post => post?.id === id)
 
     const [ summary, setSummary ] = useState('');
-    const [ validationErrors, setErrors ] = useState([]);
+    const [ validationErrors, setValidationErrors ] = useState([]);
     const [ showError, setShowError ] = useState(false);
 
     useEffect(() => {
@@ -35,8 +35,14 @@ const EditPostForm = ({ id, close }) => {
         }
 
 
-        let updatedPost = await dispatch(updatePost(editPostForm, post?.id))
+        let updatedPost = await dispatch(updatePost(editPostForm, post?.id));
+        if (updatedPost) {
+            setValidationErrors(updatedPost);
+        } else {
             close()
+        }
+
+
     }
 
     return (
