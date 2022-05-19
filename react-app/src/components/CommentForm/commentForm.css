@@ -19,8 +19,8 @@
     border:none;
     padding:0;
     cursor: pointer;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
+    /* opacity: 87%; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
@@ -39,8 +39,8 @@
 }
 
 .commentInput {
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
+    /* opacity: 87%; */
     background-color: transparent;
     border: none;
     outline: none;

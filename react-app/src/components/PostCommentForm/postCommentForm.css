@@ -14,8 +14,8 @@
     border:none;
     padding:0;
     cursor: pointer;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
+    /* opacity: 87%; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
@@ -38,8 +38,8 @@
     border: none;
     outline: none;
     resize: none;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
+    /* opacity: 87%; */
 }
 
 .post-comment-bottom-description {
@@ -50,6 +50,6 @@
 }
 
 ::placeholder {
-  color: white;
-  opacity: 87%;
+  color: rgba(255, 255, 255, 87%);
+  /* opacity: 87%; */
 }

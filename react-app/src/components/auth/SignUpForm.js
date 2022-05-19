@@ -149,7 +149,7 @@ const SignUpForm = () => {
           </form>
       </div>
       <div className='form-bottom-box'>
-        <p className='account-question'>Have an account? <a href='/login'>Log in</a></p>
+        <p className='account-question'>Have an account? <a className='question-link' href='/login'>Log in</a></p>
       </div>
     </div>
   );

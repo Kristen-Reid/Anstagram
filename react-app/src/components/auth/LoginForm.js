@@ -93,7 +93,7 @@ if (user) {
         </div>
       </div>
       <div className='form-bottom-box'>
-        <p className='account-question'>Don't have an account? <a href='/sign-up'>Sign up</a></p>
+        <p className='account-question'>Don't have an account? <a className='question-link' href='/sign-up'>Sign up</a></p>
       </div>
     </div>
   );

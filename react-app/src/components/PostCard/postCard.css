@@ -7,6 +7,7 @@
     border-left: .5px rgba(255, 255, 255, 87%) solid;
     border-right: .5px rgba(255, 255, 255, 87%) solid;
     border-radius: 8px 8px 0px 0px;
+    z-index: 4;
 }
 
 
@@ -14,11 +15,13 @@
     width: 470px;
     height: auto;
     object-fit: contain;
+    z-index: 4;
 }
 
 .post-box-main {
     margin: 20px;
     width: auto;
+    z-index: 4;
 }
 
 
@@ -30,6 +33,7 @@
     border: .5px rgba(255, 255, 255, 87%) solid;
     border-radius: 0px 0px 8px 8px;
     word-wrap: break-word;
+    z-index: 4;
 }
 
 .post-summary {
@@ -38,6 +42,7 @@
     height: 291px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+    z-index: 4;
 }
 
 .updatedAt {
@@ -45,8 +50,9 @@
     margin-left: 10px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 11px;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
+    /* opacity: 87%; */
+    z-index: 4;
 }
 
 .top-box {
@@ -54,6 +60,7 @@
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+    z-index: 4;
 }
 
 .post-menu:hover {
@@ -67,10 +74,12 @@
 .username {
     font-weight: bold;
     margin: 15px;
+    z-index: 4;
 }
 
 .comment-format-box {
     display: flex;
+    z-index: 4;
 }
 
 
@@ -79,10 +88,11 @@
     border:none;
     padding:0;
     cursor: pointer;
-    color: white;
-    opacity: 87%;
+    color: rgba(255, 255, 255, 87%);
+    /* opacity: 87%; */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
     margin-left: 5px;
+    z-index: 4;
 }

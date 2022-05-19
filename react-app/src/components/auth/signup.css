@@ -85,6 +85,7 @@
 .form-bottom-box {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
+    color: rgba(255, 255, 255, 87%);
 }
 
 a {
@@ -105,5 +106,14 @@ a {
 .demo-signup:hover {
     cursor: pointer;
     /* text-decoration-line: underline; */
+    font-weight: bolder;
+}
+
+.question-link {
+    color: #0095f6
+}
+
+.form-btn:hover {
+    cursor: pointer;
     font-weight: bolder;
 }
