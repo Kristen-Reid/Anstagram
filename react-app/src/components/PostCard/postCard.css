@@ -7,7 +7,6 @@
     border-left: .5px rgba(255, 255, 255, 87%) solid;
     border-right: .5px rgba(255, 255, 255, 87%) solid;
     border-radius: 8px 8px 0px 0px;
-    z-index: 1;
 }
 
 
@@ -15,13 +14,11 @@
     width: 470px;
     height: auto;
     object-fit: contain;
-    z-index: 1;
 }
 
 .post-box-main {
     margin: 20px;
     width: auto;
-    z-index: 1;
 }
 
 
@@ -33,7 +30,6 @@
     border: .5px rgba(255, 255, 255, 87%) solid;
     border-radius: 0px 0px 8px 8px;
     word-wrap: break-word;
-    z-index: 1;
 }
 
 .post-summary {
@@ -42,7 +38,6 @@
     height: 291px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
-    z-index: 1;
 }
 
 .updatedAt {
@@ -52,7 +47,6 @@
     font-size: 11px;
     color: rgba(255, 255, 255, 87%);
     /* opacity: 87%; */
-    z-index: 1;
 }
 
 .top-box {
@@ -60,7 +54,6 @@
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
-    z-index: 1;
 }
 
 .post-menu:hover {
@@ -74,12 +67,10 @@
 .username {
     font-weight: bold;
     margin: 15px;
-    z-index: 1;
 }
 
 .comment-format-box {
     display: flex;
-    z-index: 1;
 }
 
 
@@ -94,5 +85,4 @@
     font-size: 12px;
     margin-bottom: 15px;
     margin-left: 5px;
-    z-index: 1;
 }
