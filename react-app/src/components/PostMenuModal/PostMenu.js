@@ -8,7 +8,7 @@ const PostMenu = ({ id, post, closeCommentModal }) => {
 
     return (
         <div className='comment-menu-container'>
-            <div className='comment-menu-box'>
+            <div className='comment-menu-box post-menu-box'>
                 <div className='comment-edit-btn'>
                     <EditPostFormModal id={id} post={post} closeCommentModal={closeCommentModal} />
                 </div>

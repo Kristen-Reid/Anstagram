@@ -22,3 +22,8 @@
     padding:0;
     cursor: pointer;
 }
+
+.post-menu-box {
+    border: .5px rgba(255, 255, 255, 87%) solid;
+
+}
