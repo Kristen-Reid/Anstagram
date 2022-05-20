@@ -21,25 +21,13 @@
 .comment-menu-btn {
     background:none;
     border:none;
-    margin-top:0px;
+    margin-top: 0px;
     padding:0;
     cursor: pointer;
     color: rgba(255, 255, 255, 87%);
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.post-edit-btn {
-    background:none;
-    border:none;
-    margin-top:0px;
-    padding:0;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 87%);
-    margin: 5px;
-    font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
+    text-align: center;
 }
 
 .comment-menu-cancel {
@@ -52,15 +40,31 @@
     margin: 5px;
 }
 
+.delete-btn {
+    margin: 5px;
+}
+
+.edit-btn {
+    margin: 8px;
+}
+
+.cancel-btn {
+    margin: 5px;
+}
+
 .delete-btn:hover {
     color: red;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .edit-btn:hover {
     font-weight: bold;
+    font-size: 18px;
+    color: rgb(20, 20, 164);
 }
 
 .cancel-btn:hover {
     font-weight: bold;
+    font-size: 18px;
 }

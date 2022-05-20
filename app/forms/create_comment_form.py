@@ -9,4 +9,4 @@ def description_exists(form, field):
         raise ValidationError('Please provide a summary.')
 
 class CreateComment(FlaskForm):
-    description = TextAreaField('description', validators=[DataRequired(), Length(min=5, max=2200), description_exists])
+    description = TextAreaField('description', validators=[DataRequired(), Length(min=5, max=255), description_exists])

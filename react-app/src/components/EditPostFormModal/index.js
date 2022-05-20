@@ -8,7 +8,7 @@ const EditPostFormModal = ({ id, post, closeCommentModal }) => {
 
     return (
         <>
-            <a className='navLink post-edit-btn' onClick={() => setShowModal(true)}>Edit Post</a>
+            <a className='navLink comment-menu-btn edit-btn' onClick={() => setShowModal(true)}>Edit Post</a>
             {showModal && (
                 <Modal2 onClose={() => setShowModal(false)}>
                     <EditPostForm id={id} post={post} close={() => setShowModal(false)} closeCommentModal={closeCommentModal} />

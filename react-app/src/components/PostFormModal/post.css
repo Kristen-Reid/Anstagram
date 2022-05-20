@@ -7,7 +7,7 @@
     padding: 0;
     /* width: 100vw;
     height: 100vh; */
-    background-color: rgba(0, 0, 0, 0.8);
+    /* background-color: rgba(0, 0, 0, 0.8); */
 }
 
 .post-form-box {
@@ -18,15 +18,15 @@
     /* width: 494px;
     height: 537px; */
     text-align: center;
-    background-color: white;
-    border-radius: 12px;
-    color: black;
+    background-color: #121212;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 87%);
 }
 
 .create-post-top {
     width: 494px;
     height: 43px;
-    border: 1px solid black;
+    border: .5px solid rgba(255, 255, 255, 87%);
 }
 
 .create-post-bottom {
@@ -36,7 +36,7 @@
     align-items: center;
     width: 494px;
     height: 494px;
-    border: 1px solid black;
+    border: 1px solid rgba(255, 255, 255, 87%);
 }
 
 
@@ -47,10 +47,69 @@
     align-items: center;
 }
 
-.postInput {
+.post-Input {
     margin: 10px;
+    width: 250px;
+    height: 120px;
+    border: rgba(255, 255, 255, 87%) .5px solid;
+    background-color: transparent;
+    resize: none;
+    outline: none;
 }
 
-.errors {
+.post-Input:hover {
+    cursor: pointer;
+}
+
+.post-Input:focus {
+    cursor: text;
+}
+
+/* .errors {
     color: black;
+} */
+
+.hidden {
+    display: none;
+}
+
+.post-form-btn {
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.post-form-btn:hover {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.post-upload {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #0095f6;
+    width: 75%;
+    height: 40px;
+    border-radius: 8px;
+    color: white;
+}
+
+.post-upload:hover {
+    cursor: pointer;
+}
+
+.upload-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

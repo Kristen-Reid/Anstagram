@@ -37,10 +37,15 @@
 
 }
 
-/* button {
-    background:none;
-    border:none;
-    margin:0;
-    padding:0;
-    cursor: pointer;
-} */
+body {
+    background-color: #121212;
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    overflow: hidden;
+}
+
+body::-webkit-scrollbar-corner {
+    overflow: hidden;
+}

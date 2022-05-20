@@ -1,0 +1,28 @@
+.footer-about-container {
+    display: flex;
+    color: rgba(255, 255, 255, 87%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-about {
+    display: flex;
+    margin-bottom: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 87%);
+
+}
+
+.footer-linkedin {
+    color: rgba(255, 255, 255, 87%);
+}
+
+.footer-github {
+    color: rgba(255, 255, 255, 87%);
+}
+
+.footer-about-dot {
+    margin-left: 10px;
+    margin-right: 5px;
+}

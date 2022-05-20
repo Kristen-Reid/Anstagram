@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
 }
 
@@ -13,7 +13,6 @@
     justify-content: center;
     align-items: center;
     width: 350px;
-    /* height: 360px; */
     border: rgba(255, 255, 255, 87%) solid .5px;
 }
 

@@ -10,4 +10,4 @@ def summary_exists(form, field):
         raise ValidationError('Please provide a summary.')
 
 class CreatePost(FlaskForm):
-    summary = TextAreaField('summary', validators=[DataRequired(), Length(min=5, max=2200), summary_exists])
+    summary = TextAreaField('summary', validators=[DataRequired(), Length(min=5, max=255), summary_exists])

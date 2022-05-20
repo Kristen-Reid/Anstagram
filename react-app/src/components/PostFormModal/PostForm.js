@@ -46,9 +46,11 @@ const PostForm = ({ close }) => {
     return (
         <div className='post-form-conatiner'>
             <div className='post-form-box'>
-                <div className='errorsContainer'>
+                <div className='create-post-top'>
+                    <p>Create new post</p>
+                <div className='errorsContainer2'>
                     {showError && (
-                    <ul className='errors'>
+                    <ul className='form-errors'>
                         {validationErrors.map(error => (
                             <li key={error}>{error}</li>
                         ))}
@@ -56,30 +58,33 @@ const PostForm = ({ close }) => {
                     )
                     }
                 </div>
-                <div className='create-post-top'>
-                    <p>Create new post</p>
                 </div>
                 <div className='create-post-bottom'>
                     <div className='post-form'>
                         <form onSubmit={onSubmit}>
                             <div>
-                                <input
-                                    type='file'
-                                    accept='image/*'
-                                    onChange={updateImage}
-                                />
-                            </div>
-                            <div>
                                 <textarea
-                                    className='postInput'
-                                    placeholder='Summary'
+                                    className='post-Input'
+                                    placeholder='Add summary...'
                                     value={summary}
                                     onChange={(e) => setSummary(e.target.value)}
                                 />
                             </div>
-                            <div>
-                                <button type="submit">Submit</button>
-                                {(imageLoading)&& <p>Loading...</p>}
+                            <div className='upload-btn-container'>
+                                <div className='post-upload'>
+                                    <label className='post-upload'>Select image from computer
+                                        <input
+                                        className='hidden'
+                                        type='file'
+                                        accept='image/*'
+                                        onChange={updateImage}
+                                        />
+                                    </label>
+                                </div>
+                                <div>
+                                    <button className='post-form-btn' type="submit">Add Post</button>
+                                    {(imageLoading)&& <p>Loading...</p>}
+                                </div>
                             </div>
                         </form>
                     </div>

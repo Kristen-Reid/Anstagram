@@ -37,9 +37,6 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                             <div>
                                 <PostMenuModal id={id} post={post}/>
                             </div>
-                            {/* <div>
-                                <button onClick={() => dispatch(deletePost(id))}>Delete Post</button>
-                            </div> */}
                         </div>
                     )}
                 </div>

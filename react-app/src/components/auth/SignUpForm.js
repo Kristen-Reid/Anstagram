@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom';
 import { login, signUp } from '../../store/session';
+import Footer from '../Footer';
 import '../auth/signup.css'
 
 const SignUpForm = () => {
@@ -168,6 +169,9 @@ const SignUpForm = () => {
       </div>
       <div className='form-bottom-box'>
         <p className='account-question'>Have an account? <a className='question-link' href='/login'>Log in</a></p>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

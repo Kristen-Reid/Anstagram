@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
+import Footer from '../Footer';
 import '../auth/login.css';
 
 const LoginForm = () => {
@@ -102,6 +103,9 @@ if (user) {
       </div>
       <div className='form-bottom-box'>
         <p className='account-question'>Don't have an account? <a className='question-link' href='/sign-up'>Sign up</a></p>
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );

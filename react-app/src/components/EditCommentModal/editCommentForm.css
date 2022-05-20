@@ -35,6 +35,8 @@
     justify-content: center;
     margin: 10px 25px 10px 20px;
     width: 100%;
+    word-wrap: break-word;
+    flex-wrap: wrap;
 }
 
 .form-errors {
@@ -47,6 +49,7 @@
     margin-top: 2px;
     margin-bottom: 2px;
     width: 100%;
+
 }
 
 .errorsList {
