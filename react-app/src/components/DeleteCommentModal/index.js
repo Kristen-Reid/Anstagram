@@ -3,7 +3,7 @@ import DeleteCommentForm from './DeleteCommentForm';
 import { Modal2 } from '../../context/Modal2';
 
 
-const DeleteCommentModal = ({post, closeCommentModal }) => {
+const DeleteCommentModal = ({post, comment, closeCommentModal }) => {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -12,7 +12,7 @@ const DeleteCommentModal = ({post, closeCommentModal }) => {
             <button className='navLink comment-menu-btn delete-btn' onClick={() => setShowModal(true)}>Delete</button>
             {showModal && (
                 <Modal2 onClose={() => setShowModal(false)}>
-                    <DeleteCommentForm post={post} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal} />
+                    <DeleteCommentForm post={post} comment={comment} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal} />
                 </Modal2>
             )}
 
