@@ -61,7 +61,7 @@ const EditPostForm = ({ id, close, closeCommentModal }) => {
                             <div>
                                 <textarea
                                     className='postInput'
-                                    placeholder='Summary'
+                                    placeholder='Edit summary...'
                                     value={summary}
                                     onChange={(e) => setSummary(e.target.value)}
                                 />

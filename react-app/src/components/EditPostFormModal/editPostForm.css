@@ -31,3 +31,11 @@
     outline: none;
     color: rgba(255, 255, 255, 87%);
 }
+
+.postInput:hover {
+    cursor: pointer;
+}
+
+.postInput:focus {
+    cursor: text;
+}

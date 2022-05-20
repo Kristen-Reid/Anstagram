@@ -58,8 +58,18 @@
 }
 
 .comment-input {
-    /* width: 110%; */
-    /* height: 100px; */
+    width: 250px;
+    margin-bottom: 20px;
+    height: 100px;
     background:none;
     border: .5px solid rgba(255, 255, 255, 87%);
+}
+
+
+.comment-input:hover {
+    cursor: pointer;
+}
+
+.comment-input:focus {
+    cursor: text;
 }

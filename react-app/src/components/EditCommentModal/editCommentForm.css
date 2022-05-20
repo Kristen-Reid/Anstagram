@@ -8,7 +8,7 @@
 .edit-comment-form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     text-align: center;
     width: 300px;
@@ -58,5 +58,5 @@
 .edit-comment-textarea-container {
     display: flex;
     justify-content: center;
-    width: 200px;
+    /* width: 200px; */
 }
