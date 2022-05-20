@@ -41,7 +41,6 @@ const EditCommentForm = ({ post, comment, onClose, closeCommentModal }) => {
         }
     }
 
-    console.log()
 
     return (
         <div className='edit-comment-container'>

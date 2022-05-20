@@ -4,7 +4,7 @@ import { getAllPosts, getAPost, updatePost } from '../../store/post';
 import './editPostForm.css';
 
 
-const EditPostForm = ({ id, close }) => {
+const EditPostForm = ({ id, close, closeCommentModal }) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user)
@@ -39,15 +39,12 @@ const EditPostForm = ({ id, close }) => {
         if (updatedPost) {
             setValidationErrors(updatedPost);
         } else {
-            close()
+            closeCommentModal()
         }
-
-
     }
 
     return (
     <div className='edit-post-conatiner'>
-        {user?.id === post?.user?.id && (
                 <div className='edit-post-box'>
                     <div className='errorsContainer'>
                         {showError && (
@@ -70,12 +67,14 @@ const EditPostForm = ({ id, close }) => {
                                 />
                             </div>
                             <div>
-                                <button type='submit'>Button</button>
+                                <button className='comment-menu-btn edit-btn' type='submit'>Edit Post</button>
                             </div>
                         </form>
+                            <div>
+                                <button className='comment-menu-btn cancel-btn' type='submit' onClick={() => closeCommentModal()}>Cancel</button>
+                            </div>
                     </div>
                 </div>
-            )}
         </div>
     )
 }

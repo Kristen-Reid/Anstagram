@@ -6,6 +6,7 @@ import PostCommentForm from '../PostCommentForm';
 import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
 import EditPostFormModal from '../EditPostFormModal';
+import PostMenuModal from '../PostMenuModal';
 import '../PostCard/postCard.css'
 
 
@@ -33,12 +34,12 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                     </div>
                     {user?.id === userId && (
                         <div className='top-box'>
-                            <div className='post-menu'>
-                                <EditPostFormModal id={id}/>
-                                <div className='delete-btn-post-container'>
-                                    <button  className='delete-post' onClick={() => dispatch(deletePost(id))}>Delete Spot</button>
-                                </div>
+                            <div>
+                                <PostMenuModal id={id} post={post}/>
                             </div>
+                            {/* <div>
+                                <button onClick={() => dispatch(deletePost(id))}>Delete Post</button>
+                            </div> */}
                         </div>
                     )}
                 </div>

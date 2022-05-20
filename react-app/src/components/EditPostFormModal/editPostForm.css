@@ -4,18 +4,29 @@
     justify-content: center;
     align-items: center;
     margin: 0;
-    padding: 0;
+
 }
 
 .edit-post-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    width: 494px;
-    height: 537px;
+    width: 300px;
+    height: 300px;
     text-align: center;
-    background-color: white;
-    border-radius: 12px;
-    color: black;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: rgba(255, 255, 255, 87%);
+}
+
+.postInput {
+    width: 250px;
+    height: 120px;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    color: rgba(255, 255, 255, 87%);
 }

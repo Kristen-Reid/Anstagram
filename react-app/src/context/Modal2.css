@@ -1,4 +1,4 @@
-#modal {
+#modal2 {
   position: fixed;
   top: 0;
   right: 0;
@@ -9,7 +9,7 @@
   align-items: center;
 }
 
-#modal-background {
+#modal2-background {
   position: fixed;
   top: 0;
   right: 0;
@@ -19,7 +19,7 @@
   /* background-color: rgba(0, 0, 0, 0.5); */
 }
 
-#modal-content {
+#modal2-content {
   position: absolute;
   /* border-radius: 16px;
   box-shadow: white 0px 0 10px; */

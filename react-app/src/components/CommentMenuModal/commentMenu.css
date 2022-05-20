@@ -23,9 +23,21 @@
     padding:0;
     cursor: pointer;
     color: rgba(255, 255, 255, 87%);
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.post-edit-btn {
+    background:none;
+    border:none;
+    margin-top:0px;
+    padding:0;
+    cursor: pointer;
+    color: rgba(255, 255, 255, 87%);
     margin: 5px;
     font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
 }
 
 .comment-menu-cancel {
@@ -50,5 +62,3 @@
 .cancel-btn:hover {
     font-weight: bold;
 }
-
-

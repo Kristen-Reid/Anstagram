@@ -33,5 +33,14 @@
 
 .landing-button:hover {
     cursor: pointer;
-    font-size: 30px
+    font-size: 30px;
+
 }
+
+/* button {
+    background:none;
+    border:none;
+    margin:0;
+    padding:0;
+    cursor: pointer;
+} */

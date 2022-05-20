@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import EditPostForm from './EditPostForm';
-import { Modal } from '../../context/Modal';
-import Popup from 'reactjs-popup';
-import { ReactComponent as PostMenu } from '../../svgImg/three-dots.svg';
+import { Modal2 } from '../../context/Modal2';
 
 
-const EditPostFormModal = ({ id }) => {
+const EditPostFormModal = ({ id, post, closeCommentModal }) => {
     const [showModal, setShowModal] = useState(false);
 
     return (
         <>
-            <a className='navLink post-menu' onClick={() => setShowModal(true)}><PostMenu /></a>
+            <a className='navLink post-edit-btn' onClick={() => setShowModal(true)}>Edit Post</a>
             {showModal && (
-                <Modal onClose={() => setShowModal(false)}>
-                    <EditPostForm id={id} close={() => setShowModal(false)}/>
-                </Modal>
+                <Modal2 onClose={() => setShowModal(false)}>
+                    <EditPostForm id={id} post={post} close={() => setShowModal(false)} closeCommentModal={closeCommentModal} />
+                </Modal2>
             )}
         </>
     )
