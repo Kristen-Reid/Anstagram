@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, Length
 from app.models import Post
 
 
@@ -10,5 +10,4 @@ def summary_exists(form, field):
         raise ValidationError('Please provide a summary.')
 
 class CreatePost(FlaskForm):
-    summary = TextAreaField('summary', validators=[DataRequired(), summary_exists])
-    
+    summary = TextAreaField('summary', validators=[DataRequired(), Length(min=5, max=2200), summary_exists])

@@ -16,7 +16,7 @@ const HomePage = () => {
     const postArr = Object.values(posts);
 
 
-   
+
     useEffect(() => {
         dispatch(getAllPosts())
     }, [dispatch])
@@ -24,7 +24,7 @@ const HomePage = () => {
     return (
         <div className="home-page-container">
                 <div className='home-title'>
-                    {postArr.map((post) => (
+                    {postArr.reverse().map((post) => (
                         <PostCard key={post?.id}
                             id={post?.id}
                             image={post?.media_url}

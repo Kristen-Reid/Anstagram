@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField
-from wtforms.validators import DataRequired, ValidationError
+from wtforms.validators import DataRequired, ValidationError, Length
 
 
 def description_exists(form, field):
@@ -9,4 +9,4 @@ def description_exists(form, field):
         raise ValidationError('Please provide a summary.')
 
 class CreateComment(FlaskForm):
-    description = TextAreaField('description', validators=[DataRequired(), description_exists])
+    description = TextAreaField('description', validators=[DataRequired(), Length(min=5, max=2200), description_exists])

@@ -31,17 +31,17 @@ const SignUpForm = () => {
     } else {
       setErrors(["Passwords must match."]);
     }
-
   }
 
   useEffect(() => {
     const errors = [];
 
     if (!password.length) errors.push('Please provide email.');
-    if (password.length < 5 || password.length > 50) errors.push('Password must be between 5 and 50 characters.');
+    // if (password.length < 5 || password.length > 50) errors.push('Password must be between 5 and 50 characters.');
 
     setErrors(errors);
   }, [password]);
+
 
   const demoLogin = async (e) => {
     const data = await dispatch(login("demo@aa.io", "password"));
