@@ -55,6 +55,7 @@
     background-color: transparent;
     resize: none;
     outline: none;
+    color: rgba(255, 255, 255, 87%);
 }
 
 .post-Input:hover {
