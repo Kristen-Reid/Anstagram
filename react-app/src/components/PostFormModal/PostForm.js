@@ -34,7 +34,6 @@ const PostForm = ({ close }) => {
 
         let newPost = await dispatch(createPost(formData));
         setImageLoading(false);
-        
         if (newPost) {
             setValidationErrors(newPost);
         } else {
@@ -88,7 +87,10 @@ const PostForm = ({ close }) => {
                                     </label>
                                 </div>
                                 <div>
-                                    <button className='post-form-btn' type="submit">Add Post</button>
+                                    <button className='post-form-btn'
+                                        type="submit"
+                                        disabled={imageLoading}
+                                    >Add Post</button>
                                     {(imageLoading)&& <p>Loading...</p>}
                                 </div>
                             </div>
