@@ -23,6 +23,7 @@ const PostForm = ({ close }) => {
     const onSubmit = async (e) => {
         e.preventDefault();
         setShowError(true);
+        setImageLoading(true);
 
         const formData = new FormData();
         formData.append('image', image);
@@ -32,8 +33,12 @@ const PostForm = ({ close }) => {
 
 
         let newPost = await dispatch(createPost(formData));
-        if (newPost) setValidationErrors(newPost);
-        else close();
+        if (newPost) {
+            setValidationErrors(newPost);
+        } else {
+            setImageLoading(false);
+            close();
+        }
 
     }
 
