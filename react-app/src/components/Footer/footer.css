@@ -16,13 +16,23 @@
 
 .footer-linkedin {
     color: rgba(255, 255, 255, 87%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
 }
 
 .footer-github {
     color: rgba(255, 255, 255, 87%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
 }
 
 .footer-about-dot {
     margin-left: 10px;
     margin-right: 5px;
+    font-size: 12px;
+}
+
+.footer-copyright {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11px;
 }
