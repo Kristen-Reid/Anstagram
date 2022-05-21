@@ -33,10 +33,11 @@ const PostForm = ({ close }) => {
 
 
         let newPost = await dispatch(createPost(formData));
+        setImageLoading(false);
+        
         if (newPost) {
             setValidationErrors(newPost);
         } else {
-            setImageLoading(false);
             close();
         }
 
