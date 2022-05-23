@@ -8,7 +8,6 @@
 .comment-input-box {
     display: flex;
     flex-direction: row;
-    /* margin-top: 15px; */
     margin-right: 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -28,13 +27,13 @@
 
 .commentInput {
     width: 400px;
-    /* height: 100%; */
     background:none;
     border:none;
 }
 
 .comment-input-text {
     margin-left: 15px;
+    margin-right: 15px;
 }
 
 .commentInput {
@@ -43,8 +42,6 @@
     border: none;
     outline: none;
     resize: none;
-    /* width: 400px;
-    height: 100%; */
 }
 
 .comment-input {
@@ -54,7 +51,6 @@
     outline: none;
     resize: none;
     width: 100%;
-    /* height: 100%; */
 }
 
 .comment-input {
