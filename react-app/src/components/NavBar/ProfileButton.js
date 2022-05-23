@@ -40,13 +40,13 @@ const ProfileButton = () => {
             {showMenu && (
                 <div className='dropdownContainer'>
                     <div className='dropdownContent'>
-                        <div className='dropdownInfoContainer'>
-                            {/* <li className='dropdownInfo'>{user?.username}</li>
-                            <li className='dropdownInfo'>{user?.email}</li> */}
-                        </div>
-                        <div className='dropdownBtnContainer'>
+                        {/* <div className='dropdownInfoContainer'>
+                            <li className='dropdownInfo'>{user?.username}</li>
+                            <li className='dropdownInfo'>{user?.email}</li>
+                        </div> */}
                             <LogoutButton />
-                        </div>
+                        {/* <div className='dropdownBtnContainer'>
+                        </div> */}
                     </div>
                 </div>
             )}
