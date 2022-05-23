@@ -58,6 +58,10 @@
     color: rgba(255, 255, 255, 87%);
 }
 
+.post-Input::-webkit-scrollbar {
+    overflow: hidden;
+}
+
 .post-Input:hover {
     cursor: pointer;
 }
