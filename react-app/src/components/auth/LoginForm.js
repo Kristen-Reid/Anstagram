@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { login } from '../../store/session';
 import Footer from '../Footer';
+import { ReactComponent as SplashImage } from '../../svgImg/splash-image.svg';
 import '../auth/login.css';
 
 const LoginForm = () => {
@@ -45,67 +46,72 @@ if (user) {
 
 
   return (
-    <div className='login-form-container'>
-      <div className='login-form-box'>
-        <div className='logo-container'>
-          <div className='logo'>
-            <p className='logo-name'>Anstagram</p>
-          </div>
+    <div className='login-splash-container'>
+        <div className='login-splash-image'>
+          <SplashImage />
         </div>
-        <form onSubmit={onLogin}>
-          <div className='errorsContainer'>
-            {showError && (
-                <ul className="errors">
-                    {errors.map(error => (
-                        <li className='errorsList' key={error}>{error}</li>
-                    ))}
-                </ul>
-                )
-                }
+      <div className='login-form-container'>
+        <div className='login-form-box'>
+          <div className='logo-container'>
+            <div className='logo'>
+              <p className='logo-name'>Anstagram</p>
             </div>
-          <div className='form-input-box'>
-            <input
-              className='form-input'
-              name='username_email'
-              type='text'
-              placeholder='Username or Email'
-              value={usernameEmail}
-              onChange={updateUsernameEmail}
-            />
           </div>
-          <div className='form-input-box'>
-            <input
-              className='form-input'
-              name='password'
-              type='password'
-              placeholder='Password'
-              value={password}
-              onChange={updatePassword}
-            />
+          <form onSubmit={onLogin}>
+            <div className='errorsContainer'>
+              {showError && (
+                  <ul className="errors">
+                      {errors.map(error => (
+                          <li className='errorsList' key={error}>{error}</li>
+                      ))}
+                  </ul>
+                  )
+                  }
+              </div>
+            <div className='form-input-box'>
+              <input
+                className='form-input'
+                name='username_email'
+                type='text'
+                placeholder='Username or Email'
+                value={usernameEmail}
+                onChange={updateUsernameEmail}
+              />
+            </div>
+            <div className='form-input-box'>
+              <input
+                className='form-input'
+                name='password'
+                type='password'
+                placeholder='Password'
+                value={password}
+                onChange={updatePassword}
+              />
+            </div>
+            <div className='btn-container'>
+              <button className='form-btn' type='submit'>Login</button>
+            </div>
+          </form>
+          <div className='or-line-container'>
+            <div className='or-line'></div>
+            <div className='or'>OR</div>
+            <div className='or-line'></div>
           </div>
-          <div className='btn-container'>
-            <button className='form-btn' type='submit'>Login</button>
+          <div className='demo-container'>
+            <a
+            className="demo-btn"
+              onClick={demoLogin}
+            >
+              Demo Login
+            </a>
           </div>
-        </form>
-        <div className='or-line-container'>
-          <div className='or-line'></div>
-          <div className='or'>OR</div>
-          <div className='or-line'></div>
         </div>
-        <div className='demo-container'>
-          <a
-          className="demo-btn"
-            onClick={demoLogin}
-          >
-            Demo Login
-          </a>
+        <div className='form-bottom-box'>
+          <p className='account-question'>Don't have an account? <a className='question-link' href='/sign-up'>Sign up</a></p>
         </div>
-      </div>
-      <div className='form-bottom-box'>
-        <p className='account-question'>Don't have an account? <a className='question-link' href='/sign-up'>Sign up</a></p>
-      </div>
-      <div>
-        <Footer />
+        <div>
+          <Footer />
+        </div>
       </div>
     </div>
   );
