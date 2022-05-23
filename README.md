@@ -50,7 +50,7 @@
 1. Clone this repository (only this branch)
 
    ```bash
-   git clone https://github.com/Fiasco071/ToTheMoon.git
+   git clone https://github.com/Kristen-Reid/Anstagram
    ```
 
 2. Install dependencies
