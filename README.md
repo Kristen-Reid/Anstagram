@@ -3,7 +3,7 @@
 <h5 align="center">  By: <a href="https://github.com/Kristen-Reid">Kristen Reid</a>
 
 <h2> About </h2>
-Anstagram is a clone of Instagram. Anstagram is where anime lovers can share posts/images/gifs from their favorite anime and manga with each other!
+Anstagram is a clone of Instagram. Anstagram is where anime lovers can share posts of images from their favorite anime and manga with each other!
 
    - [Features](#features)
    - [Technologies Used](#tech)
@@ -39,7 +39,9 @@ Anstagram is a clone of Instagram. Anstagram is where anime lovers can share pos
    <img src="https://user-images.githubusercontent.com/93681149/167308823-588c1cbe-ef15-47ba-8d3f-944710a00ac6.svg" width="60px" align="left">
    <img src="https://user-images.githubusercontent.com/93681149/167308846-24aa684c-2a5d-4d32-b365-4a0de8714408.svg" width="60px" align="left">
    <img src="https://user-images.githubusercontent.com/93681149/167308866-01f03689-0b65-4ddd-803f-4a23a0253e35.svg" width="60px" align="left">
-   <img src="https://user-images.githubusercontent.com/93681149/167308908-2aacacf3-d30a-4b00-97ed-3c034e5bcadd.svg" width="60px">
+   <img src="https://user-images.githubusercontent.com/93681149/167308908-2aacacf3-d30a-4b00-97ed-3c034e5bcadd.svg" width="60px" align="left">
+   <img src="https://user-images.githubusercontent.com/93681006/169758080-3b516c5d-07f0-4f70-bdb0-0cdcce566d4a.svg" width=60px>
+
   
    
    
@@ -48,7 +50,7 @@ Anstagram is a clone of Instagram. Anstagram is where anime lovers can share pos
 1. Clone this repository (only this branch)
 
    ```bash
-   git clone https://github.com/Fiasco071/ToTheMoon.git
+   git clone https://github.com/Kristen-Reid/Anstagram
    ```
 
 2. Install dependencies
