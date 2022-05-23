@@ -39,7 +39,8 @@ Anstagram is a clone of Instagram. Anstagram is where anime lovers can share pos
    <img src="https://user-images.githubusercontent.com/93681149/167308823-588c1cbe-ef15-47ba-8d3f-944710a00ac6.svg" width="60px" align="left">
    <img src="https://user-images.githubusercontent.com/93681149/167308846-24aa684c-2a5d-4d32-b365-4a0de8714408.svg" width="60px" align="left">
    <img src="https://user-images.githubusercontent.com/93681149/167308866-01f03689-0b65-4ddd-803f-4a23a0253e35.svg" width="60px" align="left">
-   <img src="https://user-images.githubusercontent.com/93681149/167308908-2aacacf3-d30a-4b00-97ed-3c034e5bcadd.svg" width="60px">
+   <img src="https://user-images.githubusercontent.com/93681149/167308908-2aacacf3-d30a-4b00-97ed-3c034e5bcadd.svg" width="60px" align="left">
+   <img src="https://www.figma.com/file/a6K1uWmVSMqBrJlQ6djaEz/Untitled?node-id=137%3A2.svg" width='60px>
   
    
    
