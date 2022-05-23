@@ -3,7 +3,7 @@
 <h5 align="center">  By: <a href="https://github.com/Kristen-Reid">Kristen Reid</a>
 
 <h2> About </h2>
-[Anstagram](https://anstagram-ag.herokuapp.com/) is a clone of Instagram. Anstagram is where anime lovers can share posts of images from their favorite anime and manga with each other!
+Anstagram is a clone of Instagram. Anstagram is where anime lovers can share posts of images from their favorite anime and manga with each other!
 
    - [Features](#features)
    - [Technologies Used](#tech)
