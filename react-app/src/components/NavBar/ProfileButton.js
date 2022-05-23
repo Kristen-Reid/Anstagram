@@ -29,10 +29,6 @@ const ProfileButton = () => {
         return () => document.removeEventListener('click', closeMenu);
     }, [showMenu]);
 
-    // const logOut = (e) => {
-    //     e.preventDefault();
-    //     dispatch(logout());
-    // }
 
     return (
         <div className='profileContainer'>
@@ -45,8 +41,8 @@ const ProfileButton = () => {
                 <div className='dropdownContainer'>
                     <div className='dropdownContent'>
                         <div className='dropdownInfoContainer'>
-                            <li className='dropdownInfo'>{user?.username}</li>
-                            <li className='dropdownInfo'>{user?.email}</li>
+                            {/* <li className='dropdownInfo'>{user?.username}</li>
+                            <li className='dropdownInfo'>{user?.email}</li> */}
                         </div>
                         <div className='dropdownBtnContainer'>
                             <LogoutButton />
