@@ -35,7 +35,6 @@
 .post-summary {
     display: flex;
     width: 470px;
-    height: 100px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14px;
 }
@@ -60,12 +59,17 @@
 }
 
 .summary {
+    width: 350px;
     margin: 15px;
+    height: auto;
+    word-wrap: break-word;
+    flex-wrap: wrap;
 }
 
 .username {
     font-weight: bold;
-    margin: 15px;
+    margin: 15px 15px 0px 15px;
+    height: 20px;
 }
 
 .comment-format-box {
