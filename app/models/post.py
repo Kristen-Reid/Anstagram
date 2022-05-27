@@ -15,6 +15,7 @@ class Post(db.Model):
 
     user = db.relationship('User', back_populates='post')
     comment = db.relationship('Comment', back_populates='post', cascade='all, delete-orphan')
+    like = db.relationship('Like', back_populates='post', cascade='all, delete-orphan')
 
 
     def post_to_dict(self):
@@ -25,6 +26,5 @@ class Post(db.Model):
             'created_at': self.created_at,
             'updated_at': self.updated_at,
             'user_id': self.user_id,
-            'user': self.user.to_dict(),
-            # 'comment': [Comment.comment_to_dict() for Comment in self.comment]
+            'user': self.user.to_dict()
         }
