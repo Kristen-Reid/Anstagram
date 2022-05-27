@@ -7,6 +7,7 @@ import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
 import EditPostFormModal from '../EditPostFormModal';
 import PostMenuModal from '../PostMenuModal';
+import LikeButton from '../LikeButton';
 import '../PostCard/postCard.css'
 
 
@@ -41,7 +42,10 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                     )}
                 </div>
                 <div className='post-box-bottom'>
-                    <img className='post-image' src={image} alt='image'/>
+                    <img className='post-image' src={image} alt='image' />
+                    <div className='post-like-btn'>
+                        <LikeButton post={post}/>
+                    </div>
                     <div className='post-summary'>
                         <div className='summary-box username'>
                             {username}
