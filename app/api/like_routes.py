@@ -8,8 +8,9 @@ likes_routes = Blueprint('likes', __name__)
 @likes_routes.route('/')
 @login_required
 def get_all_likes():
-    likes = Like.query.filter(
-        Like.user_id == current_user.to_dict()['id']).all()
+    # likes = Like.query.filter(
+    #     Like.user_id == current_user.to_dict()['id']).all()
+    likes = Like.query.all()
     return {'likes': [like.like_to_dict() for like in likes]}
 
 

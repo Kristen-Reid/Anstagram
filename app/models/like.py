@@ -18,5 +18,7 @@ class Like(db.Model):
         return {
          'id': self.id,
          'user_id': self.user_id,
-         'post_id': self.post_id
+         'post_id': self.post_id,
+         'user': self.user.to_dict(),
+         'post': self.post.post_to_dict()
         }

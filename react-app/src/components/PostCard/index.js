@@ -9,6 +9,7 @@ import EditPostFormModal from '../EditPostFormModal';
 import PostMenuModal from '../PostMenuModal';
 import LikeButton from '../LikeButton';
 import '../PostCard/postCard.css'
+import { getAllLikes } from '../../store/like';
 
 
 const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post }) => {
@@ -17,14 +18,21 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
     const commentsArr = Object.values(comments);
-    const comment = commentsArr.filter(comment => comment?.post_id === id)
+    const comment = commentsArr.filter(comment => comment?.post_id === id);
+
+    const [active, setActive] = useState(false);
 
 
     useEffect(() => {
-        dispatch(getAllPosts())
-    }, [dispatch])
+        dispatch(getAllPosts());
+        dispatch(getAllLikes());
+    }, [dispatch]);
 
-
+     const handleChangeActive = () => {
+        setActive((previousLike) => {
+        return !previousLike;
+    });
+  };
 
     return (
         <div className='post-box-conatianer'>
@@ -44,7 +52,7 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                 <div className='post-box-bottom'>
                     <img className='post-image' src={image} alt='image' />
                     <div className='post-like-btn'>
-                        <LikeButton post={post}/>
+                        <LikeButton post={post} active={active} handleChangeActive={handleChangeActive} />
                     </div>
                     <div className='post-summary'>
                         <div className='summary-box username'>
