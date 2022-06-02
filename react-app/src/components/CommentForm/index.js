@@ -47,7 +47,7 @@ const CommentForm = ({ post }) => {
             <div className='comment-form-box'>
                 <div className='errorsContainer'>
                     {showError && (
-                    <ul className='errors'>
+                    <ul className='form-errors'>
                         {validationErrors.map(error => (
                             <li key={error}>{error}</li>
                         ))}

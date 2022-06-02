@@ -4,9 +4,10 @@ import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
 import { Modal } from '../../context/Modal';
 import SinglePost from './SinglePost';
+import { getAllLikes } from '../../store/like';
 
 
-const SinglePostModal = ({ id, post }) => {
+const SinglePostModal = ({ id, post, active }) => {
     const dispatch = useDispatch();
     const comments = useSelector(state => state.comments);
     const commentsArr = Object.values(comments);
@@ -17,6 +18,7 @@ const SinglePostModal = ({ id, post }) => {
     useEffect(() => {
         dispatch(getAllPosts())
         dispatch(getAllComments(id))
+        dispatch(getAllLikes());
     }, [dispatch])
 
     return (
@@ -24,7 +26,7 @@ const SinglePostModal = ({ id, post }) => {
             <button className='navLink comment-count-btn' onClick={() => setShowModal(true)}>View {comment?.length} comments</button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <SinglePost id={id} post={post} close={() => setShowModal(false)}/>
+                    <SinglePost id={id} post={post} active={active} close={() => setShowModal(false)}/>
                 </Modal>
             )}
 

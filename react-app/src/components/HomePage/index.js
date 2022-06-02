@@ -28,14 +28,11 @@ const HomePage = () => {
     return (
         <div className="home-page-container">
                 <div className='home-title'>
-                {postArr.reverse().map((post) => {
+                {postArr?.reverse().map((post) => {
                     let active = false
-                    likesArr.map((like) => {
-                        // console.log(like?.post_id)
-                        // console.log(post?.id)
+                    likesArr?.map((like) => {
                       if (like?.post_id === post?.id) active = true
                     })
-                    // console.log(active)
                  return  <PostCard key={post?.id}
                         id={post?.id}
                         image={post?.media_url}

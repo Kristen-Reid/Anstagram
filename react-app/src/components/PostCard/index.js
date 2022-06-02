@@ -1,15 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { deletePost } from '../../store/post';
 import SinglePostModal from '../SinglePostModal';
 import PostCommentForm from '../PostCommentForm';
 import { getAllPosts } from '../../store/post';
-import { getAllComments } from '../../store/comment';
-import EditPostFormModal from '../EditPostFormModal';
 import PostMenuModal from '../PostMenuModal';
 import LikeButton from '../LikeButton';
-import '../PostCard/postCard.css'
 import { addALike, getAllLikes } from '../../store/like';
+import '../PostCard/postCard.css'
 
 
 const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post, active }) => {
@@ -21,16 +18,14 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
     const comment = commentsArr.filter(comment => comment?.post_id === id);
 
     const [isActive, setIsActive] = useState(active);
-   console.log(id)
+
 
     useEffect(() => {
         dispatch(getAllPosts());
         dispatch(getAllLikes());
-        // console.log(active)
-        if (active === true) {
-            setIsActive(true)
-            // console.log(isActive)
-        }
+        // if (active === true) {
+        //     setIsActive(true)
+        // }
     }, [dispatch]);
 
      const handleChangeActive = (id) => {
@@ -58,7 +53,7 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                 <div className='post-box-bottom'>
                     <img className='post-image' src={image} alt='image' />
                     <div className='post-like-btn'>
-                        <LikeButton post={post} isActive={active} handleChangeActive={handleChangeActive} id={id}/>
+                        <LikeButton isActive={active} id={id}/>
                     </div>
                     <div className='post-summary'>
                         <div className='summary-box username'>
@@ -70,7 +65,7 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                     </div>
                         {comment?.length > 0 && (
                         <div className='comment-count comment-count-btn'>
-                                <SinglePostModal id={id} post={post} />
+                            <SinglePostModal id={id} post={post} active={active} />
                         </div>
                         )}
                     <div className='updatedAt'>

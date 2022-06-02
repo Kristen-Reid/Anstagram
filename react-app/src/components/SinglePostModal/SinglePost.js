@@ -5,11 +5,13 @@ import moment from 'moment';
 import CommentForm from '../CommentForm';
 import { getAComment, getAllComments } from '../../store/comment';
 import { getAllPosts } from '../../store/post';
-import './singlePost.css';
+import { getAllLikes, addALike } from '../../store/like';
 import CommentMenuModal from '../CommentMenuModal';
+import LikeButton from '../LikeButton';
+import './singlePost.css';
 
-const SinglePost = ({ close, post}) => {
-    const dispatch = useDispatch(); 
+const SinglePost = ({ id, close, post, active }) => {
+    const dispatch = useDispatch();
 
 
     const user = useSelector(state => state.session.user);
@@ -17,12 +19,22 @@ const SinglePost = ({ close, post}) => {
     const commentsArr = Object.values(comments);
     const comment = commentsArr.filter(comment => comment?.post_id === post?.id);
 
+    const [isActive, setIsActive] = useState(active);
+
 
     useEffect(() => {
         dispatch(getAllPosts());
-        dispatch(getAllComments(post?.id));
-        dispatch(getAComment(post?.id));
+        dispatch(getAllLikes());
+        dispatch(getAllComments(id));
+        dispatch(getAComment(id));
     }, [dispatch]);
+
+    const handleChangeActive = (id) => {
+         dispatch(addALike(id))
+         setIsActive((previousLike) => {
+        return !previousLike;
+    });
+  }
 
     return (
         <div className='single-post-container'>
@@ -52,6 +64,9 @@ const SinglePost = ({ close, post}) => {
                         ))}
                     </div>
                     <div className='comment-bottom'>
+                        <div>
+                            <LikeButton isActive={active} id={id} />
+                        </div>
                     <div className='comment-updatedAt'>{moment().startOf('hour').fromNow()}</div>
                     </div>
                     <div className='comment-bottom-description'>

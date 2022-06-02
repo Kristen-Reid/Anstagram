@@ -6,12 +6,12 @@ import { getAllLikes, addALike, deleteALike } from '../../store/like';
 import '../LikeButton/likeButton.css';
 
 
-const LikeButton = ({ post, isActive, handleChangeActive, id }) => {
+const LikeButton = ({ isActive, id }) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const likes = useSelector(state => state.likes);
     const likesArr = Object.values(likes);
-  
+
 
   const likedPost = async (id) => {
    dispatch(addALike(id))
