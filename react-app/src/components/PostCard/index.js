@@ -9,10 +9,10 @@ import EditPostFormModal from '../EditPostFormModal';
 import PostMenuModal from '../PostMenuModal';
 import LikeButton from '../LikeButton';
 import '../PostCard/postCard.css'
-import { getAllLikes } from '../../store/like';
+import { addALike, getAllLikes } from '../../store/like';
 
 
-const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post }) => {
+const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post, active }) => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.session.user);
@@ -20,16 +20,22 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
     const commentsArr = Object.values(comments);
     const comment = commentsArr.filter(comment => comment?.post_id === id);
 
-    const [active, setActive] = useState(false);
-
+    const [isActive, setIsActive] = useState(active);
+   console.log(id)
 
     useEffect(() => {
         dispatch(getAllPosts());
         dispatch(getAllLikes());
+        // console.log(active)
+        if (active === true) {
+            setIsActive(true)
+            // console.log(isActive)
+        }
     }, [dispatch]);
 
-     const handleChangeActive = () => {
-        setActive((previousLike) => {
+     const handleChangeActive = (id) => {
+         dispatch(addALike(id))
+         setIsActive((previousLike) => {
         return !previousLike;
     });
   };
@@ -52,7 +58,7 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                 <div className='post-box-bottom'>
                     <img className='post-image' src={image} alt='image' />
                     <div className='post-like-btn'>
-                        <LikeButton post={post} active={active} handleChangeActive={handleChangeActive} />
+                        <LikeButton post={post} isActive={active} handleChangeActive={handleChangeActive} id={id}/>
                     </div>
                     <div className='post-summary'>
                         <div className='summary-box username'>

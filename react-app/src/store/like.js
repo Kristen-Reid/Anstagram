@@ -34,11 +34,11 @@ export const getAllLikes = () => async (dispatch) => {
     }
 };
 
-export const addALike = (data, id) => async (dispatch) => {
-    const response = await fetch(`/api/likes/add${id}`, {
+export const addALike = (id) => async (dispatch) => {
+    const response = await fetch(`/api/likes/add/${id}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify(id)
     });
 
     if (response.ok) {
@@ -55,7 +55,8 @@ export const deleteALike = (id) => async (dispatch) => {
     });
 
     if (response.ok) {
-        dispatch(deleteLike(id));
+        const likeId = await response.json();
+        dispatch(deleteLike(likeId));
     }
 };
 

@@ -2,35 +2,40 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Unlike from '../../svgImg/like-hollow.svg';
 import Like from '../../svgImg/like-solid.svg';
-import { getAllLikes, addALike } from '../../store/like';
+import { getAllLikes, addALike, deleteALike } from '../../store/like';
 import '../LikeButton/likeButton.css';
 
 
-const LikeButton = ({ post, active, handleChangeActive }) => {
+const LikeButton = ({ post, isActive, handleChangeActive, id }) => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const likes = useSelector(state => state.likes);
-    console.log(likes)
+    const likesArr = Object.values(likes);
+  
 
-    useEffect(() => {
-        dispatch(getAllLikes());
-    }, [dispatch]);
+  const likedPost = async (id) => {
+   dispatch(addALike(id))
+  }
+
+  const unlikedPost = async (id) => {
+   dispatch(deleteALike(id))
+  }
 
     return (
       <div className="toggle-wrapper">
-        {active ? (
+        {isActive ? (
           <img
             className="active"
             src={Like}
             alt="solid like"
-            onClick={() => handleChangeActive()}
+            onClick={() => unlikedPost(id)}
           />
         ) : (
           <img
             className="inactive"
             src={Unlike}
             alt="hollow like"
-            onClick={() => handleChangeActive()}
+            onClick={() => likedPost(id)}
           />
         )}
       </div>
