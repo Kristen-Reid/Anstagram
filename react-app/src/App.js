@@ -5,11 +5,13 @@ import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
+import ProfilePage from './components/ProfilePage';
 import User from './components/User';
 import { authenticate } from './store/session';
 import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import { ReactComponent as SadFace } from "../src/svgImg/sadFace.svg";
+import { getAllPosts } from './store/post';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -19,6 +21,7 @@ function App() {
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
+      await dispatch(getAllPosts());
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -49,6 +52,9 @@ function App() {
         <ProtectedRoute path='/home' exact={true} >
           <NavBar />
           <HomePage />
+        </ProtectedRoute>
+        <ProtectedRoute path='/profile' exact={true} >
+          <ProfilePage />
         </ProtectedRoute>
         <Route>
           <div className=" landing-wrapper">
