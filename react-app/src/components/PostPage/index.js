@@ -50,9 +50,7 @@ const PostPage = () => {
     return (
         <div className='post-page-container'>
             <div className='post-page-box-main'>
-                <div className='post-comment-image-container'>
                     <img className='post-comment-image' src={post?.media_url} alt='image'/>
-                </div>
                 <div className='comment-container'>
                     <div className='comment-top'>
                         <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>

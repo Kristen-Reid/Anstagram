@@ -43,9 +43,7 @@ const SinglePost = ({ id, close, post, active }) => {
     return (
         <div className='single-post-container'>
             <div className='single-box-main'>
-                <div className='post-comment-image-container'>
                     <img className='post-comment-image' src={post?.media_url} alt='image'/>
-                </div>
                 <div className='comment-container'>
                     <div className='comment-top'>
                         <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>
