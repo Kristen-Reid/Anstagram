@@ -66,7 +66,7 @@ def seed_posts():
         media_url='https://i.pinimg.com/originals/c2/f0/0f/c2f00ff73646d344db779803f669d60b.jpg', summary='Sometimes I liked this show and sometimes it got on my nerves lol they definitely didn\'t need a spinoff lol.', user_id=2
     )
     post22 = Post(
-        media_url='https://i.ytimg.com/vi/Ijt145xD1TY/maxresdefault.jpg', summary='#fireforce', user_id=5
+        media_url='https://i.blogs.es/08c597/jujutsu-kaisen/840_560.jpg', summary='#fireforce', user_id=5
     )
 
 
