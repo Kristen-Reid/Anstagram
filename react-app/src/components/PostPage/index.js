@@ -13,8 +13,9 @@ import '../SinglePostModal/singlePost.css';
 import '../PostPage/postPage.css';
 
 
-const PostPage = ({ close }) => {
+const PostPage = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
     const { postId } = useParams()
 
     const [isActive, setIsActive] = useState(false);
@@ -25,14 +26,13 @@ const PostPage = ({ close }) => {
     const comments = useSelector(state => state.comments);
     const likes = useSelector(state => state.likes);
     const likesArr = Object.values(likes);
-
+    const liked = likesArr?.filter((like) => +like?.post_id === +post?.id);
+    console.log(liked)
     console.log(likesArr)
-    console.log(postId)
+    console.log(likes)
 
     const commentsArr = Object.values(comments);
     const comment = commentsArr.filter(comment => comment?.post_id === post?.id);
-    // const active = likesArr.filter(like => like?.post_id === postId)
-    console.log(likesArr?.filter((like) => +like?.post_id === +postId && +like?.user_id === +user?.id))
     const active = likesArr?.filter((like) => +like?.post_id === +postId && +like?.user_id === +user?.id).length === 0 ? false : true
 
 
@@ -58,16 +58,16 @@ const PostPage = ({ close }) => {
                 </div>
                 <div className='comment-container'>
                     <div className='comment-top'>
-                        <div className='comment-user'>{post?.user?.username}</div>
+                        <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>
                     </div>
                     <div className='comment-box'>
                         <div className='comment-caption'>
-                            <div className='comment-user'>{post?.user?.username}</div>
+                            <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>
                             <div className='comment-summary'>{post?.summary}</div>
                         </div>
                         {comment.map((comment) => (
                             <div className='comments-content' key={comment?.id}>
-                                <div className='comment-user-2 '>{comment?.user?.username}</div>
+                                <div className='comment-user-2' onClick={() => history.push(`/users/${comment?.user?.id}`)}>{comment?.user?.username}</div>
                                     <div className='comment-summary-2'>{comment?.description}</div>
                                 <div className='comment-menu'>
                                     {user?.id === comment?.user_id && (
@@ -81,6 +81,15 @@ const PostPage = ({ close }) => {
                         <div>
                             <LikeButton isActive={active} id={postId} />
                         </div>
+                        {liked?.length === 1 ? (
+                            <div className='likes-text liked'>
+                                {liked?.length} Like
+                            </div>
+                        ) : (
+                                <div className='unlike-text unliked'>
+                                  {liked?.length} Likes
+                            </div>
+                        )}
                     <div className='comment-updatedAt'>{moment().startOf('hour').fromNow()}</div>
                     </div>
                     <div className='comment-bottom-description'>

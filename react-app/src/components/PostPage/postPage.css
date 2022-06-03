@@ -16,3 +16,16 @@
 .post-page-footer{
     margin-top: 10%;
 }
+
+.likes-text {
+    color: rgba(255, 255, 255, 87%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 15px;
+}
+
+.unlike-text {
+    color: rgba(255, 255, 255, 87%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 15px;
+    margin-top: 0px;
+}

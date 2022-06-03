@@ -12,7 +12,7 @@ import './singlePost.css';
 
 const SinglePost = ({ id, close, post, active }) => {
     const dispatch = useDispatch();
-
+    const history = useHistory();
 
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
@@ -44,16 +44,16 @@ const SinglePost = ({ id, close, post, active }) => {
                 </div>
                 <div className='comment-container'>
                     <div className='comment-top'>
-                        <div className='comment-user'>{post?.user?.username}</div>
+                        <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>
                     </div>
                     <div className='comment-box'>
                         <div className='comment-caption'>
-                            <div className='comment-user'>{post?.user?.username}</div>
+                            <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>
                             <div className='comment-summary'>{post?.summary}</div>
                         </div>
                         {comment.map((comment) => (
                             <div className='comments-content' key={comment?.id}>
-                                <div className='comment-user-2 '>{comment?.user?.username}</div>
+                                <div className='comment-user-2' onClick={() => history.push(`/users/${comment?.user?.id}`)}>{comment?.user?.username}</div>
                                     <div className='comment-summary-2'>{comment?.description}</div>
                                 <div className='comment-menu'>
                                     {user?.id === comment?.user_id && (

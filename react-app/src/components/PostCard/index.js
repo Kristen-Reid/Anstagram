@@ -18,6 +18,9 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
     const comments = useSelector(state => state.comments);
     const commentsArr = Object.values(comments);
     const comment = commentsArr.filter(comment => comment?.post_id === id);
+    const likes = useSelector(state => state.likes);
+    const likesArr = Object.values(likes);
+    const liked = likesArr?.filter((like) => +like?.post_id === +post?.id);
 
     const [isActive, setIsActive] = useState(active);
 
@@ -55,8 +58,17 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
                     <div className='post-like-btn'>
                         <LikeButton isActive={active} id={id}/>
                     </div>
+                    {liked?.length === 1 ? (
+                            <div className='liked'>
+                                {liked?.length} Like
+                            </div>
+                        ) : (
+                                <div className='unliked'>
+                                  {liked?.length} Likes
+                            </div>
+                        )}
                     <div className='post-summary'>
-                        <div className='summary-box username'>
+                        <div className='summary-box username' onClick={() => history.push(`/users/${post?.user?.id}`)}>
                             {username}
                         </div>
                         <div className='summary-box summary'>

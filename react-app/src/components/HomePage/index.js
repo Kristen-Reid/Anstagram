@@ -12,6 +12,7 @@ import { getAllLikes } from '../../store/like';
 const HomePage = () => {
     const dispatch = useDispatch();
     const { id } = useParams();
+    const user = useSelector(state => state.session.user);
     const posts = useSelector(state => state.posts);
     const comments = useSelector(state => state.comments);
     const postArr = Object.values(posts);
@@ -31,7 +32,7 @@ const HomePage = () => {
                 {postArr?.reverse().map((post) => {
                     let active = false
                     likesArr?.map((like) => {
-                      if (like?.post_id === post?.id) active = true
+                      if (like?.post_id === post?.id &&  +like?.user_id === +user?.id) active = true
                     })
                  return  <PostCard key={post?.id}
                         id={post?.id}

@@ -65,6 +65,10 @@
     color: rgba(255, 255, 255, 87%);
 }
 
+.comment-user:hover {
+    cursor: pointer;
+}
+
 .comment-summary {
     margin: 15px 5px 5px 0px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -110,6 +114,10 @@
     word-wrap: break-word;
     flex-wrap: wrap;
     width: 350px;
+}
+
+.comment-user-2:hover {
+    cursor: pointer;
 }
 
 .comment-bottom {

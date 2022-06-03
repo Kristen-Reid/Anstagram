@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LogoutButton from '../auth/LogoutButton';
 import logout from '../../store/session';
@@ -9,6 +9,8 @@ import { ReactComponent as ProfilePic } from '../../svgImg/profile-pic.svg'
 
 const ProfileButton = () => {
     const dispatch = useDispatch();
+    const history = useHistory();
+
     const user = useSelector(state => state.session.user);
     const [showMenu, setShowMenu] = useState(false);
 
@@ -40,13 +42,13 @@ const ProfileButton = () => {
             {showMenu && (
                 <div className='dropdownContainer'>
                     <div className='dropdownContent'>
-                        {/* <div className='dropdownInfoContainer'>
-                            <li className='dropdownInfo'>{user?.username}</li>
-                            <li className='dropdownInfo'>{user?.email}</li>
-                        </div> */}
+                        <div>
+                            <button className='profile-page-btn' onClick={() => history.push(`/users/${user?.id}`)}>Profile Page</button>
+                        </div>
+                        <div className='logout-btn-container'>
                             <LogoutButton />
-                        {/* <div className='dropdownBtnContainer'>
-                        </div> */}
+                        </div>
+
                     </div>
                 </div>
             )}
