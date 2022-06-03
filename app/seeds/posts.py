@@ -48,7 +48,7 @@ def seed_posts():
         media_url='https://www.anime-planet.com/images/anime/screenshots/the-god-of-high-school-14602-1.jpg', summary='Worth the watch! 💥', user_id=4
     )
     post16 = Post(
-        media_url='https://i.pinimg.com/originals/83/a5/75/83a575b032f4abfa1ad49e6b3a8c62c4.jpg', summary='🔥🔥🔥🔥🔥', user_id=5
+        media_url='https://i.ytimg.com/vi/Ijt145xD1TY/maxresdefault.jpg', summary='#fireforce 🔥🔥🔥🔥🔥', user_id=5
     )
     post17 = Post(
         media_url='https://www.slashfilm.com/img/gallery/demon-slayer-season-2-finale-a-hopeful-heartbreaking-masterpiece/l-intro-1644900696.jpg', summary='So excited for season 3!! 😭🙌🏾', user_id=1
@@ -66,7 +66,7 @@ def seed_posts():
         media_url='https://i.pinimg.com/originals/c2/f0/0f/c2f00ff73646d344db779803f669d60b.jpg', summary='Sometimes I liked this show and sometimes it got on my nerves lol they definitely didn\'t need a spinoff lol.', user_id=2
     )
     post22 = Post(
-        media_url='https://i.blogs.es/08c597/jujutsu-kaisen/840_560.jpg', summary='#fireforce', user_id=5
+        media_url='https://i.blogs.es/08c597/jujutsu-kaisen/840_560.jpg', summary='#jujutsukaisen', user_id=5
     )
 
 
