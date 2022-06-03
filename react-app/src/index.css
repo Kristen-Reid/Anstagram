@@ -40,13 +40,16 @@
 
 body {
     background-color: #121212;
-    overflow-y: scroll;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
 }
 
 body::-webkit-scrollbar {
-    overflow: hidden;
+    display: none;
 }
 
 body::-webkit-scrollbar-corner {
-    overflow: hidden;
+    display: none;
 }

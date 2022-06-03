@@ -46,6 +46,7 @@ const EditPostForm = ({ id, close, closeCommentModal }) => {
     return (
     <div className='edit-post-conatiner'>
                 <div className='edit-post-box'>
+                <div className='edit-post-form-container'>
                     <div className='errorsContainer'>
                         {showError && (
                         <div className='form-errors'>
@@ -56,9 +57,8 @@ const EditPostForm = ({ id, close, closeCommentModal }) => {
                         )
                         }
                     </div>
-                    <div className='edit-post-form-container'>
                         <form onSubmit={onSubmit}>
-                            <div>
+                            <div className='edit-post-textarea-container'>
                                 <textarea
                                     className='postInput'
                                     placeholder='Edit summary...'
@@ -67,7 +67,7 @@ const EditPostForm = ({ id, close, closeCommentModal }) => {
                                 />
                             </div>
                             <div>
-                                <button className='comment-menu-btn edit-btn' type='submit'>Edit Post</button>
+                                <button className='comment-menu-btn edit-btn-post' type='submit'>Edit Post</button>
                             </div>
                         </form>
                             <div>

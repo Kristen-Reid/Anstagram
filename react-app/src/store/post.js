@@ -123,8 +123,8 @@ const postsReducer = (state = {}, action) => {
     switch (action.type) {
         case ALL_POSTS:
             const getAllPosts = {};
-            action.payload.posts.forEach((post) => {
-                getAllPosts[post.id] = post
+            action.payload.posts?.forEach((post) => {
+                getAllPosts[post?.id] = post
             });
             return getAllPosts;
         case ONE_POST:

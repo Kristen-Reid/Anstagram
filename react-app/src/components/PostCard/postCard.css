@@ -54,6 +54,10 @@
     font-size: 14px;
 }
 
+.top-box:hover {
+    cursor: pointer;
+}
+
 .post-menu:hover {
     cursor: pointer;
 }

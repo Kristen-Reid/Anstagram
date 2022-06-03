@@ -13,7 +13,7 @@ const PostMenuModal = ({ id, post }) => {
 
     return (
         <>
-            <button className='navLink post-menu-btn' onClick={() => setShowCommentModal(true)}><PostMenuBtn /></button>
+            <button className='navLink menu-btn' onClick={() => setShowCommentModal(true)}><PostMenuBtn /></button>
             {showCommentModal && (
                 <Modal onClose={() => setShowCommentModal(false)}>
                     <PostMenu id={id} post={post} closeCommentModal={() => setShowCommentModal(false)}/>

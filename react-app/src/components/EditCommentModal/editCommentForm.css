@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0%;
 }
 
 .edit-comment-form-container {
@@ -12,8 +13,10 @@
     align-items: center;
     text-align: center;
     width: 300px;
-    height: 300px;
+    height: 291px;
     background-color: #121212;
+    border:rgba(255, 255, 255, 87%) solid .5px;
+    border-radius: 10px;
 }
 
 
@@ -61,5 +64,32 @@
 .edit-comment-textarea-container {
     display: flex;
     justify-content: center;
-    /* width: 200px; */
+
+}
+
+.edit-comment-btn {
+    font-size: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-top:rgba(255, 255, 255, 87%) solid .5px;
+}
+
+.edit-comment-btn:hover {
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(34, 61, 195);
+}
+
+
+.comment-cancel-btn{
+    font-size: 20px;
+    margin: 0%;
+    border-top:rgba(255, 255, 255, 87%) solid .5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.comment-cancel-btn:hover {
+    font-weight: bold;
+    font-size: 22px;
 }

@@ -20,8 +20,9 @@ const DeleteCommentForm = ({post, onClose, comment, closeCommentModal}) => {
                         <button className='delete-btn comment-menu-btn' onClick={() => { dispatch(deleteComment(comment?.id)); closeCommentModal() }}>Delete</button>
                     </div>
 
-                <div className='cancel-btn'></div>
-                <button className='cancel-btn comment-menu-btn' onClick={() => closeCommentModal()}>Cancel</button>
+                <div className='cancel-btn'>
+                    <button className='cancel-btn comment-menu-btn' onClick={() => closeCommentModal()}>Cancel</button>
+                </div>
             </div>
         </div>
     )

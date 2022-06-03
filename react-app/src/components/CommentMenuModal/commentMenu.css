@@ -3,6 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .comment-menu-box {
@@ -12,22 +13,23 @@
     align-items: center;
     text-align: center;
     width: 300px;
-    height: 300px;
+    height: 208px;
     background-color: #121212;
-    border: .5px rgba(255, 255, 255, 87%) solid;
-
+    border: .3px rgba(255, 255, 255, 87%) solid;
+    border-radius: 10px;
 }
 
 .comment-menu-btn {
     background:none;
-    border:none;
-    margin-top: 0px;
+    /* margin-top: 0px; */
+    width: 300px;
+    height: 70px;
     padding:0;
     cursor: pointer;
     color: rgba(255, 255, 255, 87%);
-    font-size: 16px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
+    align-items: center;
 }
 
 .comment-menu-cancel {
@@ -37,34 +39,58 @@
     padding:0;
     cursor: pointer;
     color: rgba(255, 255, 255, 87%);
-    margin: 5px;
 }
 
 .delete-btn {
-    margin: 5px;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-top:rgba(255, 255, 255, 87%) solid .5px;
+
 }
 
 .edit-btn {
-    margin: 8px;
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-top:rgba(255, 255, 255, 87%) solid .5px;
 }
 
+
 .cancel-btn {
-    margin: 5px;
+    font-size: 20px;
+    margin: 0%;
+    border-top:rgba(255, 255, 255, 87%) solid .5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.comment-menu-delete {
+    margin: 0%;
 }
 
 .delete-btn:hover {
     color: red;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .edit-btn:hover {
     font-weight: bold;
-    font-size: 18px;
-    color: rgb(20, 20, 164);
+    font-size: 22px;
+    color: rgb(34, 61, 195);
 }
+
+.edit-btn-post:hover {
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(34, 61, 195);
+}
+
 
 .cancel-btn:hover {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 22px;
 }

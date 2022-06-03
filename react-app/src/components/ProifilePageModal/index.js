@@ -4,15 +4,17 @@ import { getAllPosts } from '../../store/post';
 import { getAllComments } from '../../store/comment';
 import { Modal } from '../../context/Modal';
 import { getAllLikes } from '../../store/like';
-import ProfileCardPage from '../ProfilePage';
+import ProfilePageCard from '../ProfilePage/ProfilePageCard';
+import SinglePost from '../SinglePostModal/SinglePost';
 
 
 const ProfilePageModal = () => {
     const dispatch = useDispatch();
-    const comments = useSelector(state => state.comments);
-    const commentsArr = Object.values(comments);
-    // const comment = commentsArr.filter(comment => comment?.post_id === id)
 
+    const user = useSelector(state => state.session.user);
+    const posts = useSelector(state => state.posts);
+    const postArr = Object.values(posts);
+    const profile = postArr.find(post => post?.user_id === user?.id);
     const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
@@ -23,10 +25,10 @@ const ProfilePageModal = () => {
 
     return (
         <>
-            <button className='navLink comment-count-btn' onClick={() => setShowModal(true)}></button>
+            <button className='navLink comment-count-btn' onClick={() => setShowModal(true)}><ProfilePageCard /></button>
             {showModal && (
                 <Modal onClose={() => setShowModal(false)}>
-                    <ProfileCardPage close={() => setShowModal(false)}/>
+                    <SinglePost close={() => setShowModal(false)}/>
                 </Modal>
             )}
 

@@ -12,17 +12,22 @@
     align-items: center;
     text-align: center;
     width: 300px;
-    height: 300px;
+    height: 255px;
     background-color: #121212;
+    border:rgba(255, 255, 255, 87%) solid .5px;
+    border-radius: 10px;
 }
 
 .delete-question {
     color: rgba(255, 255, 255, 87%);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .delete-red {
     color: red;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 22px;
+    font-size: 20px;
 }

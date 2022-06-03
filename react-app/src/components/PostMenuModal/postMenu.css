@@ -1,14 +1,5 @@
-.post-edit-btn {
-    background:none;
-    border:none;
-    margin-top:0px;
-    padding:0;
-    cursor: pointer;
-    color: rgba(255, 255, 255, 87%);
-    margin: 5px;
-    font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: normal;
+.edit-post{
+    padding-top: 20px;
 }
 
 .post-edit-btn:hover {
@@ -24,6 +15,24 @@
 }
 
 .post-menu-box {
-    border: .5px rgba(255, 255, 255, 87%) solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 208px;
+    background-color: #121212;
+    border: .3px rgba(255, 255, 255, 87%) solid;
+    border-radius: 10px;
+    margin-top: 10px;
+}
 
+.post-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
 }

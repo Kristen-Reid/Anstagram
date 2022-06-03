@@ -7,10 +7,12 @@ import PostMenuModal from '../PostMenuModal';
 import LikeButton from '../LikeButton';
 import { addALike, getAllLikes } from '../../store/like';
 import '../PostCard/postCard.css'
+import { useHistory } from 'react-router-dom';
 
 
 const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post, active }) => {
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const user = useSelector(state => state.session.user);
     const comments = useSelector(state => state.comments);
@@ -19,13 +21,11 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
 
     const [isActive, setIsActive] = useState(active);
 
+    console.log(userId)
 
     useEffect(() => {
         dispatch(getAllPosts());
         dispatch(getAllLikes());
-        // if (active === true) {
-        //     setIsActive(true)
-        // }
     }, [dispatch]);
 
      const handleChangeActive = (id) => {
@@ -39,7 +39,7 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
         <div className='post-box-conatianer'>
             <div className='post-box-main'>
                 <div className='post-box-top'>
-                    <div className='top-box'>
+                    <div className='top-box' onClick={() => history.push(`/users/${post?.user?.id}`)}>
                         {username}
                     </div>
                     {user?.id === userId && (

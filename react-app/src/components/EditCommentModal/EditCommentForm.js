@@ -57,7 +57,6 @@ const EditCommentForm = ({ post, comment, onClose, closeCommentModal }) => {
                         }
                 </div>
                     <form onSubmit={onSubmit}>
-                        <div>
                             <div className='edit-comment-textarea-container'>
                                 <textarea
                                     className='comment-input'
@@ -67,12 +66,11 @@ const EditCommentForm = ({ post, comment, onClose, closeCommentModal }) => {
                                 />
                             </div>
                             <div>
-                                <button className='comment-menu-btn edit-btn' type='submit'>Edit Comment</button>
+                                <button className='comment-menu-btn edit-comment-btn' type='submit'>Edit Comment</button>
                             </div>
-                        </div>
                     </form>
                             <div>
-                                <button className='comment-menu-btn cancel-btn' type='submit' onClick={() => closeCommentModal()}>Cancel</button>
+                                <button className='comment-menu-btn comment-cancel-btn' type='submit' onClick={() => closeCommentModal()}>Cancel</button>
                             </div>
                 </div>
             </div>

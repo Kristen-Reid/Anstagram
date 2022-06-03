@@ -1,36 +1,68 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllPosts } from '../../store/post';
-import { getAllComments } from '../../store/comment';
-import { getAllLikes, addALike } from '../../store/like';
-import SinglePostModal from '../SinglePostModal';
-import { useParams } from 'react-router-dom';
+import { getAllLikes } from '../../store/like';
+import { useParams, useHistory } from 'react-router-dom';
 import '../ProfilePage/profilePage.css';
+import Footer from '../Footer';
 
 
 
 const ProfilePage = () => {
     const dispatch = useDispatch();
-    const user = useSelector(state => state.session.user);
+    const history = useHistory();
+    const { userId } = useParams();
+    const [user, setUser] = useState({});
+
     const posts = useSelector(state => state.posts);
     const postArr = Object.values(posts);
-    const profile = postArr.find(post => post?.user_id === user?.id);
+    const post = postArr.filter(post => post?.user_id === user?.id)
+    console.log(postArr)
+
+    useEffect(() => {
+        dispatch(getAllPosts());
+        dispatch(getAllLikes());
+    }, [dispatch]);
+
+
+  useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    (async () => {
+      const response = await fetch(`/api/users/${userId}`);
+      const user = await response.json();
+      setUser(user);
+    })();
+  }, [userId]);
+
+  if (!user) {
+    return null;
+  }
 
 
     return (
         <div className='profile-page-container'>
             <div className='profile-page-top'>
-                {profile?.user?.username}
+                {user?.username}
             </div>
             <div className='profile-container'>
-                {postArr?.reverse().map((post) => (
-                    <div className='profile-pic-card' key={post?.id}>
+                {post?.reverse().map((post) => (
+                    <div
+                        className='profile-pic-card'
+                        key={post?.id}
+                        onClick={() => history.push(`/posts/${post?.id}`)}
+                    >
                         <img className='profile-pic-box'
                             src={post?.media_url}
                             alt='image'
                         />
                 </div>
                 ))}
+
+            </div>
+            <div className='profile-page-footer'>
+                <Footer />
             </div>
         </div>
     )

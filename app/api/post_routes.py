@@ -33,7 +33,7 @@ def get_all_posts():
 @posts_routes.route('/<int:id>')
 @login_required
 def get_one_post(id):
-    post = Post.query.filter(Post.id == id).one()
+    post = Post.query.get(id)
 
     return post.post_to_dict()
 

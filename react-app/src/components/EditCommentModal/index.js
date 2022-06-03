@@ -9,7 +9,7 @@ const EditCommentModal = ({post, comment, closeCommentModal}) => {
 
     return (
         <>
-            <button className='navLink comment-menu-btn edit-btn' onClick={() => { setShowModal(true) }}>Edit</button>
+            <button className='navLink comment-menu-btn edit-btn' onClick={() => { setShowModal(true) }}>Edit Comment</button>
             {showModal && (
                 <Modal2 onClose={() => setShowModal(false)}>
                     <EditCommentForm post={post} comment={comment} onClose={() => setShowModal(false)} closeCommentModal={closeCommentModal}/>

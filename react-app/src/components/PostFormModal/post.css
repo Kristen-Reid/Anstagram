@@ -5,9 +5,6 @@
     align-items: center;
     margin: 0;
     padding: 0;
-    /* width: 100vw;
-    height: 100vh; */
-    /* background-color: rgba(0, 0, 0, 0.8); */
 }
 
 .post-form-box {
@@ -15,8 +12,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* width: 494px;
-    height: 537px; */
     text-align: center;
     background-color: #121212;
     border-radius: 5px;

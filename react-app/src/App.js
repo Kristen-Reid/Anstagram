@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route, Switch, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import LoginForm from './components/auth/LoginForm';
 import SignUpForm from './components/auth/SignUpForm';
@@ -12,16 +12,19 @@ import NavBar from './components/NavBar';
 import HomePage from './components/HomePage';
 import { ReactComponent as SadFace } from "../src/svgImg/sadFace.svg";
 import { getAllPosts } from './store/post';
+import PostPage from './components/PostPage';
+import Footer from './components/Footer';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
+  // const { id } = useParams()
+  // console.log(id)
   const user = useSelector(state => state.session.user);
 
   useEffect(() => {
     (async() => {
       await dispatch(authenticate());
-      await dispatch(getAllPosts());
       setLoaded(true);
     })();
   }, [dispatch]);
@@ -47,14 +50,17 @@ function App() {
           <UsersList/>
         </ProtectedRoute>
         <ProtectedRoute path='/users/:userId' exact={true} >
-          <User />
+          <NavBar />
+          <ProfilePage />
+          {/* <User /> */}
         </ProtectedRoute>
         <ProtectedRoute path='/home' exact={true} >
           <NavBar />
           <HomePage />
         </ProtectedRoute>
-        <ProtectedRoute path='/profile' exact={true} >
-          <ProfilePage />
+        <ProtectedRoute path='/posts/:postId' exact={true} >
+          <NavBar />
+          <PostPage />
         </ProtectedRoute>
         <Route>
           <div className=" landing-wrapper">

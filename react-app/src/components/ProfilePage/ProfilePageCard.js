@@ -5,11 +5,11 @@ import { getAllComments } from '../../store/comment';
 import { getAllLikes, addALike } from '../../store/like';
 import SinglePostModal from '../SinglePostModal';
 import { useParams } from 'react-router-dom';
-import '../ProfilePage/profilePage.css';
+// import '../ProfilePage/profilePage.css';
 
 
 
-const ProfilePage = ({close}) => {
+const ProfilePageCard = () => {
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const posts = useSelector(state => state.posts);
@@ -19,9 +19,9 @@ const ProfilePage = ({close}) => {
 
     return (
         <div className='profile-page-container'>
-            <div className='profile-page-top'>
+            {/* <div className='profile-page-top'>
                 {profile?.user?.username}
-            </div>
+            </div> */}
             <div className='profile-container' >
                 {postArr?.reverse().map((post) => (
                     <div className='profile-pic-card' key={post?.id}>
@@ -37,4 +37,4 @@ const ProfilePage = ({close}) => {
 }
 
 
-export default ProfilePage;
+export default ProfilePageCard;

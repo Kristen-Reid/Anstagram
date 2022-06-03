@@ -58,7 +58,14 @@
     margin-bottom: 20px;
     height: 100px;
     background:none;
-    border: .5px solid rgba(255, 255, 255, 87%);
+    border: none;
+    font-size: 18px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.comment-input::-webkit-scrollbar {
+    display: none;
 }
 
 
