@@ -22,6 +22,9 @@
     width: 494px;
     height: 43px;
     border: .5px solid rgba(255, 255, 255, 87%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .create-post-bottom {
@@ -32,6 +35,8 @@
     width: 494px;
     height: 494px;
     border: 1px solid rgba(255, 255, 255, 87%);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 
