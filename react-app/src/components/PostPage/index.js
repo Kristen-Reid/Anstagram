@@ -14,7 +14,7 @@ import '../PostPage/postPage.css';
 
 
 const PostPage = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();  
     const history = useHistory();
     const { postId } = useParams()
 
