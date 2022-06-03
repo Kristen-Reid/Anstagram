@@ -41,20 +41,25 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 70%;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100%;
 }
 
 .profile-pic-card {
     color: white;
-    width: calc(90% * (1/4) - 0px - 0px);
-    height: 295px;
-    margin: 50px;
+    width: calc(100% * (1/4) - 0px - 0px);
+    height: 100%;
+    margin: 20px;
+    box-sizing: border-box;
 }
 
 .profile-pic-box {
-    width: 120%;
-    height: 120%;
+    width: 400px;
+    height: 190px;
     object-fit: contain;
+    box-sizing: border-box;
+
 }
 
 .profile-page-footer {
