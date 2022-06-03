@@ -50,6 +50,15 @@
     color: rgba(255, 255, 255, 87%);
 }
 
+.nav-div2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 9px;
+    list-style: none;
+    color: rgba(255, 255, 255, 87%);
+}
+
 .nav-div:hover {
     cursor: pointer;
 }

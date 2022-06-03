@@ -26,10 +26,8 @@ const NavBar = () => {
                 <PostFormModal />
             </li>
           </div>
-          <div className='nav-div'>
-            <li>
+          <div className='nav-div2'>
               <ProfileButton />
-            </li>
           </div>
         </div>
         </div>

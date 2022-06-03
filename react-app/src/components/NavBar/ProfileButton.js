@@ -11,6 +11,7 @@ const ProfileButton = () => {
     const dispatch = useDispatch();
     const history = useHistory();
 
+
     const user = useSelector(state => state.session.user);
     const [showMenu, setShowMenu] = useState(false);
 
@@ -36,7 +37,10 @@ const ProfileButton = () => {
         <div className='profileContainer'>
             <div className='profileBtn'>
                 <a onClick={openMenu} className='openMenu'>
-                    <ProfilePic/>
+                    <img
+                            className='post-profile-img2'
+                                src={user?.image_url}
+                        />
                 </a>
             </div>
             {showMenu && (
