@@ -40,12 +40,25 @@ const ProfilePage = () => {
     return null;
   }
 
+  console.log(user)
+
 
     return (
-        <div className='profile-page-container'>
-            <div className='profile-page-top'>
+      <div className='profile-page-container'>
+        <div className='profile-page-top-container'>
+            <img className='profile-page-pic' src={user?.image_url} alt='profile image' />
+          <div className='profile-page-top'>
+            <div className='profile-username'>
                 {user?.username}
             </div>
+            <div className='profile-descrip'>
+                {user?.description}
+            </div>
+          </div>
+        </div>
+        <div className='line-container'>
+            <div className='line'></div>
+          </div>
             <div className='profile-container'>
                 {post?.reverse().map((post) => (
                     <div
