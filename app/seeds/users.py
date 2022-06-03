@@ -14,7 +14,7 @@ def seed_users():
     stevie = User(
         full_name='Stevie Nix', username='nixie', email='nixie@aa.io', password='password', image_url='https://avatarfiles.alphacoders.com/799/79905.png')
     eren = User(
-        full_name='Eren Yeags', username='eren', email='eren@aa.io', password='password', image_url='https://www.otaquest.com/wp-content/uploads/2021/07/eren-yeager-feature-image-1024x576.png')
+        full_name='Eren Yeags', username='eren', email='eren@aa.io', password='password')
 
     db.session.add_all([demo, marnie, bobbie, kris, stevie, eren])
 
