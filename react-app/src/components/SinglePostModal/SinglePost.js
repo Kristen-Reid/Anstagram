@@ -18,6 +18,10 @@ const SinglePost = ({ id, close, post, active }) => {
     const comments = useSelector(state => state.comments);
     const commentsArr = Object.values(comments);
     const comment = commentsArr.filter(comment => comment?.post_id === post?.id);
+    const likes = useSelector(state => state.likes);
+    const likesArr = Object.values(likes);
+    const liked = likesArr?.filter((like) => +like?.post_id === +post?.id);
+
 
     const [isActive, setIsActive] = useState(active);
 
@@ -67,6 +71,15 @@ const SinglePost = ({ id, close, post, active }) => {
                         <div>
                             <LikeButton isActive={active} id={id} />
                         </div>
+                        {liked?.length === 1 ? (
+                            <div className='likes-text liked'>
+                                {liked?.length} Like
+                            </div>
+                        ) : (
+                                <div className='unlike-text unliked'>
+                                  {liked?.length} Likes
+                            </div>
+                        )}
                     <div className='comment-updatedAt'>{moment().startOf('hour').fromNow()}</div>
                     </div>
                     <div className='comment-bottom-description'>

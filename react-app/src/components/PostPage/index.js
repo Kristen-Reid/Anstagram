@@ -27,9 +27,6 @@ const PostPage = () => {
     const likes = useSelector(state => state.likes);
     const likesArr = Object.values(likes);
     const liked = likesArr?.filter((like) => +like?.post_id === +post?.id);
-    console.log(liked)
-    console.log(likesArr)
-    console.log(likes)
 
     const commentsArr = Object.values(comments);
     const comment = commentsArr.filter(comment => comment?.post_id === post?.id);
