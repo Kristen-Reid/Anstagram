@@ -57,11 +57,23 @@ const PostPage = () => {
                     </div>
                     <div className='comment-box'>
                         <div className='comment-caption'>
+                        {post?.user?.image_url && (
+                            <img
+                                className='post-profile-img'
+                                src={post?.user?.image_url}
+                            />
+                        )}
                             <div className='comment-user' onClick={() => history.push(`/users/${post?.user?.id}`)}>{post?.user?.username}</div>
                             <div className='comment-summary'>{post?.summary}</div>
                         </div>
                         {comment.map((comment) => (
                             <div className='comments-content' key={comment?.id}>
+                                {comment?.user?.image_url && (
+                                    <img
+                                        className='post-profile-img'
+                                        src={comment?.user?.image_url}
+                                    />
+                                 )}
                                 <div className='comment-user-2' onClick={() => history.push(`/users/${comment?.user?.id}`)}>{comment?.user?.username}</div>
                                     <div className='comment-summary-2'>{comment?.description}</div>
                                 <div className='comment-menu'>

@@ -46,7 +46,12 @@ const ProfilePage = () => {
     return (
       <div className='profile-page-container'>
         <div className='profile-page-top-container'>
-            <img className='profile-page-pic' src={user?.image_url} alt='profile image' />
+            {user?.image_url && (
+                <img
+                    className='profile-page-pic'
+                    src={user?.image_url}
+                />
+                )}
           <div className='profile-page-top'>
             <div className='profile-username'>
                 {user?.username}

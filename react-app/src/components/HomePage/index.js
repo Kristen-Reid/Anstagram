@@ -42,6 +42,7 @@ const HomePage = () => {
                         updatedAt={moment().startOf('hour').fromNow()}
                         userId={post?.user?.id}
                         username={post?.user?.username}
+                        userImage={post?.user?.image_url}
                         post={post}
                         active={active}
                     />

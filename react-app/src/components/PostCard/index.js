@@ -10,7 +10,7 @@ import '../PostCard/postCard.css'
 import { useHistory } from 'react-router-dom';
 
 
-const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, post, active }) => {
+const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, userImage, post, active }) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -42,8 +42,16 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
         <div className='post-box-conatianer'>
             <div className='post-box-main'>
                 <div className='post-box-top'>
-                    <div className='top-box' onClick={() => history.push(`/users/${post?.user?.id}`)}>
-                        {username}
+                    <div className='post-profile-info'>
+                    {userImage && (
+                        <img
+                            className='post-profile-img'
+                            src={userImage}
+                        />
+                        )}
+                        <div className='top-box' onClick={() => history.push(`/users/${post?.user?.id}`)}>
+                            {username}
+                        </div>
                     </div>
                     {user?.id === userId && (
                         <div className='top-box'>
