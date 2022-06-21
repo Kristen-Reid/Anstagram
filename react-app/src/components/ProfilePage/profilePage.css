@@ -8,7 +8,6 @@
 .profile-page-top {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-evenly; */
     color: rgba(255, 255, 255, 87%);
     margin-right: 300px;
 }
