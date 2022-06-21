@@ -79,7 +79,7 @@ const ProfilePage = () => {
                 ))}
 
             </div>
-            <div className='profile-page-footer'>
+            <div className='profile-page-footer2'>
                 <Footer />
             </div>
         </div>

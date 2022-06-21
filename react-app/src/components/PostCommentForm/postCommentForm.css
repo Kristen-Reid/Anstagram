@@ -18,7 +18,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     margin-bottom: 15px;
-    margin-right: 5px;
+    margin-right: 55px;
 }
 
 .postCommentInput {
@@ -29,7 +29,8 @@
 }
 
 .post-comment-input-text {
-    margin-left: 15px;
+    margin-left: 25px;
+    margin-right: 55px;
 }
 
 .post-comment-bottom-description:hover {
@@ -65,7 +66,7 @@
 }
 
 .post-comment-bottom-description {
-    width: 470px;
+    width: 550px;
     border-top: .5px solid rgba(255, 255, 255, 87%);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;

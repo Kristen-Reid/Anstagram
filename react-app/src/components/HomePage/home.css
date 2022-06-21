@@ -6,7 +6,6 @@
     width: 100vw;
     height: 100vh;
     color: rgba(255, 255, 255, 87%);
-    /* opacity: 87%; */
 }
 
 .home-title {
@@ -16,5 +15,3 @@
     justify-content: space-around;
     word-wrap: break-word;
 }
-
-

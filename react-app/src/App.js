@@ -16,15 +16,15 @@ import PostPage from './components/PostPage';
 import Footer from './components/Footer';
 import { getAllLikes } from './store/like';
 
-function App() {
+const App = () => {
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
 
   useEffect(() => {
     (async () => {
-      dispatch(getAllLikes())
-      dispatch(getAllPosts())
+      // dispatch(getAllLikes())
+      // dispatch(getAllPosts())
       await dispatch(authenticate());
       setLoaded(true);
     })();

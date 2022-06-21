@@ -32,7 +32,7 @@ const HomePage = () => {
                 {postArr?.reverse().map((post) => {
                     let active = false
                     likesArr?.map((like) => {
-                      if (like?.post_id === post?.id &&  +like?.user_id === +user?.id) active = true
+                      if (+like?.post_id === post?.id &&  +like?.user_id === +user?.id) active = true
                     })
                  return  <PostCard key={post?.id}
                         id={post?.id}
