@@ -1,7 +1,13 @@
 from app.models import db, Post
+from app.models.db import db, environment, SCHEMA
 
 
 def seed_posts():
+    if environment == "production":
+        # Before seeding, truncate all tables prefixed with schema name
+        db.session.execute(f"TRUNCATE table {SCHEMA}.posts RESTART IDENTITY CASCADE;")
+         # Add a truncate command here for every table that will be seeded.
+        db.session.commit()
     post1 = Post(
         media_url='https://wallpaperaccess.com/full/5707282.jpg', summary='Love Tokyo Ghoul! Ken Kaneki is my favorite character!!', user_id=2
         )
@@ -72,7 +78,7 @@ def seed_posts():
 
     db.session.add_all([post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11, post12, post13, post14, post15, post16, post17, post18, post19, post20, post21, post22])
 
-    db.session.commit()
+    seed_posts()
 
 
 def undo_posts():

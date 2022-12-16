@@ -1,7 +1,12 @@
 from app.models import db, Like
-
+from app.models.db import db, environment, SCHEMA
 
 def seed_likes():
+    if environment == "production":
+        # Before seeding, truncate all tables prefixed with schema name
+        db.session.execute(f"TRUNCATE table {SCHEMA}.likes RESTART IDENTITY CASCADE;")
+         # Add a truncate command here for every table that will be seeded.
+        db.session.commit()
     like1 = Like(user_id=1, post_id=1)
     like2 = Like(user_id=2, post_id=2)
     like3 = Like(user_id=3, post_id=3)
@@ -12,7 +17,7 @@ def seed_likes():
 
     db.session.add_all([like1, like2, like3, like4, like5, like6])
 
-    db.session.commit()
+    seed_likes()
 
 
 def undo_likes():
