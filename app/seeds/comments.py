@@ -1,4 +1,5 @@
-from app.models.db import db, Comment, environment, SCHEMA
+from app.models import db, Comment
+from app.models.db import db, environment, SCHEMA
 
 def seed_comments():
     if environment == "production":
