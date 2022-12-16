@@ -17,7 +17,6 @@ const ProfilePage = () => {
     const posts = useSelector(state => state.posts);
     const postArr = Object.values(posts);
     const post = postArr.filter(post => post?.user_id === user?.id)
-    console.log(postArr)
 
     useEffect(() => {
         dispatch(getAllPosts());
@@ -39,8 +38,6 @@ const ProfilePage = () => {
   if (!user) {
     return null;
   }
-
-  console.log(user)
 
 
     return (

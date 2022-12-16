@@ -24,7 +24,6 @@ const PostCard = ({ id, image, summary, createdAt, updatedAt, userId, username, 
 
     const [isActive, setIsActive] = useState(active);
 
-    console.log(userId)
 
     useEffect(() => {
         dispatch(getAllPosts());
