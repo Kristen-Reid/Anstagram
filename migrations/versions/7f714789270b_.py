@@ -7,7 +7,7 @@ Create Date: 2022-05-27 00:58:11.053494
 """
 from alembic import op
 import sqlalchemy as sa
-from alembic import os
+import os
 
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get("SCHEMA")
