@@ -1,5 +1,4 @@
-from app.models import db, Post
-from app.models.db import db, environment, SCHEMA
+from app.models.db import db, Post, environment, SCHEMA
 
 
 def seed_posts():

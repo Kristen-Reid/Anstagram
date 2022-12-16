@@ -1,5 +1,4 @@
-from app.models import db, Like
-from app.models.db import db, environment, SCHEMA
+from app.models.db import db, Like, environment, SCHEMA
 
 def seed_likes():
     if environment == "production":
