@@ -1,12 +1,7 @@
 from app.models import db, Comment
-from app.models.db import db, environment, SCHEMA
+
 
 def seed_comments():
-    if environment == "production":
-        # Before seeding, truncate all tables prefixed with schema name
-        db.session.execute(f"TRUNCATE table {SCHEMA}.comments RESTART IDENTITY CASCADE;")
-         # Add a truncate command here for every table that will be seeded.
-        db.session.commit()
     comment1= Comment(
         description='Tokyo Ghoul is such a great anime! Great ending as well.', user_id=4, post_id=1
     )
@@ -47,7 +42,7 @@ def seed_comments():
 
     db.session.add_all([comment1, comment2, comment3, comment4, comment5, comment6, comment7, comment8, comment9, comment10, comment11, comment12])
 
-    seed_comments()
+    db.session.commit()
 
 
 def undo_comments():

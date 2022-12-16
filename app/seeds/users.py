@@ -1,14 +1,9 @@
 from app.models import db, User
-from app.models.db import db, environment, SCHEMA
+
 
 
 # Adds a demo user, you can add other users here if you want
 def seed_users():
-    if environment == "production":
-        # Before seeding, truncate all tables prefixed with schema name
-        db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
-         # Add a truncate command here for every table that will be seeded.
-        db.session.commit()
     demo = User(
        full_name='Demo Moore', username='Demo', email='demo@aa.io', password='password', image_url='https://i.pinimg.com/originals/85/5b/fa/855bfad3aee07326d0681677fc56da63.jpg')
     marnie = User(
@@ -23,7 +18,7 @@ def seed_users():
         full_name='Eren Yeags', username='eren', email='eren@aa.io', password='password')
 
     db.session.add_all([demo, marnie, bobbie, kris, stevie, eren])
-    seed_users()
+    db.session.commit()
 
 
 
