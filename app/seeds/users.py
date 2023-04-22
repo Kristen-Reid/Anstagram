@@ -13,7 +13,7 @@ def seed_users():
     kris = User(
         full_name='Kris Read', username='kris', email='kris@aa.io', password='password', image_url='https://64.media.tumblr.com/94fb3cc3352fe5d471b3206de32089e2/tumblr_inline_pf1b2qQ2QU1rbr94y_500.jpg', description='Kris by day. Yoruchi by night...')
     stevie = User(
-        full_name='Stevie Nix', username='nixie', email='nixie@aa.io', password='password', image_url='https://sportshub.cbsistatic.com/i/2021/03/17/cb22639d-8bc6-4ab9-bbba-0b912b676d86/bulma-dragon-ball-1157878.jpg')
+        full_name='Stevie Nix', username='nixie', email='nixie@aa.io', password='password', image_url='https://screenrant.com/wp-content/uploads/Bulma-Dragon-Ball-Z-Battle-of-Gods.jpg')
     eren = User(
         full_name='Eren Yeags', username='eren', email='eren@aa.io', password='password')
 
