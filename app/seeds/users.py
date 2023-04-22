@@ -9,7 +9,7 @@ def seed_users():
     marnie = User(
         full_name='Marnie Marn', username='marnie', email='marnie@aa.io', password='password', image_url='https://staticg.sportskeeda.com/editor/2022/02/7b353-16439509782499.png', description='Tryna workout until I go bald 💪🏾')
     bobbie = User(
-        full_name='Bobbie Dolo', username='bobbie', email='bobbie@aa.io', password='password', image_url='https://data.whicdn.com/images/333421372/original.jpg',description='Impatiently waiting for the 3rd season of Demon Slayer...😒')
+        full_name='Bobbie Dolo', username='bobbie', email='bobbie@aa.io', password='password', image_url='https://data.whicdn.com/images/333421372/original.jpg', description='Impatiently waiting for the 3rd season of Demon Slayer...😒')
     kris = User(
         full_name='Kris Read', username='kris', email='kris@aa.io', password='password', image_url='https://64.media.tumblr.com/94fb3cc3352fe5d471b3206de32089e2/tumblr_inline_pf1b2qQ2QU1rbr94y_500.jpg', description='Kris by day. Yoruchi by night...')
     stevie = User(
