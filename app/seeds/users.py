@@ -11,7 +11,7 @@ def seed_users():
     bobbie = User(
         full_name='Bobbie Dolo', username='bobbie', email='bobbie@aa.io', password='password', image_url='https://data.whicdn.com/images/333421372/original.jpg', description='Impatiently waiting for the 3rd season of Demon Slayer...😒')
     kris = User(
-        full_name='Kris Read', username='kris', email='kris@aa.io', password='password', image_url='https://sportshub.cbsistatic.com/i/2021/03/17/e06a80b4-6ed5-4743-8079-300b2c056f12/dragon-ball-z-bulma-1188736.jpg', description='Kris by day. Yoruchi by night...')
+        full_name='Kris Read', username='kris', email='kris@aa.io', password='password', image_url='https://64.media.tumblr.com/94fb3cc3352fe5d471b3206de32089e2/tumblr_inline_pf1b2qQ2QU1rbr94y_500.jpg', description='Kris by day. Yoruchi by night...')
     stevie = User(
         full_name='Stevie Nix', username='nixie', email='nixie@aa.io', password='password', image_url='https://dragonball.guru/wp-content/uploads/2021/03/bulma-profile-400x400.png')
     eren = User(
