@@ -65,9 +65,9 @@ def seed_posts():
     post21 = Post(
         media_url='https://i.pinimg.com/originals/c2/f0/0f/c2f00ff73646d344db779803f669d60b.jpg', summary='Sometimes I liked this show and sometimes it got on my nerves lol they definitely didn\'t need a spinoff lol.', user_id=2
     )
-    post22 = Post(
-        media_url='https://i.blogs.es/08c597/jujutsu-kaisen/840_560.jpg', summary='#jujutsukaisen', user_id=5
-    )
+    # post22 = Post(
+    #     media_url='https://i.blogs.es/08c597/jujutsu-kaisen/840_560.jpg', summary='#jujutsukaisen', user_id=5
+    # )
 
 
     db.session.add_all([post1, post2, post3, post4, post5, post6, post7, post8, post9, post10, post11, post12, post13, post14, post15, post16, post17, post18, post19, post20, post21, post22])
